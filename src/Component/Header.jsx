@@ -1,13 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import threshers from "./Threshers";
 
 const Header = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleMouseEnter = () => {
+    if (!isClicked) {
+      setDropdownOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isClicked) {
+      setDropdownOpen(false);
+    }
+  };
+
+  const handleClick = () => {
+    if (dropdownOpen) {
+      setDropdownOpen(false);
+      setIsClicked(!isClicked);
+    } else {
+      setDropdownOpen(true);
+      setIsClicked(!isClicked);
+    }
+  };
+
   return (
-    <header className="bg-white shadow-lg p-0 sm:p-0">
-      <div className="flex items-center justify-between flex-wrap sm:flex-nowrap">
+    <header className="bg-white shadow-lg">
+      <div className="flex items-center justify-between p-4">
         <div className="flex items-center">
-          <a href="/" className="flex-none min-w-[80px] sm:min-w-[100px]">
-            <div className="relative pl-1 w-full h-16 sm:h-20">
+          <a href="/" className="flex-none">
+            <div className="relative w-full h-16 sm:h-20">
               <img
                 alt="logo"
                 src="https://i.imgur.com/Z5Hf8eH.png"
@@ -32,12 +58,11 @@ const Header = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center mt-2 sm:mt-0">
+        <div className="flex items-center">
           <a
-            className="group flex items-center disabled:opacity-50 disabled:hover:opacity-50 hover:opacity-95 justify-center ring-none rounded-lg shadow-lg font-semibold 
-  py-1 px-3 text-sm sm:py-2 sm:px-4 sm:text-base font-dm focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-gray-100 border-b-4 border-b-green-600 disabled:border-0
-  disabled:bg-white disabled:text-gray-800 ring-white text-gray-800 hover:border-0 active:border-0 hover:text-gray-800 active:bg-gray-200
-  active:text-gray-800 focus-visible:outline-green-500 dark:bg-gray-100 dark:border-gray-700 dark:border-b-green-600 mr-2 sm:mr-10"
+            className="group flex items-center disabled:opacity-50 hover:opacity-95 justify-center rounded-lg shadow-lg font-semibold 
+            px-3 sm:px-4 font-dm focus:outline-none bg-gray-100 border-b-4 border-b-green-600 
+            text-gray-800 hover:text-gray-800 active:bg-gray-200 active:text-gray-800 focus-visible:outline-green-500 dark:bg-gray-100 dark:border-gray-700 dark:border-b-green-600"
             href="tel:9828719163"
           >
             <FaPhoneAlt className="mr-1 sm:mr-2 text-black" />
@@ -47,9 +72,9 @@ const Header = () => {
       </div>
 
       <div className="w-full bg-gray-100">
-        <nav className="py-1 ml-0 mr-0 sm:py-2">
-          <ul className="flex gap-4 sm:gap-6 justify-center text-black uppercase text-xs sm:text-sm font-medium">
-            <li>
+        <nav>
+          <ul className="flex justify-center text-black uppercase text-xs sm:text-sm font-medium">
+            <li className="px-2 py-1 sm:px-4 sm:py-2">
               <a
                 href="/"
                 className="hover:text-green-600 transition-colors duration-300"
@@ -57,15 +82,45 @@ const Header = () => {
                 Home
               </a>
             </li>
-            <li>
-              <a
-                href="/escorts-group/overview"
+            <li
+              className="relative px-2 py-1 sm:px-4 sm:py-2"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              onClick={handleClick}
+            >
+              <button
                 className="hover:text-green-600 transition-colors duration-300"
               >
                 Our Products
-              </a>
+              </button>
+              {(dropdownOpen || isClicked) && (
+                <div className="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-lg z-10">
+                <ul className="text-black text-sm">
+                  {threshers.map((thresher, index) => (
+                    <li key={thresher.productId}>
+                      <a
+                        href={`/${thresher.productId}`}
+                        className={`block px-4 py-2 transition-colors duration-300 ${
+                          index === 0 ? "rounded-t-lg hover:bg-green-600 hover:text-white" : ""
+                        } ${
+                          index === threshers.length - 1 ? "rounded-b-lg hover:bg-green-600 hover:text-white" : ""
+                        } ${
+                          index !== 0 && index !== threshers.length - 1 ? "border-b border-gray-200" : ""
+                        } ${
+                          index !== threshers.length - 1 ? "border-b border-gray-200" : ""
+                        } hover:bg-green-600 hover:text-white`}
+                      >
+                        {thresher.ModelName}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+
+              )}
             </li>
-            <li>
+            <li className="px-2 py-1 sm:px-4 sm:py-2">
               <a
                 href="/investors/overview"
                 className="hover:text-green-600 transition-colors duration-300"
@@ -73,7 +128,7 @@ const Header = () => {
                 About Us
               </a>
             </li>
-            <li>
+            <li className="px-2 py-1 sm:px-4 sm:py-2">
               <a
                 href="/media-room/overview"
                 className="hover:text-green-600 transition-colors duration-300"

@@ -5,8 +5,8 @@ const Carousel = () => {
   const items = [
     {
       title: "Combine Harvester - 512",
-      imageUrl: "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
-      link: "https://www.jangeer.com/combine-harvester/combine-harvester-512"
+      imageUrl: "https://i.imgur.com/j4g8Lgy.jpeg"  ,   
+       link: "https://www.jangeer.com/combine-harvester/combine-harvester-512"
     },
     {
       title: "Tractor Mounted Combine - 510",
@@ -15,7 +15,7 @@ const Carousel = () => {
     },
     {
       title: "Multicrop Thresher",
-      imageUrl: "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
+      imageUrl:"https://i.imgur.com/ULz2pvi.jpeg",
       link: "https://www.jangeer.com/multicrop-thresher"
     },
     {

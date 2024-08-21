@@ -41,7 +41,7 @@ const Header = () => {
             href="tel:9828719163"
           >
             <FaPhoneAlt className="mr-1 sm:mr-2 text-black" />
-            +91 9828 7191 63
+            +91 9828719163
           </a>
         </div>
       </div>

@@ -11,7 +11,7 @@ const Header = () => {
               <img
                 alt="logo"
                 src="https://i.imgur.com/Z5Hf8eH.png"
-                className="object-contain w-2000px h-full transition-transform transform hover:scale-105 duration-300 pl-10 mt-3 mb-3"
+                className="object-contain w-2000px h-full  pl-10 mt-3 mb-3"
               />
             </div>
           </a>

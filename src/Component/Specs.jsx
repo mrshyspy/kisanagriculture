@@ -1,6 +1,6 @@
 // TechnicalSpecificationsPage.jsx
 import React from 'react';
-import ImageCarousel from './ProductDetail';
+import ProductDetail from './ProductDetail';
 import QuickLinks from './QuickLink';
 import Breadcrumbs from './Breadcrumb'; // Import the Breadcrumbs component
 
@@ -37,8 +37,8 @@ function TechnicalSpecificationsPage() {
     <>
       <div className="container mx-auto p-6 bg-white text-gray-800">
         <Breadcrumbs paths={breadcrumbPaths} /> {/* Add Breadcrumbs here */}
-        <ImageCarousel />
-        <h2 className=" mt-8 text-2xl font-semibold mb-8">Technical Specifications</h2>
+        <ProductDetail />
+        <h2 className=" mt-8 text-2xl font-semibold mb-4">Technical Specifications</h2>
         <div className="overflow-x-auto mb-12">
           <table className="min-w-full bg-white text-gray-800 shadow-lg rounded-lg border border-gray-300">
             <tbody>

@@ -2,9 +2,11 @@ import React from 'react';
 import Header from './Component/Header';
 import './index.css';
 import Footer from './Component/Footer';
-import ProductPage from './Component/Product';
-import ProductSlider from './Component/ProductDetail';
+import HomePage from './Component/HomePage';
+import ProductDetail from './Component/ProductDetail';
 import TechnicalSpecifications from './Component/Specs'; 
+import threshers from './Component/Threshers';
+import ProductDetailPage from './Component/ProductDetailPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -12,9 +14,10 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<ProductPage />} />
-        <Route path="/product-detail" element={<ProductSlider />} />
-        <Route path="/technical-specifications" element={<TechnicalSpecifications />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/product-detail" element={<ProductDetail />} />
+        <Route path="/product/:ProductId" element={<TechnicalSpecifications threshers={threshers} />} />
+        <Route path="/:ProductId" element={<ProductDetailPage threshers={threshers} />} />
       </Routes>
       <Footer />
     </Router>

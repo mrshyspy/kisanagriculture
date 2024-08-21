@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-const ImageCarousel = () => {
+const ProductDetail = ({threshers}) => {
+  console.log(threshers);
   const images = [
     'https://i.imgur.com/nkjprq9.png',
     'https://i.imgur.com/IEAum1D.jpeg',
@@ -84,7 +85,7 @@ const ImageCarousel = () => {
 
       {/* Right side: Product description */}
       <div className="lg:w-1/2 flex flex-col justify-center space-y-4 md:space-y-6 mt-4 lg:mt-0">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">The Farmtrac 26 Atom</h2>
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800">The Farmtrac 26 Atom</h1>
         <p className="text-gray-700 leading-relaxed">
           The Farmtrac 26 atom, compact tractor is the ultimate companion for orchard, 
           cotton, sugarcane farmers. This 26 HP Category tractor delivers exceptional 
@@ -107,4 +108,4 @@ const ImageCarousel = () => {
   );
 };
 
-export default ImageCarousel;
+export default ProductDetail;

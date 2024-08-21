@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import threshers from "./Threshers";
 
@@ -98,8 +99,8 @@ const Header = () => {
                 <ul className="text-black text-sm">
                   {threshers.map((thresher, index) => (
                     <li key={thresher.productId}>
-                      <a
-                        href={`/${thresher.productId}`}
+                      <Link
+                        to={`/${thresher.productId}`}
                         className={`block px-4 py-2 transition-colors duration-300 ${
                           index === 0 ? "rounded-t-lg hover:bg-green-600 hover:text-white" : ""
                         } ${
@@ -109,9 +110,9 @@ const Header = () => {
                         } ${
                           index !== threshers.length - 1 ? "border-b border-gray-200" : ""
                         } hover:bg-green-600 hover:text-white`}
-                      >
+                        >
                         {thresher.ModelName}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

@@ -37,9 +37,10 @@ const HomePage = () => {
                     alt={machine.ModelName}
                   />
                   <div className="p-4">
-                    <p className="text-base sm:text-lg font-semibold text-gray-800 truncate capitalize">
-                      {machine.ModelName}
-                    </p>
+                  <p className="text-base sm:text-xl md:text-xl font-semibold text-gray-800 truncate capitalize">
+  {machine.ModelName}
+</p>
+
                     <ul className="text-sm sm:text-base text-gray-600 mt-3 space-y-1">
                       <li><strong>Capacity:</strong> {machine.details.specification.capacity}</li>
                       <li><strong>Power:</strong> {machine.details.specification.power}</li>

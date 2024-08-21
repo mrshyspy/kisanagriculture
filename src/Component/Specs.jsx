@@ -63,10 +63,9 @@ function TechnicalSpecificationsPage() {
             ))}
           </ul>
         </div>
-        <div className="pt-10">
+        <div className="absolute pt-4">
           <QuickLinks />
         </div>
-
         <div className="bg-white p-6 shadow-lg">
           <h3 className="text-2xl font-semibold mb-4">Watch Videos</h3>
           <div className="relative w-full overflow-hidden pb-[56.25%] h-0">

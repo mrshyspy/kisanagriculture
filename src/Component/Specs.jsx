@@ -63,8 +63,8 @@ function TechnicalSpecificationsPage() {
             ))}
           </ul>
         </div>
-        <div>
-          <QuickLinks/>
+        <div className="pt-10">
+          <QuickLinks />
         </div>
 
         <div className="bg-white p-6 shadow-lg">

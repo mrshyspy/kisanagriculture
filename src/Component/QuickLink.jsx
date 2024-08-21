@@ -3,9 +3,9 @@ import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 
 const QuickLinks = () => {
   return (
-    <div className="bg-green-600 p-4 sm:p-6 rounded-lg shadow-md max-w-lg mx-auto">
-      <ul className="flex flex-col sm:flex-row justify-around text-lg sm:text-2xl">
-        <li className="mb-4 sm:mb-0">
+    <div className="bg-green-600 p-4 sm:p-6 rounded-lg shadow-md max-w-md mx-auto">
+      <ul className="flex justify-around text-lg sm:text-2xl">
+        <li>
           <a href="/get-in-touch/dealer-locator" className="flex items-center text-white">
             <FaMapMarkerAlt className="mr-2 sm:mr-4 text-white" />
             Get location

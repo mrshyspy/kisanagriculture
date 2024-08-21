@@ -24,7 +24,7 @@ const HomePage = () => {
               Discover our range of thresher machines designed for different agricultural needs. Choose from single, double, and three fan models, with and without elevators. Each machine is tailored to provide efficiency and reliability in your farming operations.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {threshers.map((machine, index) => (
               <div
                 key={index}

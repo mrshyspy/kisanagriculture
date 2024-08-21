@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import CarouselComponent from './CarouselComponent';
-import QuickLinks from './QuickLink';
-import threshers from './Threshers';
+import React from "react";
+import { Link } from "react-router-dom";
+import CarouselComponent from "./CarouselComponent";
+import QuickLinks from "./QuickLink";
+import threshers from "./Threshers";
 
 const HomePage = () => {
   return (
@@ -21,7 +21,10 @@ const HomePage = () => {
               KISAN Thresher Machines
             </h1>
             <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto">
-              Discover our range of thresher machines designed for different agricultural needs. Choose from single, double, and three fan models, with and without elevators. Each machine is tailored to provide efficiency and reliability in your farming operations.
+              Discover our range of thresher machines designed for different
+              agricultural needs. Choose from single, double, and three fan
+              models, with and without elevators. Each machine is tailored to
+              provide efficiency and reliability in your farming operations.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -37,15 +40,27 @@ const HomePage = () => {
                     alt={machine.ModelName}
                   />
                   <div className="p-4">
-                  <p className="text-base sm:text-xl md:text-xl font-semibold text-gray-800 truncate capitalize">
-  {machine.ModelName}
-</p>
+                    <p className="text-xl font-semibold text-gray-800 truncate capitalize">
+                      {machine.ModelName}
+                    </p>
 
                     <ul className="text-sm sm:text-base text-gray-600 mt-3 space-y-1">
-                      <li><strong>Capacity:</strong> {machine.details.specification.capacity}</li>
-                      <li><strong>Power:</strong> {machine.details.specification.power}</li>
-                      <li><strong>Weight:</strong> {machine.details.specification.weight}</li>
-                      <li><strong>Dimensions:</strong> {machine.details.specification.dimensions}</li>
+                      <li>
+                        <strong>Capacity:</strong>{" "}
+                        {machine.details.specification.capacity}
+                      </li>
+                      <li>
+                        <strong>Power:</strong>{" "}
+                        {machine.details.specification.power}
+                      </li>
+                      <li>
+                        <strong>Weight:</strong>{" "}
+                        {machine.details.specification.weight}
+                      </li>
+                      <li>
+                        <strong>Dimensions:</strong>{" "}
+                        {machine.details.specification.dimensions}
+                      </li>
                     </ul>
                   </div>
                 </Link>
@@ -53,7 +68,7 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-        <div className='pt-10'>
+        <div className="pt-10">
           <QuickLinks />
         </div>
         {/* Google Map Embed */}

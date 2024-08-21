@@ -57,7 +57,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-[60vh] sm:h-[80vh] md:h-screen overflow-hidden">
       <div className="relative w-full h-full flex overflow-hidden">
         <div className="flex flex-nowrap transition-transform duration-1000" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
           {items.map((item, index) => (
@@ -70,9 +70,9 @@ const Carousel = () => {
                 alt={item.title}
                 className="object-cover w-full h-full"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                <div className="text-center text-white max-w-2xl px-4">
-                  <h2 className="text-4xl font-bold mb-4">{item.title}</h2>
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4 sm:p-6">
+                <div className="text-center text-white max-w-md sm:max-w-lg lg:max-w-2xl px-4">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">{item.title}</h2>
                   <a
                     href={item.link}
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
@@ -86,24 +86,23 @@ const Carousel = () => {
         </div>
       </div>
       <button
-  onClick={prevSlide}
-  className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300"
-  aria-label="Previous slide"
->
-  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-  </svg>
-</button>
-<button
-  onClick={nextSlide}
-  className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300"
-  aria-label="Next slide"
->
-  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-  </svg>
-</button>
-
+        onClick={prevSlide}
+        className="absolute top-1/2 left-2 md:left-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300"
+        aria-label="Previous slide"
+      >
+        <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-2 md:right-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300"
+        aria-label="Next slide"
+      >
+        <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
     </div>
   );
 };

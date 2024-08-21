@@ -63,7 +63,7 @@ function TechnicalSpecificationsPage() {
             ))}
           </ul>
         </div>
-        <div className='pt-1 pb-1'>
+        <div>
           <QuickLinks/>
         </div>
 

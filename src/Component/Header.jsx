@@ -29,12 +29,18 @@ const Header = () => {
     }
   };
 
+  const handleClickDropDown = () => {
+    if(dropdownOpen){
+      setDropdownOpen(false);
+    }
+  }
+
   return (
     <header className="bg-white shadow-lg">
-      <div className="flex items-center justify-between p-4">
+      <div className="flex items-center justify-between px-4 pb-1 pt-1">
         <div className="flex items-center">
           <a href="/" className="flex-none">
-            <div className="relative w-full h-16 sm:h-20">
+            <div className="relative w-full h-16 sm:h-20 ">
               <img
                 alt="logo"
                 src="https://i.imgur.com/Z5Hf8eH.png"
@@ -98,7 +104,9 @@ const Header = () => {
                 <div className="absolute left-0 mt-2 w-60 bg-white shadow-lg rounded-lg z-10">
                 <ul className="text-black text-sm">
                   {threshers.map((thresher, index) => (
-                    <li key={thresher.productId}>
+                    <li key={thresher.productId}  
+                    onClick={handleClickDropDown}
+                    >
                       <Link
                         to={`/${thresher.productId}`}
                         className={`block px-4 py-2 transition-colors duration-300 ${

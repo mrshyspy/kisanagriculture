@@ -17,7 +17,7 @@ const HomePage = () => {
 
         <div className="container mx-auto p-6 bg-white rounded-lg rounded-b-none shadow-lg">
           <div className="text-center mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 mt-10">
+            <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 mt-10">
               KISAN Thresher Machines
             </h1>
             <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto">

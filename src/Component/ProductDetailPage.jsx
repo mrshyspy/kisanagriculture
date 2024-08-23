@@ -132,10 +132,10 @@ function ProductDetailPage({ threshers }) {
               {thresher.details.description}
             </p>
             <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-              <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+              <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105">
                 Get On Road Price
               </button>
-              <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+              <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105">
                 Download Brochure
               </button>
             </div>

@@ -7,7 +7,7 @@ export default {
         customBlue: '#1DA1F2',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['DM Sans', 'sans-serif','Inter'],
       },
     },
   },

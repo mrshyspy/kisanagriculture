@@ -7,6 +7,7 @@ import ProductDetail from './Component/ProductDetail';
 import TechnicalSpecifications from './Component/Specs'; 
 import threshers from './Component/Threshers';
 import ProductDetailPage from './Component/ProductDetailPage';
+import ContactUs from './Component/ContactUs';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/product-detail" element={<ProductDetail />} />
         <Route path="/product/:ProductId" element={<TechnicalSpecifications threshers={threshers} />} />
         <Route path="/:ProductId" element={<ProductDetailPage threshers={threshers} />} />
+        <Route path="/contact-us" element={<ContactUs/>} />
       </Routes>
       <Footer />
     </Router>

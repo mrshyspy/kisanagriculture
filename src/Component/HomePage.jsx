@@ -18,9 +18,11 @@ const HomePage = () => {
         <div className="container mx-auto p-6 bg-white rounded-lg rounded-b-none shadow-lg">
           <div className="text-center mb-12">
             <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 mt-10">
-              KISAN Thresher Machines
+              Discover Our Wide Range of{" "}
+              <span className="text-green-600">Thresher Machines</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto">
+
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 bg-green-50 p-6 rounded-lg shadow-md max-w-3xl mx-auto sm:mx-4 md:mx-auto">
               Discover our range of thresher machines designed for different
               agricultural needs. Choose from single, double, and three fan
               models, with and without elevators. Each machine is tailored to
@@ -36,12 +38,12 @@ const HomePage = () => {
                 >
                   <Link to={`/${machine.productId}`} className="block">
                     <img
-                      className="h-64 w-full object-cover mb-4 mt-0"
+                      className="h-64 w-full object-cover mb-2"
                       src={machine.details.imageUrl}
                       alt={machine.ModelName}
                     />
                     <div className="p-6">
-                      <p className="text-lg font-semibold mb-2 text-center">
+                      <p className="text-lg font-semibold mb-1 text-center">
                         {machine.ModelName}
                       </p>
                       <div className="flex text-sm text-gray-600 mb-4">
@@ -69,7 +71,7 @@ const HomePage = () => {
                       </div>
                     </div>
                     <div className="text-center pb-6">
-                      <button className="bg-white border border-gray-300 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white">
+                      <button className="bg-green-600 border border-gray-300 text-white px-4 py-2 rounded-full hover:bg-green-700 transition-colors duration-300">
                         Know More →
                       </button>
                     </div>

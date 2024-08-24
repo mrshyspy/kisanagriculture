@@ -30,56 +30,60 @@ const HomePage = () => {
             </p>
           </div>
           <div className="container mx-auto px-4 lg:px-16">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {threshers.map((machine, index) => (
-                <div
-                  key={index}
-                  className="bg-white text-gray-800 rounded-xl overflow-hidden shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-                >
-                  <Link to={`/${machine.productId}`} className="block">
-                    <img
-                      className="h-64 w-full object-cover mb-2"
-                      src={machine.details.imageUrl}
-                      alt={machine.ModelName}
-                    />
-                    <div className="p-6">
-                      <p className="text-lg font-semibold mb-1 text-center">
-                        {machine.ModelName}
-                      </p>
-                      <div className="flex text-sm text-gray-600 mb-4">
-                        <div className="w-1/2 pr-4 text-left">
-                          <p>
-                            <strong>Capacity:</strong>{" "}
-                            {machine.details.specification.capacity}
-                          </p>
-                          <p>
-                            <strong>Power:</strong>{" "}
-                            {machine.details.specification.power}
-                          </p>
-                        </div>
-                        <div className="border-r border-gray-300"></div>
-                        <div className="w-1/2 pl-4 text-left">
-                          <p>
-                            <strong>Weight:</strong>{" "}
-                            {machine.details.specification.weight}
-                          </p>
-                          <p>
-                            <strong>Dimensions:</strong>{" "}
-                            {machine.details.specification.dimensions}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-center pb-6">
-                      <button className="bg-green-600 border border-gray-300 text-white px-4 py-2 rounded-full hover:bg-green-700 transition-colors duration-300">
-                        Know More →
-                      </button>
-                    </div>
-                  </Link>
-                </div>
-              ))}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    {threshers.map((machine, index) => (
+      <div
+        key={index}
+        className="bg-white text-gray-800 rounded-xl overflow-hidden shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+      >
+        <Link to={`/${machine.productId}`} className="block">
+          <img
+            className="h-64 w-full object-cover mb-2"
+            src={machine.details.imageUrl}
+            alt={machine.ModelName}
+          />
+          <div className="p-6">
+            <p className="text-lg font-semibold mb-1 text-center">
+              {machine.ModelName}
+            </p>
+            <div className="text-sm text-gray-600 mb-4">
+              <div className="flex justify-between mb-1">
+                <span><strong>Capacity:</strong></span>
+                <span className="text-center w-full">
+                  {machine.details.specification.capacity}
+                </span>
+              </div>
+              <div className="flex justify-between mb-1">
+                <span><strong>Power:</strong></span>
+                <span className="text-center w-full">
+                  {machine.details.specification.power}
+                </span>
+              </div>
+              <div className="flex justify-between mb-1">
+                <span><strong>Weight:</strong></span>
+                <span className="text-center w-full">
+                  {machine.details.specification.weight}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span><strong>Dimensions:</strong></span>
+                <span className="text-center w-full">
+                  {machine.details.specification.dimensions}
+                </span>
+              </div>
             </div>
           </div>
+          <div className="text-center pb-6">
+            <button className="bg-green-600 border border-gray-300 text-white px-4 py-2 rounded-full hover:bg-green-700 transition-colors duration-300">
+              Know More →
+            </button>
+          </div>
+        </Link>
+      </div>
+    ))}
+  </div>
+</div>
+
         </div>
 
         <div className="pt-10">

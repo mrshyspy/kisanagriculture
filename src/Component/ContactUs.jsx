@@ -16,7 +16,7 @@ const ContactUs = () => {
         <div className="flex items-stretch justify-center">
           <div className="grid md:grid-cols-2">
             <div className="h-full pr-6">
-              <p className="mt-3 mb-12 text-lg text-gray-800 dark:text-slate-800">
+              <p className="mt-3 mb-12 text-lg sm:text-center text-gray-800 dark:text-slate-800">
               Feel free to reach out to us for any inquiries or assistance. We're here to help!
               </p>
               <ul className="mb-6 md:mb-0">

@@ -16,14 +16,14 @@ const HomePage = () => {
         ></div>
 
         <div className="container mx-auto p-6 bg-white rounded-lg rounded-b-none shadow-lg">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 p-4 ">
             <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 mt-10">
               Discover Our Wide Range of{" "}
-              <span className="text-green-600">Thresher Machines</span>
+              <span className="text-green-600">Thresher Machines</span> !
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 bg-green-50 p-6 rounded-lg shadow-md max-w-3xl mx-auto sm:mx-4 md:mx-auto">
-              Discover our range of thresher machines designed for different
+              We have designed thresher machines for different
               agricultural needs. Choose from single, double, and three fan
               models, with and without elevators. Each machine is tailored to
               provide efficiency and reliability in your farming operations.

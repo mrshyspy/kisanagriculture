@@ -82,9 +82,9 @@ const HomePage = () => {
                       </div>
                     </div>
                     <div className="text-center pb-6">
-                      <button className="bg-white border border-gray-300 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
-                        Know More →
-                      </button>
+                    <button className="bg-white border border-gray-300 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
+                      Know More →
+                    </button>
                     </div>
                   </Link>
                 </div>

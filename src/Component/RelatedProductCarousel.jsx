@@ -14,7 +14,7 @@ const CarouselComponent = () => {
       } else if (window.innerWidth >= 640) {
         setItemsPerPage(2.5);
       } else {
-        setItemsPerPage(3);
+        setItemsPerPage(1.5);
       }
     };
 
@@ -37,7 +37,7 @@ const CarouselComponent = () => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative md:px-12  w-full">
       <h2 className="text-center mt-16 mb-4 text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800">
         Related Products
       </h2>
@@ -49,32 +49,38 @@ const CarouselComponent = () => {
           currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
         }`}
         disabled={currentIndex === 0}
+        aria-label="Previous Slide"
       >
         <FaChevronLeft />
       </button>
       <button
         onClick={nextSlide}
         className={`absolute top-1/2 transform -translate-y-1/2 right-2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 z-10 ${
-          currentIndex >= threshers.length - itemsPerPage ? "opacity-50 cursor-not-allowed" : ""
+          currentIndex >= threshers.length - itemsPerPage
+            ? "opacity-50 cursor-not-allowed"
+            : ""
         }`}
         disabled={currentIndex >= threshers.length - itemsPerPage}
+        aria-label="Next Slide"
       >
         <FaChevronRight />
       </button>
 
       {/* Carousel Items */}
-      <div className="flex overflow-hidden">
+      <div className="relative overflow-x-scroll scrollbar-hide">
         <div
           className="flex transition-transform duration-300 ease-in-out"
           style={{
-            transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
+            transform: `translateX(-${(currentIndex * 100) / itemsPerPage}%)`,
           }}
         >
           {threshers.map((machine, index) => (
             <div
               key={index}
-              className="w-full flex-shrink-0 p-4"
-              style={{ width: `${100 / itemsPerPage}%` }}
+              className=" flex-shrink-0 py-6 px-4"
+              style={{
+                width: `${100 / itemsPerPage}%`,
+              }}
             >
               <div className="bg-white text-gray-800 rounded-xl overflow-hidden shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300">
                 <Link to={`/${machine.productId}`} className="block">

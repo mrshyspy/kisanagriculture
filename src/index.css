@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Hide scrollbar by default */
+.carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .carousel-container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  /* Show scrollbar on mobile view */
+  @media (max-width: 640px) {
+    .carousel-container::-webkit-scrollbar {
+      display: block;
+    }
+  
+    .carousel-container {
+      -ms-overflow-style: auto; /* IE and Edge */
+      scrollbar-width: auto; /* Firefox */
+    }
+  }
+  

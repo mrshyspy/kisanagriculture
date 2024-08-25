@@ -9,7 +9,7 @@ function ProductDetailPage({ threshers }) {
   const images = [
     'https://i.imgur.com/nkjprq9.png',
     'https://i.imgur.com/IEAum1D.jpeg',
-    'https://i.imgur.com/nkjprq9.png',
+    '	https://i.imgur.com/5haWYRc.jpeg',
     'https://i.imgur.com/IEAum1D.jpeg',
   ];
   const { ProductId } = useParams();

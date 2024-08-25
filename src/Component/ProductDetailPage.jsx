@@ -172,7 +172,7 @@ function ProductDetailPage({ threshers }) {
             ))}
           </ul>
         </div>
-        <div className=" justify-center pt-1 pb-1">
+        <div className="  justify-center pt-1 pb-1">
           <QuickLinks />
         </div>
 

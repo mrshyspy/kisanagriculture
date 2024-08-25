@@ -5,21 +5,21 @@ import threshers from "./Threshers";
 
 const CarouselComponent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(1.2); // Default to showing 1.2 items per page on mobile
+  const [itemsPerPage, setItemsPerPage] = useState(1.5);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
-        setItemsPerPage(3); // 3 items per page on desktop
+        setItemsPerPage(3);
       } else if (window.innerWidth >= 640) {
-        setItemsPerPage(2.5); // 2.5 items per page on tablet
+        setItemsPerPage(2.5);
       } else {
-        setItemsPerPage(1.5); // 1.2 items per page on mobile
+        setItemsPerPage(3);
       }
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Set the initial items per page based on the current screen size
+    handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -38,7 +38,10 @@ const CarouselComponent = () => {
 
   return (
     <div className="relative w-full">
-        <h2 className=" text-center mt-16 mb-4 text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800"> Related Products</h2>
+      <h2 className="text-center mt-16 mb-4 text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800">
+        Related Products
+      </h2>
+
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
@@ -70,7 +73,7 @@ const CarouselComponent = () => {
           {threshers.map((machine, index) => (
             <div
               key={index}
-              className={`w-full flex-shrink-0 p-4`}
+              className="w-full flex-shrink-0 p-4"
               style={{ width: `${100 / itemsPerPage}%` }}
             >
               <div className="bg-white text-gray-800 rounded-xl overflow-hidden shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300">

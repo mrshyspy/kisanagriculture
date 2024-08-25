@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <>
       <CarouselComponent />
-      <div className="bg-gray-100 min-h-screen py-3 pb-0 relative font-sans">
+      <div className="bg-gray-100 min-h-screen pb-0 relative font-sans">
         {/* Background Image */}
         <div
           className="absolute bottom-0 left-0 right-0 h-32 bg-[url('https://i.imgur.com/amI5Tnq.png')] bg-cover bg-no-repeat"
@@ -29,7 +29,7 @@ const HomePage = () => {
               provide efficiency and reliability in your farming operations.
             </p>
           </div>
-          <div className="container mx-auto px-4 lg:px-16">
+          <div className="container mx-auto pb-6 px-4 lg:px-16">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {threshers.map((machine, index) => (
                 <div

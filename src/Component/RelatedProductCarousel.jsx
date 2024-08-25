@@ -5,7 +5,7 @@ import threshers from "./Threshers";
 
 const CarouselComponent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(1.5);
+  const [itemsPerPage, setItemsPerPage] = useState(1);
 
   useEffect(() => {
     const handleResize = () => {
@@ -14,7 +14,7 @@ const CarouselComponent = () => {
       } else if (window.innerWidth >= 640) {
         setItemsPerPage(2.5);
       } else {
-        setItemsPerPage(1.5);
+        setItemsPerPage(1);
       }
     };
 
@@ -77,7 +77,7 @@ const CarouselComponent = () => {
           {threshers.map((machine, index) => (
             <div
               key={index}
-              className=" flex-shrink-0 py-6 px-4"
+              className=" flex-shrink-0  sm:py-8 py-6 px-4"
               style={{
                 width: `${100 / itemsPerPage}%`,
               }}

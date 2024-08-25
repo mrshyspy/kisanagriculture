@@ -7,7 +7,6 @@ const CarouselComponent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
   const carouselRef = useRef(null);
-  const itemsRef = useRef([]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,60 +19,25 @@ const CarouselComponent = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isMobile) {
-        const carousel = carouselRef.current;
-        const items = itemsRef.current;
-
-        if (carousel) {
-          const centerX = carousel.scrollLeft + carousel.offsetWidth / 2;
-
-          items.forEach((item) => {
-            const itemCenterX = item.offsetLeft + item.offsetWidth / 2;
-            const distance = Math.abs(centerX - itemCenterX);
-            const scale = Math.max(0.9, 1 - distance / (carousel.offsetWidth * 2)); // Subtle zoom effect
-
-            item.style.transform = `scale(${scale})`;
-          });
-        }
-      }
-    };
-
-    const carousel = carouselRef.current;
-    if (carousel) {
-      carousel.addEventListener("scroll", handleScroll);
-      handleScroll();
-    }
-
-    return () => {
-      if (carousel) {
-        carousel.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, [isMobile]);
-
   const nextSlide = () => {
-    if (carouselRef.current) {
-      const carousel = carouselRef.current;
-      const itemWidth = carousel.children[0].offsetWidth + 20; // Adjust for gap
-      const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-      const newScrollLeft = Math.min(
-        carousel.scrollLeft + itemWidth,
-        maxScrollLeft
-      );
-      carousel.scrollTo({ left: newScrollLeft, behavior: "smooth" });
+    if (currentIndex < threshers.length - 1) {
+      setCurrentIndex(currentIndex + 1);
     }
   };
 
   const prevSlide = () => {
-    if (carouselRef.current) {
-      const carousel = carouselRef.current;
-      const itemWidth = carousel.children[0].offsetWidth + 20; // Adjust for gap
-      const newScrollLeft = Math.max(carousel.scrollLeft - itemWidth, 0);
-      carousel.scrollTo({ left: newScrollLeft, behavior: "smooth" });
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
     }
   };
+
+  useEffect(() => {
+    const scrollAmount = (carouselRef.current.scrollWidth / threshers.length) * currentIndex;
+    carouselRef.current.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }, [currentIndex]);
 
   return (
     <div className="relative md:px-12 w-full">
@@ -106,21 +70,15 @@ const CarouselComponent = () => {
       </button>
 
       {/* Carousel Items */}
-      <div
-        className="relative overflow-x-auto whitespace-nowrap scrollbar-hide"
-        ref={carouselRef}
-        style={{
-          padding: '10px', // Adjust for space on the sides if needed
-        }}
-      >
+      <div className="relative overflow-x-auto whitespace-nowrap scrollbar-hide" ref={carouselRef}>
         {threshers.map((machine, index) => (
           <div
             key={index}
             className="inline-block sm:py-8 py-6 px-4 transition-transform duration-300"
-            ref={(el) => (itemsRef.current[index] = el)}
             style={{
-              width: isMobile ? 'calc(90vw - 20px)' : 'auto', // Adjust width for mobile view
-              margin: isMobile ? '0' : '0', // Fixed gap between cards
+              transform: isMobile
+                ? `scale(${index === currentIndex ? 1 : 0.9})`
+                : 'none',
               transition: 'transform 0.3s ease-in-out',
             }}
           >

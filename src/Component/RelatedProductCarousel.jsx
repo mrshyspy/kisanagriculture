@@ -32,7 +32,7 @@ const CarouselComponent = () => {
           items.forEach((item) => {
             const itemCenterX = item.offsetLeft + item.offsetWidth / 2;
             const distance = Math.abs(centerX - itemCenterX);
-            const scale = Math.max(0.8, 1 - distance / (carousel.offsetWidth * 2));
+            const scale = Math.max(0.9, 1 - distance / (carousel.offsetWidth * 2)); // Subtle zoom effect
 
             item.style.transform = `scale(${scale})`;
           });

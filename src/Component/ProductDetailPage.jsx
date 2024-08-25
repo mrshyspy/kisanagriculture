@@ -3,6 +3,7 @@ import QuickLinks from './QuickLink';
 import Breadcrumbs from './Breadcrumb';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import RelatedProductCarouselComponent from './RelatedProductCarousel';
 
 function ProductDetailPage({ threshers }) {
   const images = [
@@ -173,6 +174,10 @@ function ProductDetailPage({ threshers }) {
         </div>
         <div className="pt-1 pb-1">
           <QuickLinks />
+        </div>
+
+        <div>
+          <RelatedProductCarouselComponent/>
         </div>
 
         <div className="bg-white p-6 shadow-lg">

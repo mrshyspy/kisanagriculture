@@ -30,7 +30,7 @@ const HomePage = () => {
               and reliability in your farming operations.
             </p>
           </div>
-          <div className="container mx-auto pb-6 px-4 lg:px-16">
+          <div className="container mx-auto pb-6 sm:px-3 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {threshers.map((machine, index) => (
                 <div

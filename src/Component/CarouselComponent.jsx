@@ -6,37 +6,37 @@ const Carousel = () => {
     {
       title: "Combine Harvester - 512",
       imageUrl: "https://i.imgur.com/j4g8Lgy.jpeg",
-      link: "https://www.jangeer.com/combine-harvester/combine-harvester-512"
+      link: "https://www.Kisan.com/combine-harvester/combine-harvester-512"
     },
     {
       title: "Tractor Mounted Combine - 510",
       imageUrl: "https://i.imgur.com/IEAum1D.jpg",
-      link: "https://www.jangeer.com/combine-harvester/tractor-mounted-combine-510"
+      link: "https://www.Kisan.com/combine-harvester/tractor-mounted-combine-510"
     },
     {
       title: "Multicrop Thresher",
       imageUrl:"https://i.imgur.com/ULz2pvi.jpeg",
-      link: "https://www.jangeer.com/multicrop-thresher"
+      link: "https://www.Kisan.com/multicrop-thresher"
     },
     {
-      title: "Jangeer Rotavator",
+      title: "Kisan Rotavator",
       imageUrl: "https://i.imgur.com/IEAum1D.jpg",
-      link: "https://www.jangeer.com/rotavator/jangeer-rotavator"
+      link: "https://www.Kisan.com/rotavator/Kisan-rotavator"
     },
     {
       title: "Chaff Cutter",
       imageUrl: "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
-      link: "https://www.jangeer.com/chaff-cutter/jangeer-chaff-cutter"
+      link: "https://www.Kisan.com/chaff-cutter/Kisan-chaff-cutter"
     },
     {
       title: "Groundnut Thresher",
       imageUrl: "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
-      link: "https://www.jangeer.com/groundnut-thresher/jangeer-groundnut-thresher"
+      link: "https://www.Kisan.com/groundnut-thresher/Kisan-groundnut-thresher"
     },
     {
       title: "Maize Thresher",
       imageUrl: "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
-      link: "https://www.jangeer.com/maize-thresher/jangeer-maize-thresher"
+      link: "https://www.Kisan.com/maize-thresher/Kisan-maize-thresher"
     }
   ];
 

@@ -16,7 +16,7 @@ const HomePage = () => {
           style={{ zIndex: -1 }}
         ></div>
 
-        <div className="container mx-auto p-6 bg-gray-100 rounded-lg rounded-b-none shadow-md">
+        <div className="container mx-auto p-6 bg-gradient-to-tr from-yellow-100 to-green-100 rounded-lg rounded-b-none shadow-md">
           <div className="text-center mb-12 p-2">
             <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 mt-10">
               Discover Our Wide Range of{" "}

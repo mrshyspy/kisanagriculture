@@ -2,31 +2,32 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CarouselComponent from "./CarouselComponent";
 import QuickLinks from "./QuickLink";
+import Banner from "./Banner";
 import threshers from "./Threshers";
 
 const HomePage = () => {
   return (
     <>
       <CarouselComponent />
-      <div className="bg-gray-100 min-h-screen pb-0 relative font-sans">
+      <div className="bg-gray-100 min-h-screen pb-0 relative font-sans ">
         {/* Background Image */}
         <div
           className="absolute bottom-0 left-0 right-0 h-32 bg-[url('https://i.imgur.com/amI5Tnq.png')] bg-cover bg-no-repeat"
           style={{ zIndex: -1 }}
         ></div>
 
-        <div className="container mx-auto p-6 bg-white rounded-lg rounded-b-none shadow-lg">
+        <div className="container mx-auto p-6 bg-white rounded-lg rounded-b-none shadow-md">
           <div className="text-center mb-12 p-2">
             <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 mt-10">
               Discover Our Wide Range of{" "}
               <span className="text-green-600">Thresher Machines</span> !
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 bg-green-50 p-6 rounded-lg shadow-md max-w-3xl mx-auto sm:mx-4 md:mx-auto">
-              We have designed thresher machines for different
-              agricultural needs. Choose from single, double, and three fan
-              models, with and without elevators. Each machine is tailored to
-              provide efficiency and reliability in your farming operations.
+            <p className="border-b-green-600 border-b-4 text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 bg-green-50 p-6 rounded-lg shadow-md max-w-3xl mx-auto sm:mx-4 md:mx-auto">
+              We have designed thresher machines for different agricultural
+              needs. Choose from single, double, and three fan models, with and
+              without elevators. Each machine is tailored to provide efficiency
+              and reliability in your farming operations.
             </p>
           </div>
           <div className="container mx-auto pb-6 px-4 lg:px-16">
@@ -82,9 +83,9 @@ const HomePage = () => {
                       </div>
                     </div>
                     <div className="text-center pb-6">
-                    <button className="bg-white border border-gray-300 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
-                      Know More →
-                    </button>
+                      <button className="bg-white border border-gray-300 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
+                        Know More →
+                      </button>
                     </div>
                   </Link>
                 </div>
@@ -92,7 +93,9 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-
+        <div>
+          <Banner/>
+        </div>
         <div className="pt-10">
           <QuickLinks />
         </div>

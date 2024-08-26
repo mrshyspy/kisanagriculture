@@ -5,8 +5,8 @@ const Carousel = () => {
   const items = [
     {
       title: "Combine Harvester - 512",
-      imageUrl: "https://i.imgur.com/j4g8Lgy.jpeg"  ,   
-       link: "https://www.jangeer.com/combine-harvester/combine-harvester-512"
+      imageUrl: "https://i.imgur.com/j4g8Lgy.jpeg",
+      link: "https://www.jangeer.com/combine-harvester/combine-harvester-512"
     },
     {
       title: "Tractor Mounted Combine - 510",
@@ -57,7 +57,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full h-[60vh] sm:h-[80vh] md:h-screen overflow-hidden">
+    <div className="relative w-full h-[30vh] sm:h-[40vh] md:h-[50vh] overflow-hidden">
       <div className="relative w-full h-full flex overflow-hidden">
         <div className="flex flex-nowrap transition-transform duration-1000" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
           {items.map((item, index) => (

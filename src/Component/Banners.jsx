@@ -47,7 +47,7 @@ function Banners() {
             key={index}
             className={`flex flex-col justify-center items-center ${banner.bgClass} py-4 sm:py-6 px-4 sm:px-6 rounded-lg shadow-lg space-y-3 sm:space-y-4`}
           >
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center">
+            <h1 className="text-lg sm:text-lg md:text-xl font-bold text-white text-center">
               {banner.title}
             </h1>
             {/* <p className="text-sm sm:text-base md:text-lg text-white text-center">

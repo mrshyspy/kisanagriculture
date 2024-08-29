@@ -10,18 +10,18 @@ const HomePage = () => {
   return (
     <>
       <CarouselComponent />
-      <div className="bg-gradient-to-tr from-white to-green-100 min-h-screen pb-0 relative font-sans ">
+      <div className="bg-gray-100 min-h-screen pb-0 relative font-sans ">
         {/* Background Image */}
         <div
           className="absolute bottom-0 left-0 right-0 h-32 bg-[url('https://i.imgur.com/amI5Tnq.png')] bg-cover bg-no-repeat"
           style={{ zIndex: -1 }}
         ></div>
 
-        <div className="container mx-auto p-6 bg-gradient-to-tr from-yellow-100 to-green-100 rounded-lg rounded-b-none shadow-md">
+        <div className="container mx-auto p-6 bg-gradient-to-tr from-yellow-200 to-green-600 rounded-lg rounded-b-none shadow-md">
           <div className="text-center mb-12 p-2">
             <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-12 mt-10">
               Discover Our Wide Range of{" "}
-              <span className="text-green-600">Thresher Machines</span> !
+              <span className="text-white">Thresher Machines</span> !
             </h1>
 
             <p className="border-b-green-600 border-b-4 text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 bg-green-50 p-6 rounded-lg shadow-md max-w-3xl mx-auto sm:mx-4 md:mx-auto">

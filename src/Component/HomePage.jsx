@@ -5,6 +5,7 @@ import QuickLinks from "./QuickLink";
 import Banner from "./Banner";
 import threshers from "./Threshers";
 import Banners from "./Banners";
+import ProductVideos from "./ProductVideos"
 
 const HomePage = () => {
   return (
@@ -100,9 +101,13 @@ const HomePage = () => {
         <div>
           <Banners/>
         </div>
+        <div>
+          <ProductVideos/>
+        </div>
         <div className="pt-10">
           <QuickLinks />
         </div>
+    
         {/* Google Map Embed */}
         <div className="mt-12">
           <div className="container mx-auto p-6">

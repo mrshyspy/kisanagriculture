@@ -23,7 +23,7 @@ function Banners() {
       bgClass: "bg-gradient-to-br from-purple-600 to-purple-500" // Custom gradient color
     },
     {
-      title: "Built to last",
+      title: "Built to last             ",
       subtitle: "Built to last with exceptional performance for every harvest.",
       bgClass: "bg-gradient-to-br from-teal-600 to-teal-500" // Custom gradient color
     },
@@ -41,7 +41,7 @@ function Banners() {
           Quality Before Quantity
         </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
         {bannerData.map((banner, index) => (
           <div
             key={index}
@@ -50,9 +50,9 @@ function Banners() {
             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center">
               {banner.title}
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white text-center">
+            {/* <p className="text-sm sm:text-base md:text-lg text-white text-center">
               {banner.subtitle}
-            </p>
+            </p> */}
           </div>
         ))}
       </div>

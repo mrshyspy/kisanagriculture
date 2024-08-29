@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <>
       <CarouselComponent />
-      <div className="bg-gray-100 min-h-screen pb-0 relative font-sans ">
+      <div className="bg-gradient-to-tr from-white to-green-100 min-h-screen pb-0 relative font-sans ">
         {/* Background Image */}
         <div
           className="absolute bottom-0 left-0 right-0 h-32 bg-[url('https://i.imgur.com/amI5Tnq.png')] bg-cover bg-no-repeat"

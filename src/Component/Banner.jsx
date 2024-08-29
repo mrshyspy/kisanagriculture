@@ -31,14 +31,14 @@ function Banner() {
             />
           </div>
         </div>
-        <div className="md:w-4/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 bg-yellow-50 dark:bg-yellow-400 py-6 px-6 md:py-12 lg:px-6 flex flex-col justify-center relative rounded-lg shadow-lg">
+        <div className="md:w-4/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 bg-yellow-50 dark:bg-yellow-400 flex flex-col justify-center relative rounded-lg shadow-lg">
           <div className="flex flex-col justify-center">
-            <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 dark:text-gray-900">
+            {/* <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 dark:text-gray-900">
               Game Console
             </h1>
             <p className="text-base lg:text-xl text-gray-700 dark:text-gray-800 mt-2">
               Save Upto <span className="font-extrabold">30%</span>
-            </p>
+            </p> */}
           </div>
           <div className="flex justify-end md:absolute md:bottom-4 md:right-4 lg:bottom-0 lg:right-0">
             <img

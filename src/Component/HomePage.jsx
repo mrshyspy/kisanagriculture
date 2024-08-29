@@ -4,6 +4,7 @@ import CarouselComponent from "./CarouselComponent";
 import QuickLinks from "./QuickLink";
 import Banner from "./Banner";
 import threshers from "./Threshers";
+import Banners from "./Banners";
 
 const HomePage = () => {
   return (
@@ -95,6 +96,9 @@ const HomePage = () => {
         </div>
         <div>
           <Banner/>
+        </div>
+        <div>
+          <Banners/>
         </div>
         <div className="pt-10">
           <QuickLinks />

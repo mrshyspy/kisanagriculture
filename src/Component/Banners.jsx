@@ -23,7 +23,7 @@ function Banners() {
       bgClass: "bg-gradient-to-br from-purple-600 to-purple-500" // Custom gradient color
     },
     {
-      title: "Built to last",
+      title: "Built to last   ",
       subtitle: "Built to last with exceptional performance for every harvest.",
       bgClass: "bg-gradient-to-br from-teal-600 to-teal-500" // Custom gradient color
     },
@@ -35,7 +35,7 @@ function Banners() {
   ];
 
   return (
-    <div className=" bg-gradient-to-tl from-yellow-100 to-green-100 container mx-auto py-6 md:py-9 px-4 md:px-6">
+    <div className="container mx-auto py-6 md:py-9 px-4 md:px-6">
       <div className="text-center mb-6 md:mb-8">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-800">
           Quality Before Quantity

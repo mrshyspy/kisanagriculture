@@ -9,6 +9,7 @@ import threshers from './Component/Threshers';
 import ProductDetailPage from './Component/ProductDetailPage';
 import ContactUs from './Component/ContactUs';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Gallery from './Component/Gallery';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/product/:ProductId" element={<TechnicalSpecifications threshers={threshers} />} />
         <Route path="/:ProductId" element={<ProductDetailPage threshers={threshers} />} />
         <Route path="/contact-us" element={<ContactUs/>} />
+        <Route path="/gallery" element = {<Gallery/>} />
       </Routes>
       <Footer />
     </Router>

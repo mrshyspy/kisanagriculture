@@ -139,12 +139,12 @@ const Header = () => {
               </Link>
             </li>
             <li className="px-2 py-1 sm:px-4 sm:py-2">
-              <a
-                href="/media-room/overview"
+            <Link
+                to="/gallery"
                 className="hover:text-green-600 transition-colors duration-300"
               >
-                Gallery
-              </a>
+              Gallery
+              </Link>
             </li>
           </ul>
         </nav>

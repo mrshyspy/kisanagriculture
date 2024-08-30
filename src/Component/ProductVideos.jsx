@@ -37,7 +37,7 @@ const VideoList = () => {
         <div className="mt-6 text-center">
           <button
             onClick={handleShowMore}
-            className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700"
+            className="bg-green-600 text-white py-2 px-4 rounded-full hover:bg-green-700"
           >
             Load More...
           </button>

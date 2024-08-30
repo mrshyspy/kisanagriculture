@@ -93,7 +93,7 @@ const CarouselComponent = () => {
                     <p className="text-lg font-semibold mb-1 text-center">
                       {machine.ModelName}
                     </p>
-                    <div className="text-sm text-gray-600 mb-4">
+                    {/* <div className="text-sm text-gray-600 mb-4">
                       <div className="flex justify-between mb-1">
                         <span>
                           <strong>Capacity:</strong>
@@ -126,7 +126,7 @@ const CarouselComponent = () => {
                           {machine.details.specification.dimensions}
                         </span>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="text-center pb-6">
                       <button className="bg-white border border-gray-300 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">

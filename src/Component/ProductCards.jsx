@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { IoClose } from 'react-icons/io5'; // Import the close icon
 import threshers from './Threshers';
 
 const ProductCard = () => {
@@ -92,10 +93,10 @@ const ProductCard = () => {
           <div className="bg-white rounded-lg overflow-hidden shadow-lg w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3">
             <div className="relative">
               <button
-                className="absolute top-2 right-2 bg-red-500 text-white rounded-full px-3 py-1"
+                className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2"
                 onClick={closeModal}
               >
-                X
+                <IoClose size={16} /> {/* Use the close icon */}
               </button>
               <iframe
                 width="100%"

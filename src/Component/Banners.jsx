@@ -37,7 +37,7 @@ function Banners() {
   return (
     <div className="container mx-auto py-6 md:py-9 px-4 md:px-6">
       <div className="text-center mb-6 md:mb-8">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-800">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-600">
           Quality Before Quantity
         </h2>
       </div>

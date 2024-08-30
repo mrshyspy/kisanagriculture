@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import QuickLinks from './QuickLink';
 import Breadcrumbs from './Breadcrumb';
-import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import RelatedProductCarouselComponent from './RelatedProductCarousel';
 
@@ -9,14 +8,19 @@ function ProductDetailPage({ threshers }) {
   const images = [
     'https://i.imgur.com/nkjprq9.png',
     'https://i.imgur.com/IEAum1D.jpeg',
-    '	https://i.imgur.com/5haWYRc.jpeg',
+    'https://i.imgur.com/5haWYRc.jpeg',
     'https://i.imgur.com/IEAum1D.jpeg',
   ];
   const { ProductId } = useParams();
   const [selectedImage, setSelectedImage] = useState(images[0]);
   const [isZoomed, setIsZoomed] = useState(false);
 
-  const thresher = threshers.find(t => t.productId === ProductId);
+  const thresher = threshers.find((t) => t.productId === ProductId);
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component is mounted or when ProductId changes
+    window.scrollTo(0, 0);
+  }, [ProductId]);
 
   const specs = [
     { label: 'Gear Box', value: '21-21 Heavy Duty' },
@@ -166,31 +170,13 @@ function ProductDetailPage({ threshers }) {
           <h3 className="text-2xl font-semibold mb-4">Features</h3>
           <ul className="list-disc list-inside">
             {features.map((feature, index) => (
-              <li key={index} className="mb-2">
-                {feature}
-              </li>
+              <li key={index}>{feature}</li>
             ))}
           </ul>
         </div>
-        <div className="  justify-center pt-1 pb-1">
-          <QuickLinks />
-        </div>
 
-        <div>
-          <RelatedProductCarouselComponent/>
-        </div>
-
-        <div className="bg-white p-6 shadow-lg">
-          <h3 className="text-2xl font-semibold mb-4">Watch Videos</h3>
-          <div className="relative w-full overflow-hidden pb-[56.25%] h-0 rounded-xl shadow-lg">
-            <iframe
-              className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/QK9hM4wU-eU"
-              title="YouTube video"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
+        <RelatedProductCarouselComponent />
+        <QuickLinks />
       </div>
     </>
   );

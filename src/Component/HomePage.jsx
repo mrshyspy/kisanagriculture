@@ -20,7 +20,7 @@ const HomePage = () => {
 
         <div className="container mx-auto p-6 bg-gradient-to-tr from-yellow-100 to-green-100 rounded-lg rounded-b-none shadow-md">
           <div className="text-center mb-12 p-2">
-          <p className=" text-base sm:text-lg md:text-xl font-medium text-gray-800 mt-8">Serving Thousands Of Happy Custumer Since <span className="text-red-600">Since 1998</span> </p>
+          <p className=" text-base sm:text-lg md:text-xl font-medium text-gray-800 mt-8">Serving Thousands Of Happy Custumer<span className="text-red-600">Since 1998</span> </p>
 
             <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-12 mt-1">
               Discover Our Wide Range of{" "}

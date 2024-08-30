@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import threshers from './Threshers';
 
 const ProductCard = () => {
   const [showVideo, setShowVideo] = useState(false);
+  const topRef = useRef(null);
 
   const handleVideoClick = (e) => {
     e.preventDefault();
     setShowVideo(true);
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const closeModal = () => {
@@ -15,7 +19,7 @@ const ProductCard = () => {
   };
 
   return (
-    <div className="container mx-auto pb-6 sm:px-3 lg:px-8">
+    <div ref={topRef} className="container mx-auto pb-6 sm:px-3 lg:px-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {threshers.map((machine, index) => (
           <div

@@ -46,8 +46,8 @@ const HomePage = () => {
         <div>
           <Banner />
         </div>
-        <div>
-          <Banners />
+        <div >
+          <Banners/>
         </div>
         <div>
           <ProductVideos />

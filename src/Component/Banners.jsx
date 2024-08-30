@@ -45,7 +45,7 @@ function Banners() {
         {bannerData.map((banner, index) => (
           <div
             key={index}
-            className={`flex flex-col justify-center items-center ${banner.bgClass} py-4 sm:py-6 px-4 sm:px-6 rounded-lg shadow-lg space-y-3 sm:space-y-4`}
+            className={`flex flex-col justify-center items-center ${banner.bgClass} py-2 sm:py-4 px-4 sm:px-6 rounded-lg shadow-lg space-y-3 sm:space-y-4`}
           >
             <h1 className="text-lg sm:text-lg md:text-2xl font-bold text-white text-center">
               {banner.title}

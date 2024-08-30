@@ -46,7 +46,7 @@ const HomePage = () => {
         <div>
           <Banner />
         </div>
-        <div >
+        <div className="bg-white ">
           <Banners/>
         </div>
         <div>

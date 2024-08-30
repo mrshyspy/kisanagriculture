@@ -15,7 +15,7 @@ const VideoList = () => {
       <h1 className="text-3xl font-bold mb-6 text-gray-800">Product Videos</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {threshers.slice(0, showAll ? threshers.length : (window.innerWidth >= 1024 ? 3 : 2)).map((thresher, index) => (
-          <div key={index} className="bg-white p-4 rounded-lg ">
+          <div key={index} className="bg-white p-2 rounded-lg ">
             <div className="relative" style={{ paddingTop: '56.25%' }}>
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
@@ -27,7 +27,7 @@ const VideoList = () => {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className="mt-4 text-center">
+            <div className="mt-2 text-center">
               <h2 className="text-base sm:text-base md:text-lg lg:text-lg font-normal text-gray-800">{thresher.ModelName}</h2>
             </div>
           </div>

@@ -28,7 +28,7 @@ const VideoList = () => {
               ></iframe>
             </div>
             <div className="mt-2 text-center">
-              <h2 className="text-base sm:text-base md:text-lg lg:text-lg font-normal text-gray-800">{thresher.ModelName}</h2>
+              <h2 className="text-base sm:text-base md:text-lg lg:text-lg font-normal text-gray-800 p-2">{thresher.ModelName}</h2>
             </div>
           </div>
         ))}

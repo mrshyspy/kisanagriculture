@@ -28,7 +28,7 @@ const HomePage = () => {
             </h1>
 
             <div>
-            <p className="border-b-green-600 border-b-4 text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 bg-green-50 p-6 rounded-lg shadow-md max-w-3xl mx-auto sm:mx-4 md:mx-auto">
+            <p className="border-b-green-600 border-b-4 text-base text-justify sm:text-lg md:text-xl leading-relaxed text-gray-700 bg-green-50 p-6 rounded-lg shadow-md max-w-3xl mx-auto sm:mx-4 md:mx-auto">
               We have designed thresher machines for different agricultural
               needs. Choose from single, double, and three fan models, with and
               without elevators. Each machine is tailored to provide efficiency

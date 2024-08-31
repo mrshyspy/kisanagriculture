@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaTimes } from 'react-icons/fa';
 
 const images = [
   "https://i.imgur.com/xCvyXTB.jpeg",
@@ -19,6 +20,7 @@ const images = [
 const Gallery = () => {
   const [loading, setLoading] = useState(Array(images.length).fill(true));
   const [progress, setProgress] = useState(Array(images.length).fill(0));
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     images.forEach((src, index) => {
@@ -49,12 +51,25 @@ const Gallery = () => {
     });
   }, []);
 
+  const handleImageClick = (src) => {
+    setSelectedImage(src);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <div className="p-6 bg-white">
       <h2 className="text-3xl text-gray-800 font-bold mb-6 text-center">Photo Gallery</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
         {images.map((src, index) => (
-          <div key={index} className="relative overflow-hidden rounded-lg shadow-lg" style={{ paddingBottom: '56.25%' }}>
+          <div
+            key={index}
+            className="relative overflow-hidden rounded-lg shadow-lg"
+            style={{ paddingBottom: '56.25%' }}
+            onClick={() => handleImageClick(src)}
+          >
             {loading[index] && (
               <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
                 <div className="w-3/4 h-2 bg-gray-300 rounded">
@@ -74,6 +89,27 @@ const Gallery = () => {
           </div>
         ))}
       </div>
+
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+          onClick={handleCloseModal}
+        >
+          <div className="relative max-w-full max-h-full p-4">
+            <img
+              src={selectedImage}
+              alt="Selected"
+              className="w-full h-auto max-h-screen object-contain"
+            />
+            <button
+              className="absolute top-4 right-4 text-white"
+              onClick={handleCloseModal}
+            >
+              <FaTimes size={36} />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

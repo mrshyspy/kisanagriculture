@@ -54,9 +54,9 @@ const Gallery = () => {
       <h2 className="text-3xl text-gray-800 font-bold mb-6 text-center">Photo Gallery</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
         {images.map((src, index) => (
-          <div key={index} className="relative overflow-hidden rounded-lg shadow-lg">
+          <div key={index} className="relative overflow-hidden rounded-lg shadow-lg" style={{ paddingBottom: '56.25%' }}>
             {loading[index] && (
-              <div className="w-full h-48 bg-gray-200 animate-pulse flex items-center justify-center">
+              <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
                 <div className="w-3/4 h-2 bg-gray-300 rounded">
                   <div
                     className="h-2 bg-green-500 rounded"
@@ -68,7 +68,7 @@ const Gallery = () => {
             <img
               src={src}
               alt={`Gallery Image ${index + 1}`}
-              className={`w-full h-48 object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 ${loading[index] ? 'hidden' : 'block'}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 ${loading[index] ? 'hidden' : 'block'}`}
               loading="lazy"
             />
           </div>

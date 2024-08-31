@@ -5,17 +5,17 @@ const Carousel = () => {
   const items = [
     {
       title: "Combine Harvester - 512",
-      imageUrl: "https://i.imgur.com/j4g8Lgy.jpeg",
+      imageUrl: "https://i.imgur.com/9UlVtFF.png",
       link: "https://www.Kisan.com/combine-harvester/combine-harvester-512"
     },
     {
       title: "Tractor Mounted Combine - 510",
-      imageUrl: "https://i.imgur.com/IEAum1D.jpg",
+      imageUrl: "https://i.imgur.com/eGrnSDw.png",
       link: "https://www.Kisan.com/combine-harvester/tractor-mounted-combine-510"
     },
     {
       title: "Multicrop Thresher",
-      imageUrl:"https://i.imgur.com/ULz2pvi.jpeg",
+      imageUrl:"https://i.imgur.com/lJHNByQ.png",
       link: "https://www.Kisan.com/multicrop-thresher"
     },
     {

@@ -5,7 +5,7 @@ const ContactUs = () => {
     <section className="bg-white" id="contact">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-3xl md:text-4xl">
             Get in Touch
           </h2>
           <p className="mt-4 text-base text-gray-600 sm:text-lg">

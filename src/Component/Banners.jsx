@@ -28,7 +28,7 @@ function Banners() {
       bgClass: "bg-gradient-to-br from-teal-600 to-teal-500" // Custom gradient color
     },
     {
-      title: "Innovative Design",
+      title: "Precision Engineering",
       subtitle: "Experience cutting-edge design in every thresher.",
       bgClass: "bg-gradient-to-br from-orange-600 to-orange-500" // Custom gradient color
     }

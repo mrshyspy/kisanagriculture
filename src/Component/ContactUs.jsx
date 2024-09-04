@@ -51,7 +51,7 @@ const ContactUs = () => {
                       <h3 className="text-base sm:text-lg font-semibold text-gray-900">
                         Contact
                       </h3>
-                      <p className="text-sm sm:text-base text-gray-600">Mobile: +91 9828719163, +91 9929877244</p>
+                      <p className="text-sm sm:text-base text-gray-600">Mobile: +91 9828719163, +91 7665373702</p>
                       <p className="text-sm sm:text-base text-gray-600">
                         Mail: kisanagriculture.com@gmail.com
                       </p>

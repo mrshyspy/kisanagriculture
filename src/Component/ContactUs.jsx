@@ -1,5 +1,5 @@
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
-import { FaLinkedin, FaYoutube, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"; // Importing additional icons
+import { FaLinkedin, FaYoutube, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const ContactUs = () => {
   return (
@@ -30,12 +30,12 @@ const ContactUs = () => {
                   We're here to help!
                 </p>
               </div>
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
-                <div className="md:w-1/2 bg-gray-100 rounded-lg p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-gray-100 rounded-lg p-6">
                   <ul className="space-y-6">
                     <li className="flex items-start space-x-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-md bg-green-600 text-white shadow-md">
-                        <FaMapMarkerAlt className="h-8 w-8" />
+                      <div className="flex aspect-square h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 items-center justify-center rounded-md bg-green-600 text-white shadow-md">
+                        <FaMapMarkerAlt className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10" />
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900">
@@ -46,8 +46,8 @@ const ContactUs = () => {
                       </div>
                     </li>
                     <li className="flex items-start space-x-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-md bg-green-600 text-white shadow-md">
-                        <FaPhoneAlt className="h-8 w-8" />
+                      <div className="flex aspect-square h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 items-center justify-center rounded-md bg-green-600 text-white shadow-md">
+                        <FaPhoneAlt className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10" />
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900">
@@ -61,18 +61,9 @@ const ContactUs = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="md:w-1/2 bg-gray-100 rounded-lg p-6">
+                <div className="bg-gray-100 rounded-lg p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-6">Follow Us</h3>
                   <div className="flex items-center gap-6">
-                    {/* <a
-                      className="text-gray-700 hover:text-green-600"
-                      aria-label="Visit LinkedIn"
-                      href="https://www.linkedin.com/in/your-profile"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaLinkedin className="h-8 w-8" />
-                    </a> */}
                     <a
                       className="text-gray-700 hover:text-green-600"
                       aria-label="Visit YouTube"
@@ -80,7 +71,7 @@ const ContactUs = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaYoutube className="h-8 w-8" />
+                      <FaYoutube className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10" />
                     </a>
                     <a
                       className="text-gray-700 hover:text-green-600"
@@ -89,7 +80,7 @@ const ContactUs = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaFacebook className="h-8 w-8" />
+                      <FaFacebook className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10" />
                     </a>
                     <a
                       className="text-gray-700 hover:text-green-600"
@@ -98,9 +89,8 @@ const ContactUs = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaInstagram className="h-8 w-8" />
+                      <FaInstagram className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10" />
                     </a>
-                    
                   </div>
                 </div>
               </div>

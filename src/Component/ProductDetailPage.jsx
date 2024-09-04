@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import QuickLinks from './QuickLink';
-import Breadcrumbs from './Breadcrumb';
-import { useParams } from 'react-router-dom';
-import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import QuickLinks from "./QuickLink";
+import Breadcrumbs from "./Breadcrumb";
+import { useParams } from "react-router-dom";
+import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
-import RelatedProductCarouselComponent from './RelatedProductCarousel';
+import RelatedProductCarouselComponent from "./RelatedProductCarousel";
 
 function ProductDetailPage({ threshers }) {
   const images = [
-    'https://i.imgur.com/nkjprq9.png',
-    'https://i.imgur.com/IEAum1D.jpeg',
-    'https://i.imgur.com/5haWYRc.jpeg',
-    'https://i.imgur.com/IEAum1D.jpeg',
+    "https://i.imgur.com/nkjprq9.png",
+    "https://i.imgur.com/IEAum1D.jpeg",
+    "https://i.imgur.com/5haWYRc.jpeg",
+    "https://i.imgur.com/IEAum1D.jpeg",
   ];
   const { ProductId } = useParams();
   const [selectedImage, setSelectedImage] = useState(images[0]);
@@ -25,30 +25,30 @@ function ProductDetailPage({ threshers }) {
   }, [ProductId]);
 
   const specs = [
-    { label: 'Gear Box', value: '21-21 Heavy Duty' },
-    { label: 'Drum Size', value: '45 Inch / 49 Inch' },
-    { label: 'Basket', value: '1745 mm (5 Feet 8 Inch)' },
-    { label: 'Length', value: '5410 mm (17 Feet 9 Inch)' },
-    { label: 'Width', value: '2438 mm (8 Feet)' },
-    { label: 'Height', value: '2209 mm (7 Feet 3 Inch)' },
+    { label: "Gear Box", value: "21-21 Heavy Duty" },
+    { label: "Drum Size", value: "45 Inch / 49 Inch" },
+    { label: "Basket", value: "1745 mm (5 Feet 8 Inch)" },
+    { label: "Length", value: "5410 mm (17 Feet 9 Inch)" },
+    { label: "Width", value: "2438 mm (8 Feet)" },
+    { label: "Height", value: "2209 mm (7 Feet 3 Inch)" },
   ];
 
   const features = [
-    'Large Sieve Area for Optimum Grain Cleaning.',
-    'Faster Unloading System.',
-    'High Ground Clearance.',
-    'Good working in the light Wet and Soft Fields.',
-    'Long Length thresher rotor for complete threshing.',
-    'Best quality V-belts, Bearings and accessories used.',
-    'Can operate with any tractor above 39 HP.',
-    'Heavy Duty Axles.',
-    'Highly Fuel Efficient.',
-    'Superior Chain Drives.',
+    "Large Sieve Area for Optimum Grain Cleaning.",
+    "Faster Unloading System.",
+    "High Ground Clearance.",
+    "Good working in the light Wet and Soft Fields.",
+    "Long Length thresher rotor for complete threshing.",
+    "Best quality V-belts, Bearings and accessories used.",
+    "Can operate with any tractor above 39 HP.",
+    "Heavy Duty Axles.",
+    "Highly Fuel Efficient.",
+    "Superior Chain Drives.",
   ];
 
   const breadcrumbPaths = [
-    { label: 'Home', href: '/' },
-    { label: thresher ? thresher.ModelName : 'Product', href: `/${ProductId}` },
+    { label: "Home", href: "/" },
+    { label: thresher ? thresher.ModelName : "Product", href: `/${ProductId}` },
   ];
 
   if (!thresher) {
@@ -71,7 +71,7 @@ function ProductDetailPage({ threshers }) {
                 src={selectedImage}
                 alt="Selected"
                 className={`object-cover w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 transition-transform duration-500 ${
-                  isZoomed ? 'scale-110' : 'scale-100'
+                  isZoomed ? "scale-110" : "scale-100"
                 }`}
               />
               {/* Navigation arrows */}
@@ -79,7 +79,8 @@ function ProductDetailPage({ threshers }) {
                 className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300"
                 onClick={() => {
                   const currentIndex = images.indexOf(selectedImage);
-                  const nextIndex = (currentIndex - 1 + images.length) % images.length;
+                  const nextIndex =
+                    (currentIndex - 1 + images.length) % images.length;
                   setSelectedImage(images[nextIndex]);
                 }}
               >
@@ -91,7 +92,11 @@ function ProductDetailPage({ threshers }) {
                   stroke="currentColor"
                   className="w-4 h-4 sm:w-5 sm:h-5"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 19l-7-7 7-7"
+                  />
                 </svg>
               </button>
               <button
@@ -110,7 +115,11 @@ function ProductDetailPage({ threshers }) {
                   stroke="currentColor"
                   className="w-4 h-4 sm:w-5 sm:h-5"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </button>
             </div>
@@ -122,7 +131,9 @@ function ProductDetailPage({ threshers }) {
                   src={img}
                   alt={`Thumbnail ${index + 1}`}
                   className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 cursor-pointer rounded-lg border-b-4 ${
-                    selectedImage === img ? 'border-b-green-600' : 'border-b-gray-300'
+                    selectedImage === img
+                      ? "border-b-green-600"
+                      : "border-b-gray-300"
                   } shadow-sm transform transition-transform duration-300 hover:scale-110`}
                   onClick={() => setSelectedImage(img)}
                 />
@@ -147,21 +158,30 @@ function ProductDetailPage({ threshers }) {
               </button>
             </div>
             <p className="text-xs text-gray-400 mt-4">
-              Disclaimer: These photographs are for illustrative purposes only and may be subject to change.
+              Disclaimer: These photographs are for illustrative purposes only
+              and may be subject to change.
             </p>
           </div>
         </div>
-        <h2 className="mt-8 text-2xl font-semibold mb-4">Technical Specifications</h2>
+        <h2 className="mt-8 text-2xl font-semibold mb-4">
+          Technical Specifications
+        </h2>
         <div className="overflow-x-auto mb-12">
           <table className="min-w-full bg-white text-gray-800 shadow-lg rounded-lg border border-gray-300">
             <tbody>
               {specs.map((spec, index) => (
                 <tr
                   key={index}
-                  className={`border-b border-gray-300 ${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}`}
+                  className={`border-b border-gray-300 ${
+                    index % 2 === 0 ? "bg-gray-100" : "bg-white"
+                  }`}
                 >
-                  <td className="px-4 py-3 border-r border-gray-300">{spec.label}</td>
-                  <td className="px-4 py-3 border-r border-gray-300">{spec.value}</td>
+                  <td className="px-4 py-3 border-r border-gray-300">
+                    {spec.label}
+                  </td>
+                  <td className="px-4 py-3 border-r border-gray-300">
+                    {spec.value}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -179,22 +199,28 @@ function ProductDetailPage({ threshers }) {
 
         <RelatedProductCarouselComponent />
         {/* <QuickLinks /> */}
-        <div className="bg-green-600 p-3 sm:p-6 rounded-full shadow-md max-w-full sm:max-w-lg mx-6 sm:mx-auto">
-      <ul className="flex justify-around text-xl sm:text-2xl">
-        <li>
-          <a href="/get-in-touch/dealer-locator" className="flex items-center text-white">
-            <FaMapMarkerAlt className="mr-3 sm:mr-4 text-white" />
-            Get location
-          </a>
-        </li>
-        <li>
-          <a href="tel:1800 2100 700" className="flex items-center text-white">
-            <FaPhoneAlt className="mr-3 sm:mr-4 text-white" />
-            Call Us Now
-          </a>
-        </li>
-      </ul>
-    </div>
+        <div className="bg-green-600 py-3 sm:py-6 rounded-full shadow-md max-w-full sm:max-w-full mx-auto sm:mx-auto">
+          <ul className="flex justify-around text-xl sm:text-2xl">
+            <li>
+              <a
+                href="/get-in-touch/dealer-locator"
+                className="flex items-center text-white"
+              >
+                <FaMapMarkerAlt className="mr-3 sm:mr-4 text-white" />
+                Get location
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:1800 2100 700"
+                className="flex items-center text-white"
+              >
+                <FaPhoneAlt className="mr-3 sm:mr-4 text-white" />
+                Call Us Now
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </>
   );

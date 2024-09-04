@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        customBlue: '#000000', // Custom color addition
+        customBlue: '#FFFFFF', // Custom color addition
       },
       fontFamily: {
         sans: ['DM Sans', 'sans-serif', 'Inter'], // Custom font family

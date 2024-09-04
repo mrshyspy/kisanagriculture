@@ -199,7 +199,7 @@ function ProductDetailPage({ threshers }) {
 
         <RelatedProductCarouselComponent />
         {/* <QuickLinks /> */}
-        <div className="bg-green-600 py-3 sm:py-6 rounded-full shadow-md max-w-full sm:max-w-full mx-auto sm:mx-auto">
+        <div className="bg-green-600 p-3 sm:p-3 rounded-full shadow-md max-w-full sm:max-w-full mx-4 sm:mx-auto">
           <ul className="flex justify-around text-xl sm:text-2xl">
             <li>
               <a

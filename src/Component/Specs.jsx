@@ -1,4 +1,3 @@
-// TechnicalSpecificationsPage.jsx
 import React from 'react';
 import ProductDetail from './ProductDetail';
 import QuickLinks from './QuickLink';
@@ -38,7 +37,7 @@ function TechnicalSpecificationsPage() {
       <div className="container mx-auto p-6 bg-white text-gray-800">
         <Breadcrumbs paths={breadcrumbPaths} /> {/* Add Breadcrumbs here */}
         <ProductDetail />
-        <h2 className=" mt-8 text-2xl font-semibold mb-4">Technical Specifications</h2>
+        <h2 className="mt-8 text-xl md:text-2xl font-semibold mb-4">Technical Specifications</h2>
         <div className="overflow-x-auto mb-12">
           <table className="min-w-full bg-white text-gray-800 shadow-lg rounded-lg border border-gray-300">
             <tbody>
@@ -47,8 +46,8 @@ function TechnicalSpecificationsPage() {
                   key={index}
                   className={`border-b border-gray-300 ${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}`}
                 >
-                  <td className="px-4 py-3 border-r border-gray-300">{spec.label}</td>
-                  <td className="px-4 py-3 border-r border-gray-300">{spec.value}</td>
+                  <td className="px-4 py-3 border-r border-gray-300 text-sm md:text-base">{spec.label}</td>
+                  <td className="px-4 py-3 border-r border-gray-300 text-sm md:text-base">{spec.value}</td>
                 </tr>
               ))}
             </tbody>
@@ -56,8 +55,8 @@ function TechnicalSpecificationsPage() {
         </div>
 
         <div className="bg-gray-100 p-6 shadow-lg mb-12">
-          <h3 className="text-2xl font-semibold mb-4">Features</h3>
-          <ul className="list-disc list-inside">
+          <h3 className="text-lg md:text-xl font-semibold mb-4">Features</h3>
+          <ul className="list-disc list-inside text-center text-sm md:text-base">
             {features.map((feature, index) => (
               <li key={index} className="mb-2">{feature}</li>
             ))}
@@ -67,7 +66,7 @@ function TechnicalSpecificationsPage() {
           <QuickLinks />
         </div>
         <div className="bg-white p-6 shadow-lg">
-          <h3 className="text-2xl font-semibold mb-4">Watch Videos</h3>
+          <h3 className="text-lg md:text-xl font-semibold mb-4">Watch Videos</h3>
           <div className="relative w-full overflow-hidden pb-[56.25%] h-0">
             <iframe
               className="absolute top-0 left-0 w-full h-full"

@@ -203,7 +203,7 @@ function ProductDetailPage({ threshers }) {
           <ul className="flex justify-around  text-xl sm:text-2xl">
             <li>
               <a
-                href="/get-in-touch/dealer-locator"
+                href="https://wa.me/+917665373702"
                 className="flex items-center text-white"
               >
                 <FaWhatsapp className="mr-3 sm:mr-4 text-white" />

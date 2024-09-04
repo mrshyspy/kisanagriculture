@@ -38,7 +38,8 @@ const CarouselComponent = () => {
 
   return (
     <div className="relative md:px-12 w-full">
-      <h2 className="text-center mt-16 mb-4 text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800">
+    
+      <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold mt-16 mb-4 text-gray-800">
         Related Products
       </h2>
 

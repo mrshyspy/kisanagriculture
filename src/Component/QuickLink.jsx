@@ -6,7 +6,7 @@ const QuickLinks = () => {
     <div className="bg-green-600 p-3 sm:p-6 rounded-full shadow-md max-w-full sm:max-w-lg mx-6 sm:mx-auto">
       <ul className="flex justify-around text-xl sm:text-2xl">
         <li>
-          <a href="/get-in-touch/dealer-locator" className="flex items-center text-white">
+          <a href="https://wa.me/+917665373702" className="flex items-center text-white">
             <FaWhatsapp className="mr-3 sm:mr-4 text-white" />
             Message Us
           </a>

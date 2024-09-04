@@ -19,7 +19,7 @@ const ContactUs = () => {
           ></iframe>
         </div>
         <div className="container px-6  sm:px-4 md:px-12">
-          <div className="block rounded-lg bg-gray-100 px-6 py-12 shadow-md md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border border-gray-300">
+          <div className="block rounded-lg bg-gray-100 px-2 py-12 shadow-md md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border border-gray-300">
             <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-extrabold text-gray-900 sm:text-3xl md:text-4xl">
@@ -34,7 +34,7 @@ const ContactUs = () => {
                 <div className="bg-gray-100 rounded-lg p-6">
                   <ul className="space-y-6">
                     <li className="flex items-start space-x-4">
-                      <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-md bg-green-600 text-white shadow-md">
+                      <div className="flex aspect-square h-12 w-12 text-green-600 items-center justify-center">
                         <FaMapMarkerAlt className="h-8 w-8" />
                       </div>
                       <div>
@@ -46,7 +46,7 @@ const ContactUs = () => {
                       </div>
                     </li>
                     <li className="flex items-start space-x-4">
-                      <div className="flex aspect-square h-12 w-12 items-center justify-center rounded-md bg-green-600 text-white shadow-md">
+                      <div className="flex aspect-square h-12 w-12 text-green-600 items-center justify-center">
                         <FaPhoneAlt className="h-8 w-8" />
                       </div>
                       <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
+import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 
 const QuickLinks = () => {
   return (
@@ -7,14 +7,14 @@ const QuickLinks = () => {
       <ul className="flex justify-around text-xl sm:text-2xl">
         <li>
           <a href="/get-in-touch/dealer-locator" className="flex items-center text-white">
-            <FaMapMarkerAlt className="mr-3 sm:mr-4 text-white" />
-            Get location
+            <FaWhatsapp className="mr-3 sm:mr-4 text-white" />
+            Message Us
           </a>
         </li>
         <li>
-          <a href="tel:1800 2100 700" className="flex items-center text-white">
+          <a href="tel:+919828719163" className="flex items-center text-white">
             <FaPhoneAlt className="mr-3 sm:mr-4 text-white" />
-            Call Us Now
+            Call Now
           </a>
         </li>
       </ul>

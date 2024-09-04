@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import QuickLinks from "./QuickLink";
 import Breadcrumbs from "./Breadcrumb";
 import { useParams } from "react-router-dom";
-import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 import RelatedProductCarouselComponent from "./RelatedProductCarousel";
 
@@ -206,17 +206,17 @@ function ProductDetailPage({ threshers }) {
                 href="/get-in-touch/dealer-locator"
                 className="flex items-center text-white"
               >
-                <FaMapMarkerAlt className="mr-3 sm:mr-4 text-white" />
-                Get location
+                <FaWhatsapp className="mr-3 sm:mr-4 text-white" />
+                Message Us
               </a>
             </li>
             <li>
               <a
-                href="tel:1800 2100 700"
+                href="tel:+919828719163"
                 className="flex items-center text-white"
               >
                 <FaPhoneAlt className="mr-3 sm:mr-4 text-white" />
-                Call Us Now
+                Call Now
               </a>
             </li>
           </ul>

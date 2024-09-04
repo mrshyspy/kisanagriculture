@@ -61,7 +61,8 @@ const Gallery = () => {
 
   return (
     <div className="p-6 bg-white">
-      <h2 className="text-3xl text-gray-800 font-bold mb-6 text-center">Photo Gallery</h2>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-800 font-extrabold mb-6 text-center">Photo Gallery</h2>
+      
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
         {images.map((src, index) => (
           <div

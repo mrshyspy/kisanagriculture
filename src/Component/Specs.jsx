@@ -56,7 +56,7 @@ function TechnicalSpecificationsPage() {
 
         <div className="bg-gray-100 p-6 shadow-lg mb-12">
           <h3 className="text-lg md:text-xl font-semibold mb-4">Features</h3>
-          <ul className="list-none pl-0 text-center text-sm md:text-base">
+          <ul className="text-center text-sm md:text-base" style={{ listStyleType: 'none', paddingLeft: '0' }}>
             {features.map((feature, index) => (
               <li key={index} className="mb-2">{feature}</li>
             ))}

@@ -143,33 +143,33 @@ function ProductDetailPage({ threshers }) {
 
           {/* Right side: Product description */}
           <div className="lg:w-1/2 flex flex-col justify-center space-y-4 md:space-y-6">
-  <h1 className="mt-8 text-2xl font-semibold text-gray-800 mb-4">
-    {thresher.ModelName}
-  </h1>
-  <p className="text-gray-700 leading-relaxed">
-    {thresher.details.description}
-  </p>
-  <div className="flex flex-row space-x-4">
-    <a
-      href="tel:+919828719163"
-      className="flex bg-green-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105"
-    >
-      <FaPhoneAlt className="mr-3 sm:mr-4 text-white text-lg sm:text-xl md:text-2xl" />
-      Call Now
-    </a>
-    <a
-      href="https://wa.me/+917665373702"
-      className="flex items-center bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105"
-    >
-      <FaWhatsapp className="mr-3 sm:mr-4 text-green-600 text-lg sm:text-xl md:text-2xl" />
-      Message Us
-    </a>
-  </div>
-  <p className="text-xs text-gray-400 mt-4">
-    Disclaimer: These photographs are for illustrative purposes only and may be subject to change.
-  </p>
-</div>
-
+            <h1 className="mt-8 text-2xl font-semibold text-gray-800 mb-4">
+              {thresher.ModelName}
+            </h1>
+            <p className="text-gray-700 leading-relaxed">
+              {thresher.details.description}
+            </p>
+            <div className="flex flex-row space-x-4">
+              <a
+                href="tel:+919828719163"
+                className="flex bg-green-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105"
+              >
+                <FaPhoneAlt className="mr-3 sm:mr-4 text-white text-lg sm:text-xl md:text-2xl" />
+                Call Now
+              </a>
+              <a
+                href="https://wa.me/+917665373702"
+                className="flex items-center bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105"
+              >
+                <FaWhatsapp className="mr-3 sm:mr-4 text-green-600 text-lg sm:text-xl md:text-2xl" />
+                Message Us
+              </a>
+            </div>
+            <p className="text-xs text-gray-400 mt-4">
+              Disclaimer: These photographs are for illustrative purposes only
+              and may be subject to change.
+            </p>
+          </div>
         </div>
         <h2 className="mt-8 text-2xl font-semibold mb-4">
           Technical Specifications

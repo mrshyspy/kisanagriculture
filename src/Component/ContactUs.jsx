@@ -18,7 +18,7 @@ const ContactUs = () => {
             loading="lazy"
           ></iframe>
         </div>
-        <div className="container px-6 md:px-12">
+        <div className="container px-6  sm:px-4 md:px-12">
           <div className="block rounded-lg bg-gray-100 px-6 py-12 shadow-md md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border border-gray-300">
             <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
               <div className="text-center mb-12">

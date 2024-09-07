@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import QuickLinks from "./QuickLink";
 import Breadcrumbs from "./Breadcrumb";
 import { useParams } from "react-router-dom";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";

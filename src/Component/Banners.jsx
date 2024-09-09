@@ -1,63 +1,109 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Banners() {
+export default function Banners() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   const bannerData = [
     {
       title: "Heavy Duty",
       subtitle: "Maximize your efficiency with our high-performance threshers.",
-      bgClass: "bg-gradient-to-br from-green-600 to-green-500" // Custom gradient color
+      bgClass: "from-green-400 to-emerald-600",
+      icon: "🚜",
     },
     {
       title: "Advanced Features",
       subtitle: "Experience cutting-edge features designed for modern farming.",
-      bgClass: "bg-gradient-to-br from-blue-600 to-blue-500" // Custom gradient color
+      bgClass: "from-blue-400 to-indigo-600",
+      icon: "🔬",
     },
     {
       title: "Affordable Excellence",
       subtitle: "Top quality at great prices. Get the most value for your investment.",
-      bgClass: "bg-gradient-to-br from-yellow-600 to-yellow-500" // Custom gradient color
+      bgClass: "from-yellow-400 to-amber-600",
+      icon: "💰",
     },
     {
       title: "Easy to Use",
       subtitle: "User-friendly machines for effortless operation.",
-      bgClass: "bg-gradient-to-br from-purple-600 to-purple-500" // Custom gradient color
+      bgClass: "from-purple-400 to-fuchsia-600",
+      icon: "👌",
     },
     {
-      title: "Built to last",
+      title: "Built to Last",
       subtitle: "Built to last with exceptional performance for every harvest.",
-      bgClass: "bg-gradient-to-br from-teal-600 to-teal-500" // Custom gradient color
+      bgClass: "from-teal-400 to-cyan-600",
+      icon: "🏗️",
     },
     {
       title: "Precision Engineering",
       subtitle: "Experience cutting-edge design in every thresher.",
-      bgClass: "bg-gradient-to-br from-orange-600 to-orange-500" // Custom gradient color
-    }
+      bgClass: "from-orange-400 to-red-600",
+      icon: "⚙️",
+    },
   ];
 
   return (
-    <div className="container mx-auto py-6 md:py-9 px-4 md:px-6">
-      <div className="text-center mb-6 md:mb-8">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-gray-600">
-          Quality Before Quantity
-        </h2>
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+    <div className="container mx-auto py-16 px-4 md:px-6 bg-gray-100 dark:bg-gray-900">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gray-800 dark:text-gray-200 mb-12 animate-fade-in-down">
+        Quality Before Quantity
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {bannerData.map((banner, index) => (
           <div
             key={index}
-            className={`flex flex-col justify-center items-center ${banner.bgClass} py-2 sm:py-4 px-4 sm:px-6 rounded-lg shadow-lg space-y-3 sm:space-y-4`}
+            className={`bg-gradient-to-br ${banner.bgClass} rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-fade-in-up`}
+            style={{ animationDelay: `${index * 100}ms` }}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
-            <h1 className="text-lg sm:text-lg md:text-2xl font-bold text-white text-center">
-              {banner.title}
-            </h1>
-            {/* <p className="text-sm sm:text-base md:text-lg text-white text-center">
-              {banner.subtitle}
-            </p> */}
+            <div className="p-6 h-full flex flex-col justify-between backdrop-blur-sm bg-white/10">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{banner.title}</h3>
+                  <span 
+                    className={`text-3xl sm:text-4xl md:text-5xl transition-transform duration-300 ${
+                      hoveredIndex === index ? 'rotate-12 scale-110' : ''
+                    }`} 
+                    role="img" 
+                    aria-label={banner.title}
+                  >
+                    {banner.icon}
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm md:text-base text-white">{banner.subtitle}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
+      <style jsx>{`
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-down {
+          animation: fadeInDown 0.5s ease-out;
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.5s ease-out;
+        }
+      `}</style>
     </div>
   );
 }
-
-export default Banners;

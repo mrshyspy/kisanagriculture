@@ -54,6 +54,7 @@ const HomePage = () => {
         </div>
         <div className="pt-10">
           <QuickLinks />
+          
         </div>
 
         {/* Google Map Embed */}

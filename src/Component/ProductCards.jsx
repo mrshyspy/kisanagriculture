@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { IoClose } from 'react-icons/io5'; // Import the close icon
 import threshers from './Threshers';
+import { GreenModernButtonInline } from "../components/green-modern-button-inline"; 
 
 const ProductCard = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -73,15 +74,15 @@ const ProductCard = () => {
                 </div>
               </div>
               <div className="text-center pb-6">
-                <button
-                  className="bg-white border border-gray-300 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300 mr-2"
-                  onClick={handleVideoClick}
-                >
-                  Watch Video
-                </button>
-                <button className="bg-white border border-gray-300 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
-                  Know More →
-                </button>
+                <div className="flex justify-center gap-4"> {/* Added flex layout */}
+                  <button
+                    className="bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300"
+                    onClick={handleVideoClick}
+                  >
+                    Watch Video
+                  </button>
+                  <GreenModernButtonInline /> {/* Second button in the row */}
+                </div>
               </div>
             </Link>
           </div>

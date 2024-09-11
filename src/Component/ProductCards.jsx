@@ -22,13 +22,13 @@ const ProductCard = () => {
   };
 
   return (
-    <div ref={topRef} className="container mx-auto py-8 px-6 sm:px-10 lg:px-12 bg-gradient-to-br from-yellow-100 to-green-100">
+    <div ref={topRef} className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
       {/* Responsive Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {threshers.map((machine, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 sm:shadow-2xl sm:hover:scale-105 sm:hover:shadow-2xl hover:shadow-xl hover:scale-105"
+            className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl"
           >
             <Link to={`/${machine.productId}`} className="block">
               <div className="relative">
@@ -37,13 +37,18 @@ const ProductCard = () => {
                   src={machine.details.imageUrl}
                   alt={machine.ModelName}
                 />
+                {/* <img
+                className="h-64 w-full object-cover mb-2"
+                src={machine.details.imageUrl}
+                alt={machine.ModelName}
+              /> */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <h3 className="absolute bottom-4 left-4 text-white text-lg sm:text-xl font-bold">
                   {machine.ModelName}
                 </h3>
               </div>
               <div className="p-4 sm:p-6">
-                <div className="space-y-2 text-sm sm:text-sm text-gray-800">
+                <div className="space-y-2 text-xs sm:text-sm text-gray-600">
                   {Object.entries(machine.details.specification).map(
                     ([key, value]) => (
                       <div
@@ -51,7 +56,7 @@ const ProductCard = () => {
                         className="flex items-center justify-between"
                       >
                         <span className="font-medium capitalize">{key}:</span>
-                        <span className="bg-gray-100 px-3 py-1 rounded-full">
+                        <span className="bg-gray-100 px-2 py-1 rounded-full">
                           {value}
                         </span>
                       </div>
@@ -59,19 +64,17 @@ const ProductCard = () => {
                   )}
                 </div>
               </div>
-              <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                {/* Button Layout Responsive */}
-                <div className="flex flex-row sm:flex-row justify-between items-center gap-3">
+              <div className="text-center pb-10 pt-6">
+                <div className="flex justify-center gap-4">
+                  {" "}
+                  {/* Added flex layout */}
                   <button
-                    className="flex items-center bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300 text-sm sm:text-base"
+                    className="bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300"
                     onClick={handleVideoClick}
                   >
-                    <Play className="w-4 h-4" /> {/* Icon */}
-                    <span className="ml-3">Watch Video</span>{" "}
-                    {/* Text with no margin change */}
+                    Watch Video
                   </button>
-
-                  <GreenModernButtonInline className="w-full sm:w-auto flex-1" />
+                  <GreenModernButtonInline /> {/* Second button in the row */}
                 </div>
               </div>
             </Link>

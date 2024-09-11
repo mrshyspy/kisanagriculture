@@ -24,11 +24,11 @@ const ProductCard = () => {
   return (
     <div ref={topRef} className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
       {/* Responsive Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {threshers.map((machine, index) => (
           <div
             key={index}
-            className="bg-white text-gray-800 rounded-xl overflow-hidden shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+            className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl"
           >
             <Link to={`/${machine.productId}`} className="block">
               <div className="relative">
@@ -64,18 +64,19 @@ const ProductCard = () => {
                   )}
                 </div>
               </div>
-              <div className="text-center pb-6">
-                <div className="flex justify-center gap-4 ">
-                  {" "}
-                  {/* Added flex layout */}
+              <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                {/* Button Layout Responsive */}
+                <div className="flex flex-row sm:flex-row justify-between items-center gap-3">
                   <button
-  className="bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300 text-sm sm:text-base md:text-lg"
-  onClick={handleVideoClick}
->
-  Watch Video
-</button>
+                    className="flex items-center bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300 text-sm sm:text-base"
+                    onClick={handleVideoClick}
+                  >
+                    <Play className="w-4 h-4" /> {/* Icon */}
+                    <span className="ml-2">Watch Video</span>{" "}
+                    {/* Text with no margin change */}
+                  </button>
 
-                  <GreenModernButtonInline /> {/* Second button in the row */}
+                  <GreenModernButtonInline className="w-full sm:w-auto flex-1" />
                 </div>
               </div>
             </Link>

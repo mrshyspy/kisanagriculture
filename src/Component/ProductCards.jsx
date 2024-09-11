@@ -64,7 +64,7 @@ const ProductCard = () => {
                   )}
                 </div>
               </div>
-              <div className="text-center pb-10 pt-6">
+              <div className="text-center pb-12 pt-6">
                 <div className="flex justify-center gap-4">
                   {" "}
                   {/* Added flex layout */}

@@ -64,18 +64,17 @@ const ProductCard = () => {
                   )}
                 </div>
               </div>
-              <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                {/* Button Layout Responsive */}
-                <div className="flex justify-center gap-4"> {/* Added flex layout */}
+              <div className="text-center pb-6">
+                <div className="flex justify-center gap-10">
+                  {" "}
+                  {/* Added flex layout */}
                   <button
-                    className="flex items-center bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300"
+                    className="bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300"
                     onClick={handleVideoClick}
                   >
-                    <Play className="w-4 h-4" /> {/* Icon */}
-                    <span className="ml-2">Watch Video</span>{" "}
-                    {/* Text with no margin change */}
+                    Watch Video
                   </button>
-                  <GreenModernButtonInline className="w-full sm:w-auto flex-1" />
+                  <GreenModernButtonInline /> {/* Second button in the row */}
                 </div>
               </div>
             </Link>
@@ -111,4 +110,3 @@ const ProductCard = () => {
 };
 
 export default ProductCard;
-

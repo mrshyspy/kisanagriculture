@@ -23,6 +23,8 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     images.forEach((src, index) => {
       const xhr = new XMLHttpRequest();
       xhr.open("GET", src, true);

@@ -47,7 +47,7 @@ const Header = () => {
     <header className="bg-white shadow-lg">
       <div className="flex items-center justify-between px-4 pb-1 pt-1">
         <div className="flex items-center">
-          <a href="/" className="flex-none">
+          <Link to="/" className="flex-none">
             <div className="relative w-full h-16 sm:h-20">
               <img
                 alt="logo"
@@ -55,7 +55,7 @@ const Header = () => {
                 className="object-contain h-full"
               />
             </div>
-          </a>
+          </Link>
           <div className="ml-4 sm:ml-6 hidden sm:block">
             <h1 className="text-xl sm:text-2xl font-bold">
               KISAN Agriculture Workshop
@@ -90,12 +90,12 @@ const Header = () => {
         <nav>
           <ul className="flex justify-center text-black uppercase text-xs sm:text-sm font-medium">
             <li className="px-2 py-1 sm:px-4 sm:py-2">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="hover:text-green-600 transition-colors duration-300"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li
               className="relative px-2 py-1 sm:px-4 sm:py-2"
@@ -139,11 +139,11 @@ const Header = () => {
               </Link>
             </li>
             <li className="px-2 py-1 sm:px-4 sm:py-2">
-            <Link
+              <Link
                 to="/gallery"
                 className="hover:text-green-600 transition-colors duration-300"
               >
-              Gallery
+                Gallery
               </Link>
             </li>
           </ul>

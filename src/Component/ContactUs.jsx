@@ -1,7 +1,10 @@
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { FaLinkedin, FaYoutube, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-
+import { useEffect } from "react";
 const ContactUs = () => {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <>
       <section className="mb-16 md:mb-24 lg:mb-32">

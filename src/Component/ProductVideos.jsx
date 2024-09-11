@@ -13,7 +13,7 @@ export default function VideoList() {
 
   return (
     <div className="container mx-auto py-8 px-6 sm:px-8 lg:px-12">
-      <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">Product Videos</h1>
+      <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold mt-4 mb-8 text-gray-800">Product Videos</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {threshers.slice(0, showAll ? threshers.length : (typeof window !== 'undefined' && window.innerWidth >= 1024 ? 3 : 2)).map((thresher, index) => (
           <div key={index} className=" transition-transform ease-in-out bg-white rounded-xl shadow-lg overflow-hidden duration-300 hover:scale-105">

@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageSquare, Phone, X } from "lucide-react"; // Import the X icon
 
-export default function QuickLinks() {
-  const [isVisible, setIsVisible] = useState(true); // State to control visibility
+export default function CallToActions() {
+  const [isVisible, setIsVisible] = useState(false); // Initially hidden
+
+  useEffect(() => {
+    // Set a timeout to show the component after 5 seconds
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 8000);
+
+    // Clean up the timer if the component is unmounted before the timeout
+    return () => clearTimeout(timer);
+  }, []);
 
   if (!isVisible) return null; // Don't render the component if not visible
 

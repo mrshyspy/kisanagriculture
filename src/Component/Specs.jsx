@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductDetail from './ProductDetail';
-import QuickLinks from './QuickLink';
+import CallToActions from './CallToAction';
 import Breadcrumbs from './Breadcrumb'; // Import the Breadcrumbs component
 
 function TechnicalSpecificationsPage() {
@@ -63,7 +63,7 @@ function TechnicalSpecificationsPage() {
           </ul>
         </div>
         <div className="absolute pt-4">
-          <QuickLinks />
+          <CallToActions />
         </div>
         <div className="bg-white p-6 shadow-lg">
           <h3 className="text-lg md:text-xl font-semibold mb-4">Watch Videos</h3>

@@ -1,6 +1,6 @@
 import React from "react";
 import CarouselComponent from "./CarouselComponent";
-import QuickLinks from "./QuickLink";
+import CallToActions from "./CallToAction";
 import Banner from "./Banner";
 import Banners from "./Banners";
 import ProductVideos from "./ProductVideos";
@@ -18,7 +18,7 @@ const HomePage = () => {
       <Banner />
       <Banners/>
       <ProductVideos />
-      <QuickLinks />
+      <CallToActions />
       <Map/>
       
     </>

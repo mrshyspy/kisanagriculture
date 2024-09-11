@@ -28,7 +28,7 @@ const ProductCard = () => {
         {threshers.map((machine, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl"
+            className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl"
           >
             <Link to={`/${machine.productId}`} className="block">
               <div className="relative">

@@ -49,8 +49,8 @@ const ProductCard = () => {
                         key={key}
                         className="flex items-center justify-between"
                       >
-                        <span className="font-medium capitalize">{key}:</span>
-                        <span className="bg-gray-100 px-2 py-1 rounded-full">
+                        <span className="font-medium capitalize pl-4 ">{key}:</span>
+                        <span className=" px-2 pr-4 py-1 rounded-full">
                           {value}
                         </span>
                       </div>

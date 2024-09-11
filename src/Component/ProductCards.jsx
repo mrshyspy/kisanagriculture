@@ -32,16 +32,16 @@ const ProductCard = () => {
           >
             <Link to={`/${machine.productId}`} className="block">
               <div className="relative">
-                <img
+                {/* <img
                   className="h-48 sm:h-56 md:h-64 w-full object-cover"
                   src={machine.details.imageUrl}
                   alt={machine.ModelName}
-                />
-                {/* <img
+                /> */}
+                <img
                 className="h-64 w-full object-cover mb-2"
                 src={machine.details.imageUrl}
                 alt={machine.ModelName}
-              /> */}
+              />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <h3 className="absolute bottom-4 left-4 text-white text-lg sm:text-xl font-bold">
                   {machine.ModelName}

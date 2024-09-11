@@ -19,7 +19,7 @@ export default function CallToActions() {
 
   return (
     <div className="fixed bottom-4 left-0 right-0 z-50">
-      <div className="max-w-md mx-auto px-4">
+      <div className="max-w-md mx-auto px-8">
         <div className="bg-green-700 backdrop-blur-sm rounded-full p-2 shadow-lg relative">
           {/* Cross button */}
           <button

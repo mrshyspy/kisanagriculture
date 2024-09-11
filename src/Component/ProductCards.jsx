@@ -43,7 +43,7 @@ const ProductCard = () => {
                 </h3>
               </div>
               <div className="p-4 sm:p-6">
-                <div className="space-y-2 text-s sm:text-sm text-gray-800">
+                <div className="space-y-2 text-sm sm:text-sm text-gray-800">
                   {Object.entries(machine.details.specification).map(
                     ([key, value]) => (
                       <div

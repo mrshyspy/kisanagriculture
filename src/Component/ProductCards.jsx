@@ -69,11 +69,12 @@ const ProductCard = () => {
                   {" "}
                   {/* Added flex layout */}
                   <button
-                    className="bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300"
-                    onClick={handleVideoClick}
-                  >
-                    Watch Video
-                  </button>
+  className="bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300 text-sm sm:text-base md:text-lg"
+  onClick={handleVideoClick}
+>
+  Watch Video
+</button>
+
                   <GreenModernButtonInline /> {/* Second button in the row */}
                 </div>
               </div>

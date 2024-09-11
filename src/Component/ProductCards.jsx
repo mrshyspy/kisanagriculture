@@ -21,7 +21,10 @@ const ProductCard = () => {
   };
 
   return (
-    <div ref={topRef} className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-yellow-100 to-green-100">
+    <div
+      ref={topRef}
+      className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-yellow-100 to-green-100"
+    >
       {/* Responsive Grid Layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {threshers.map((machine, index) => (
@@ -49,7 +52,9 @@ const ProductCard = () => {
                         key={key}
                         className="flex items-center justify-between"
                       >
-                        <span className="font-medium capitalize pl-4 ">{key}:</span>
+                        <span className="font-medium capitalize pl-4 ">
+                          {key}:
+                        </span>
                         <span className=" px-2 pr-4 py-1 rounded-full">
                           {value}
                         </span>
@@ -58,7 +63,7 @@ const ProductCard = () => {
                   )}
                 </div>
               </div>
-              <div className="text-center pb-12 pt-6">
+              <div className="text-center pb-10 pt-6">
                 <div className="flex justify-center gap-4">
                   <button
                     className="bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300"

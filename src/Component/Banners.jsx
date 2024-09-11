@@ -51,7 +51,7 @@ export default function Banners() {
         {bannerData.map((banner, index) => (
           <div
             key={index}
-            className={`bg-gradient-to-br ${banner.bgClass} rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-fade-in-up`}
+            className={`bg-gradient-to-br ${banner.bgClass} rounded-xl shadow-lg overflow-hidden `}
             style={{ animationDelay: `${index * 100}ms` }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}

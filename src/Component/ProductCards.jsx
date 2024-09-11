@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
-import { Play } from "lucide-react";
 import threshers from "./Threshers";
 import { GreenModernButtonInline } from "../components/green-modern-button-inline";
 
@@ -22,26 +21,21 @@ const ProductCard = () => {
   };
 
   return (
-    <div ref={topRef} className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <div ref={topRef} className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-yellow-100 to-green-100">
       {/* Responsive Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {threshers.map((machine, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl"
+            className="bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 ease-in-out lg:hover:shadow-xl lg:hover:scale-105"
           >
             <Link to={`/${machine.productId}`} className="block">
               <div className="relative">
-                {/* <img
-                  className="h-48 sm:h-56 md:h-64 w-full object-cover"
+                <img
+                  className="h-64 w-full object-cover mb-2 transition-transform duration-300 ease-in-out lg:hover:scale-105" // Zoom effect with ease-in-out
                   src={machine.details.imageUrl}
                   alt={machine.ModelName}
-                /> */}
-                <img
-                className="h-64 w-full object-cover mb-2"
-                src={machine.details.imageUrl}
-                alt={machine.ModelName}
-              />
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <h3 className="absolute bottom-4 left-4 text-white text-lg sm:text-xl font-bold">
                   {machine.ModelName}
@@ -66,15 +60,13 @@ const ProductCard = () => {
               </div>
               <div className="text-center pb-12 pt-6">
                 <div className="flex justify-center gap-4">
-                  {" "}
-                  {/* Added flex layout */}
                   <button
                     className="bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300"
                     onClick={handleVideoClick}
                   >
                     Watch Video
                   </button>
-                  <GreenModernButtonInline /> {/* Second button in the row */}
+                  <GreenModernButtonInline />
                 </div>
               </div>
             </Link>

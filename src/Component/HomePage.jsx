@@ -52,15 +52,15 @@ const HomePage = () => {
         <div>
           <ProductVideos />
         </div>
-        <div className="pt-10">
+        <div>
           <QuickLinks />
           
         </div>
 
         {/* Google Map Embed */}
-        <div className="mt-12">
+        <div>
           <div className="container mx-auto p-6">
-            <h2 className="mt-8 text-2xl font-semibold text-gray-800 mb-6">
+            <h2 className="mt-4 text-2xl font-semibold text-gray-800 mb-6">
               Visit Us
             </h2>
             <iframe

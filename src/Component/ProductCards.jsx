@@ -24,11 +24,11 @@ const ProductCard = () => {
   return (
     <div ref={topRef} className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
       {/* Responsive Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {threshers.map((machine, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl"
+            className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 sm:shadow-2xl sm:hover:scale-105 sm:hover:shadow-2xl hover:shadow-xl hover:scale-105"
           >
             <Link to={`/${machine.productId}`} className="block">
               <div className="relative">
@@ -37,11 +37,6 @@ const ProductCard = () => {
                   src={machine.details.imageUrl}
                   alt={machine.ModelName}
                 />
-                {/* <img
-                className="h-64 w-full object-cover mb-2"
-                src={machine.details.imageUrl}
-                alt={machine.ModelName}
-              /> */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <h3 className="absolute bottom-4 left-4 text-white text-lg sm:text-xl font-bold">
                   {machine.ModelName}

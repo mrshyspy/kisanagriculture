@@ -5,10 +5,10 @@ function Banner() {
   return (
     <div className=" container mx-auto py-9 md:py-12 px-6 md:px-6">
       <div className="flex flex-col md:flex-row items-stretch justify-center space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
-      <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 dark:bg-gray-800 p-6 md:p-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12 rounded-lg shadow-lg">
+      <div className="flex flex-col md:flex-row items-center justify-between bg-yellow-400 dark:bg-gray-800 p-6 md:p-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12 rounded-lg shadow-lg">
       <div className="flex flex-col justify-center md:w-1/2">
             <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 dark:text-white">
-              All <span className="text-yellow-400">INDIA</span> Delivery
+              All <span className="text-green-600">INDIA</span> Delivery
             </h1>
             <p className="text-base lg:text-xl text-gray-700 dark:text-gray-200 mt-2">
               We deliver threshers all over{" "}

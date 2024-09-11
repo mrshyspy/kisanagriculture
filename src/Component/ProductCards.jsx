@@ -22,13 +22,13 @@ const ProductCard = () => {
   };
 
   return (
-    <div ref={topRef} className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-yellow-100 to-green-100">
+    <div ref={topRef} className="container mx-auto py-8 px-6 sm:px-10 lg:px-12 bg-gradient-to-br from-yellow-100 to-green-100">
       {/* Responsive Grid Layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {threshers.map((machine, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 sm:shadow-2xl sm:hover:scale-105 sm:hover:shadow-2xl hover:shadow-xl hover:scale-105"
+            className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 sm:shadow-2xl sm:hover:scale-105 sm:hover:shadow-2xl hover:shadow-xl hover:scale-105"
           >
             <Link to={`/${machine.productId}`} className="block">
               <div className="relative">

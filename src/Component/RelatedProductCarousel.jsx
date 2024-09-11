@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import threshers from "./Threshers";
+import { GreenModernButtonInline } from "../components/green-modern-button-inline";
 
 const CarouselComponent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -130,9 +131,10 @@ const CarouselComponent = () => {
                     </div> */}
                   </div>
                   <div className="text-center pb-6">
-                      <button className="bg-white border border-gray-300 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
+                      {/* <button className="bg-white border border-gray-300 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
                         Know More →
-                      </button>
+                      </button> */}
+                      <GreenModernButtonInline/>
                     </div>
                 </Link>
               </div>

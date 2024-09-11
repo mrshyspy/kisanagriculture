@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import threshers from "./Threshers";
 
-const VideoList = () => {
+export default function VideoList() {
   const [showAll, setShowAll] = useState(false);
 
   const videoUrl = "https://www.youtube.com/embed/DHCSpVVPnp0?si=7Ik3TBs6Xa_IWauo";
@@ -11,12 +12,12 @@ const VideoList = () => {
   };
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">Product Videos</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {threshers.slice(0, showAll ? threshers.length : (window.innerWidth >= 1024 ? 3 : 2)).map((thresher, index) => (
-          <div key={index} className="bg-white p-2 rounded-lg ">
-            <div className="relative" style={{ paddingTop: '56.25%' }}>
+    <div className="container mx-auto px-4 py-12">
+      <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">Product Videos</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {threshers.slice(0, showAll ? threshers.length : (typeof window !== 'undefined' && window.innerWidth >= 1024 ? 3 : 2)).map((thresher, index) => (
+          <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <div className="relative pb-[56.25%]">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src={videoUrl}
@@ -27,24 +28,28 @@ const VideoList = () => {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className="mt-2 text-center">
-              <h2 className="text-base sm:text-base md:text-lg lg:text-lg font-normal text-gray-800 p-2">{thresher.ModelName}</h2>
+            <div className="p-4">
+              <h2 className="text-lg font-semibold text-gray-800 text-center">{thresher.ModelName}</h2>
             </div>
           </div>
         ))}
       </div>
       {!showAll && (
-        <div className="mt-6 text-center">
-          <button
-            onClick={handleShowMore}
-            className="bg-green-600 text-white py-2 px-4 rounded-full hover:bg-green-700"
-          >
-            Load More...
-          </button>
+        <div className="mt-12 text-center relative">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-300"></div>
+          </div>
+          <div className="relative">
+            <button
+              onClick={handleShowMore}
+              className="inline-flex items-center px-6 py-3 bg-white border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-300"
+            >
+              Load More
+              <ChevronDown className="ml-2 h-4 w-4" />
+            </button>
+          </div>
         </div>
       )}
     </div>
   );
-};
-
-export default VideoList;
+}

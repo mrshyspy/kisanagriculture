@@ -51,7 +51,7 @@ const ProductCard = () => {
                         className="flex items-center justify-between"
                       >
                         <span className="font-medium capitalize">{key}:</span>
-                        <span className="bg-gray-100 px-2 py-1 rounded-full">
+                        <span className="bg-gray-100 px-3 py-1 rounded-full">
                           {value}
                         </span>
                       </div>
@@ -67,7 +67,7 @@ const ProductCard = () => {
                     onClick={handleVideoClick}
                   >
                     <Play className="w-4 h-4" /> {/* Icon */}
-                    <span className="ml-2">Watch Video</span>{" "}
+                    <span className="ml-3">Watch Video</span>{" "}
                     {/* Text with no margin change */}
                   </button>
 

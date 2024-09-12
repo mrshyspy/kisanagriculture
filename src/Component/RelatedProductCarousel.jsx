@@ -39,7 +39,6 @@ const CarouselComponent = () => {
 
   return (
     <div className="relative md:px-12 w-full">
-    
       <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold mt-16 mb-4 text-gray-800">
         Related Products
       </h2>
@@ -69,7 +68,7 @@ const CarouselComponent = () => {
       </button>
 
       {/* Carousel Items */}
-      <div className="relative overflow-x-scroll scrollbar-hide ">
+      <div className="relative overflow-x-scroll scrollbar-hide touch-pan-x">
         <div
           className="flex transition-transform duration-300 ease-in-out"
           style={{
@@ -95,47 +94,10 @@ const CarouselComponent = () => {
                     <p className="text-lg font-semibold mb-1 text-center">
                       {machine.ModelName}
                     </p>
-                    {/* <div className="text-sm text-gray-600 mb-4">
-                      <div className="flex justify-between mb-1">
-                        <span>
-                          <strong>Capacity:</strong>
-                        </span>
-                        <span className="text-center w-full">
-                          {machine.details.specification.capacity}
-                        </span>
-                      </div>
-                      <div className="flex justify-between mb-1">
-                        <span>
-                          <strong>Power:</strong>
-                        </span>
-                        <span className="text-center w-full">
-                          {machine.details.specification.power}
-                        </span>
-                      </div>
-                      <div className="flex justify-between mb-1">
-                        <span>
-                          <strong>Weight:</strong>
-                        </span>
-                        <span className="text-center w-full">
-                          {machine.details.specification.weight}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>
-                          <strong>Dimensions:</strong>
-                        </span>
-                        <span className="text-center w-full">
-                          {machine.details.specification.dimensions}
-                        </span>
-                      </div>
-                    </div> */}
                   </div>
                   <div className="text-center pb-6">
-                      {/* <button className="bg-white border border-gray-300 text-green-600 px-4 py-2 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300">
-                        Know More →
-                      </button> */}
-                      <GreenModernButtonInline/>
-                    </div>
+                    <GreenModernButtonInline />
+                  </div>
                 </Link>
               </div>
             </div>

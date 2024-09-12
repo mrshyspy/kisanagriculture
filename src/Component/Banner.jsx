@@ -3,14 +3,14 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 function Banner() {
   return (
-    <div className=" container mx-auto py-8 px-6 sm:px-8 lg:px-12">
+    <div className="container mx-auto py-8 px-6 sm:px-8 lg:px-12">
       <div className="flex flex-col md:flex-row items-stretch justify-center space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
-        <div className="mb-4 flex flex-col md:flex-row items-center justify-between bg-yellow-400 dark:bg-gray-800 p-6 md:p-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12 rounded-lg shadow-lg">
+        <div className="flex flex-col md:flex-row items-center justify-between bg-yellow-400 dark:bg-gray-800 p-6 md:p-8 lg:p-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12 rounded-lg shadow-lg">
           <div className="flex flex-col justify-center md:w-1/2">
-            <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 dark:text-white">
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 dark:text-white">
               All <span className="text-green-600">INDIA</span> Delivery
             </h1>
-            <p className="text-base lg:text-xl text-gray-700 dark:text-gray-200 mt-2">
+            <p className="text-base lg:text-lg xl:text-xl text-gray-700 dark:text-gray-200 mt-2">
               We deliver threshers all over{" "}
               <span className="font-extrabold">INDIA</span>
             </p>
@@ -31,22 +31,12 @@ function Banner() {
             />
           </div>
         </div>
-        <div className="md:w-4/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 bg-yellow-50 dark:bg-yellow-400 flex flex-col justify-center relative rounded-lg shadow-lg">
-          <div className="flex flex-col justify-center">
-            {/* <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 dark:text-gray-900">
-              Game Console
-            </h1>
-            <p className="text-base lg:text-xl text-gray-700 dark:text-gray-800 mt-2">
-              Save Upto <span className="font-extrabold">30%</span>
-            </p> */}
-          </div>
-          <div className="flex justify-end md:absolute md:bottom-4 md:right-4 lg:bottom-0 lg:right-0">
-            <img
-              src="https://i.imgur.com/6C7cfxi.jpeg"
-              alt="Game Console"
-              className="md:w-20 md:h-20 lg:w-full lg:h-full rounded-lg"
-            />
-          </div>
+        <div className="md:w-4/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+          <img
+            src="https://i.imgur.com/6C7cfxi.jpeg"
+            alt="img"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </div>

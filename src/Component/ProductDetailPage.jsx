@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Breadcrumbs from "./Breadcrumb";
 import { useParams } from "react-router-dom";
-// import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
-import { Phone, WhatsApp } from 'lucide-react';
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 import RelatedProductCarouselComponent from "./RelatedProductCarousel";
 
@@ -154,14 +153,14 @@ function ProductDetailPage({ threshers }) {
                 href="tel:+919828719163"
                 className="flex bg-green-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105"
               >
-                <Phone className="mr-3 sm:mr-4 text-white text-lg sm:text-xl md:text-2xl" />
+                <FaPhoneAlt className="mr-3 sm:mr-4 text-white text-lg sm:text-xl md:text-2xl" />
                 Call Now
               </a>
               <a
                 href="https://wa.me/+917665373702"
                 className="flex items-center bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105"
               >
-                <WhatsApp className="mr-3 sm:mr-4 text-green-600 text-lg sm:text-xl md:text-2xl" />
+                <FaWhatsapp className="mr-3 sm:mr-4 text-green-600 text-lg sm:text-xl md:text-2xl" />
                 Message Us
               </a>
             </div>
@@ -206,29 +205,6 @@ function ProductDetailPage({ threshers }) {
         </div>
 
         <RelatedProductCarouselComponent />
-        {/* <CallToActions /> */}
-        <div className="bg-green-600 p-3 sm:p-3 mb-6 rounded-full shadow-md max-w-full sm:max-w-lg mx-4 sm:mx-auto">
-          <ul className="flex justify-around  text-xl sm:text-2xl">
-            <li>
-              <a
-                href="https://wa.me/+917665373702"
-                className="flex items-center text-white"
-              >
-                <WhatsApp className="mr-3 sm:mr-4 text-white" />
-                Message Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="tel:+919828719163"
-                className="flex items-center text-white"
-              >
-                <Phone className="mr-3 sm:mr-4 text-white" />
-                Call Now
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
     </>
   );

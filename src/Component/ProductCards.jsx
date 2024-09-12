@@ -55,7 +55,7 @@ const ProductCard = () => {
                         <span className="font-medium capitalize pl-4 ">
                           {key}:
                         </span>
-                        <span className=" px-2 pr-4 py-1 rounded-full">
+                        <span className=" px-2 pr-4  rounded-full">
                           {value}
                         </span>
                       </div>

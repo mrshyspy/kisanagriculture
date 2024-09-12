@@ -64,7 +64,7 @@ const ProductCard = () => {
                 </div>
               </div>
               <div className="text-center pb-10 pt-4">
-                <div className="flex justify-center gap-4">
+                <div className="flex justify-center gap-5">
                   <button
                     className="bg-white border border-gray-300 text-green-600 px-4 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300"
                     onClick={handleVideoClick}

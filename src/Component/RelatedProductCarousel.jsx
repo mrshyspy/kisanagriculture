@@ -140,7 +140,7 @@ const CarouselComponent = () => {
       <div
         className="relative overflow-x-scroll scrollbar-hide touch-pan-x"
         ref={carouselRef}
-        style={{ touchAction: 'pan-x' }}
+        style={{ touchAction: 'pan-x pan-y' }}
       >
         <div className="flex transition-transform duration-300 ease-in-out">
           {threshers.map((machine, index) => (

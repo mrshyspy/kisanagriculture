@@ -3,7 +3,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 function Banner() {
   return (
-    <div className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-gray-100">
+    <div className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-gray-100 shadow-lg">
       <div className="flex flex-col md:flex-row items-stretch justify-center space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
         <div className="flex flex-col md:flex-row items-center justify-between bg-yellow-400 dark:bg-gray-800 p-6 md:p-8 lg:p-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12 rounded-lg shadow-lg">
           <div className="flex flex-col justify-center md:w-1/2">

@@ -19,8 +19,8 @@ const HomePage = () => {
       <Hero />
       <ProductCard />
       <Banner />
-      <Banners />
       <ProductVideos />
+      <Banners />
       <CallToActions />
       <Map />
     </>

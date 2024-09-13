@@ -66,7 +66,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to="/contact-us"
-                    className="text-gray-300 text-xs sm:text-sm hover:text-green-600 hover:underline transition"
+                    className="text-gray-300 text-sm hover:text-green-600 hover:underline transition"
                   >
                     Contact Us
                   </Link>
@@ -74,7 +74,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to="/gallery"
-                    className="text-gray-300 text-xs sm:text-sm hover:text-green-600 hover:underline transition"
+                    className="text-gray-300 text-sm hover:text-green-600 hover:underline transition"
                   >
                     Gallery
                   </Link>
@@ -91,7 +91,7 @@ const Footer = () => {
                   <li key={thresher.productId}>
                     <Link
                       to={`/${thresher.productId}`}
-                      className="text-gray-300 text-xs sm:text-sm hover:text-green-600 hover:underline transition"
+                      className="text-gray-300 text-sm hover:text-green-600 hover:underline transition"
                     >
                       {thresher.ModelName}
                     </Link>
@@ -106,12 +106,12 @@ const Footer = () => {
               <h3 className="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Contact Us</h3>
               <ul className="space-y-1">
                 <li className="flex items-start">
-                  <MapPin className="mr-3 h-5 w-5 sm:h-8 sm:w-8 text-green-600" />
+                  <MapPin className="mr-3 h-4 w-4 sm:h-8 sm:w-8 text-green-600" />
                   <a
                     href="https://www.google.com/maps/place/Kisan+Agriculture+Workshop/@27.5831875,76.8191875,2474m/data=!3m1!1e3!4m6!3m5!1s0x397294b04d338b2b:0xcc9c3f44187307c!8m2!3d27.5831875!4d76.8191875!16s%2Fg%2F11l6tm33d1?entry=ttu&g_ep=EgoyMDI0MDkwOC4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300 text-xs sm:text-sm hover:text-green-600 transition-colors"
+                    className="text-gray-300 text-sm hover:text-green-600 transition-colors"
                   >
                     Ramgarh-Govindgarh Road, Ramgarh, Alwar Distt. Rajasthan
                   </a>
@@ -121,14 +121,14 @@ const Footer = () => {
                   <div>
                     <a
                       href="tel:+919828719163"
-                      className="text-gray-300 text-xs sm:text-sm hover:text-green-600 transition-colors"
+                      className="text-gray-300 text-sm hover:text-green-600 transition-colors"
                     >
                       +91 9828-719163
                     </a>{" "}
                     ,{" "}
                     <a
                       href="tel:+919929877244"
-                      className="text-gray-300 text-xs sm:text-sm hover:text-green-600 transition-colors"
+                      className="text-gray-300 text-sm hover:text-green-600 transition-colors"
                     >
                       +91 9929-877244
                     </a>
@@ -138,7 +138,7 @@ const Footer = () => {
                   <Mail className="mr-3 h-4 w-4 text-green-600" />
                   <a
                     href="mailto:Kisanagriculture.com@gmail.com"
-                    className="text-gray-300 text-xs sm:text-sm hover:text-green-600 transition-colors"
+                    className="text-gray-300 text-sm hover:text-green-600 transition-colors"
                   >
                     Kisanagriculture.com@gmail.com
                   </a>

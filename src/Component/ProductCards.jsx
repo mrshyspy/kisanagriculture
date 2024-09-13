@@ -55,7 +55,7 @@ const ProductCard = () => {
                         <span className="font-medium capitalize pl-4 ">
                           {key}:
                         </span>
-                        <span className=" px-2 pr-4  rounded-full">
+                        <span className=" px-2 pr-4 rounded-full">
                           {value}
                         </span>
                       </div>
@@ -82,16 +82,16 @@ const ProductCard = () => {
       {/* Video Modal */}
       {showVideo && (
         <div className="fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-4xl relative">
+          <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-screen-lg">
             <button
-              className="absolute top-4 right-4 text-white bg-red-500 hover:bg-red-600 rounded-full p-2 transition-colors duration-300"
+              className="absolute top-4 right-4 text-white bg-red-500 hover:bg-red-600 rounded-full p-2 transition-colors duration-300 z-10"
               onClick={closeModal}
             >
               <IoClose size={24} />
             </button>
-            <div className="aspect-w-16 aspect-h-9">
+            <div className="relative w-full pt-[56.25%]"> {/* 16:9 Aspect Ratio */}
               <iframe
-                className="w-full h-full"
+                className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/oQUJiOlrc_0?si=d0IgDUm5GKFVbmEV"
                 title="YouTube video player"
                 frameBorder="0"

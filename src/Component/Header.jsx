@@ -45,7 +45,7 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-lg">
-      <div className="flex items-center justify-between px-4 pb-1 pt-1 overflow-auto">
+      <div className="flex items-center justify-between px-4 pb-1 pt-1">
         <div className="flex items-center">
           <Link to="/" className="flex-none">
             <div className="relative w-full h-16 sm:h-20">
@@ -86,7 +86,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="w-full bg-gray-100 shadow-sm border-b-gray-300 border-b-2 overflow-auto">
+      <div className="w-full bg-gray-100 shadow-sm border-b-gray-300 border-b-2">
         <nav>
           <ul className="flex justify-center text-black uppercase text-xs sm:text-sm font-medium">
             <li className="px-2 py-1 sm:px-4 sm:py-2">

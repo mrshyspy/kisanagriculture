@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSwipeable } from 'react-swipeable';
 
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,6 +41,30 @@ const Carousel = () => {
     }
   ];
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => nextSlide(),
+    onSwipedRight: () => prevSlide(),
+    swipeDuration: 300,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true
+  });
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % items.length);
@@ -58,7 +83,10 @@ const Carousel = () => {
 
   return (
     <div className="relative w-full h-[30vh] sm:h-[40vh] md:h-[50vh] overflow-hidden">
-      <div className="relative w-full h-full flex overflow-hidden">
+      <div
+        className="relative w-full h-full flex overflow-hidden"
+        {...handlers}
+      >
         <div className="flex flex-nowrap transition-transform duration-1000" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
           {items.map((item, index) => (
             <div

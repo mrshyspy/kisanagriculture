@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Breadcrumbs from "./Breadcrumb";
 import { useParams } from "react-router-dom";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { Phone, MessageSquare } from "lucide-react";
 import RelatedProductCarouselComponent from "./RelatedProductCarousel";
-
 function ProductDetailPage({ threshers }) {
   const images = [
     "https://i.imgur.com/nkjprq9.png",
@@ -168,14 +168,14 @@ function ProductDetailPage({ threshers }) {
                 href="tel:+919828719163"
                 className="flex bg-green-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105"
               >
-                <FaPhoneAlt className="mr-3 sm:mr-4 text-white text-lg sm:text-xl md:text-2xl" />
+                <Phone className="mr-2 sm:mr-3 text-white text-lg sm:text-xl md:text-xl" />
                 Call Now
               </a>
               <a
                 href="https://wa.me/+917665373702"
                 className="flex items-center bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105"
               >
-                <FaWhatsapp className="mr-3 sm:mr-4 text-green-600 text-lg sm:text-xl md:text-2xl" />
+                <MessageSquare className="mr-2 sm:mr-3 text-green-600 text-lg sm:text-xl md:text-xl" />
                 Message Us
               </a>
             </div>

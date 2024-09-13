@@ -46,8 +46,8 @@ function TechnicalSpecificationsPage() {
                   key={index}
                   className={`border-b border-gray-300 ${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}`}
                 >
-                  <td className="px-4 py-3 border-r border-gray-300 text-sm md:text-base">{spec.label}</td>
-                  <td className="px-4 py-3 border-r border-gray-300 text-sm md:text-base">{spec.value}</td>
+                  <td className="px-4 py-3 border-r border-gray-300 text-xs md:text-base">{spec.label}</td>
+                  <td className="px-4 py-3 border-r border-gray-300 text-xs md:text-base">{spec.value}</td>
                 </tr>
               ))}
             </tbody>
@@ -56,7 +56,7 @@ function TechnicalSpecificationsPage() {
 
         <div className="bg-gray-100 p-6 shadow-lg mb-12">
           <h3 className="text-lg md:text-xl font-semibold mb-4">Features</h3>
-          <ul className="text-center text-sm md:text-base" style={{ listStyleType: 'none', paddingLeft: '0' }}>
+          <ul className="text-center text-xs md:text-base" style={{ listStyleType: 'none', paddingLeft: '0' }}>
             {features.map((feature, index) => (
               <li key={index} className="mb-2">{feature}</li>
             ))}

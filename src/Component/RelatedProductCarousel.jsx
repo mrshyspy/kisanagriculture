@@ -115,20 +115,22 @@ const CarouselComponent = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className={`absolute top-1/2 transform -translate-y-1/2 left-2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 z-10 ${
-          !canScrollLeft ? "opacity-50 cursor-not-allowed" : ""
+        className={`absolute top-1/2 transform -translate-y-1/2 left-2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300 z-10 ${
+          currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
         }`}
-        disabled={!canScrollLeft}
+        disabled={currentIndex === 0}
         aria-label="Previous Slide"
       >
         <FaChevronLeft />
       </button>
       <button
         onClick={nextSlide}
-        className={`absolute top-1/2 transform -translate-y-1/2 right-2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 z-10 ${
-          !canScrollRight ? "opacity-50 cursor-not-allowed" : ""
+        className={`absolute top-1/2 transform -translate-y-1/2 right-2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300 z-10 ${
+          currentIndex >= threshers.length - itemsPerPage
+            ? "opacity-50 cursor-not-allowed"
+            : ""
         }`}
-        disabled={!canScrollRight}
+        disabled={currentIndex >= threshers.length - itemsPerPage}
         aria-label="Next Slide"
       >
         <FaChevronRight />

@@ -86,7 +86,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="w-full bg-green-100 shadow-sm border-b-gray-300 border-b-2">
+      <div className="w-full bg-gray-100 shadow-sm border-b-gray-300 border-b-2">
         <nav>
           <ul className="flex justify-center text-black uppercase text-xs sm:text-sm font-medium">
             <li className="px-2 py-1 sm:px-4 sm:py-2">

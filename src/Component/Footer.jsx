@@ -71,7 +71,7 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4 text-gray-200">Contact Us</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <MapPin className="mr-3 h-6 w-6 text-green-400" />
+                  <MapPin className="mr-3 h-10 w-10 text-green-400" />
                   <a
                     href="https://www.google.com/maps/place/Kisan+Agriculture+Workshop/@27.5831875,76.8191875,2474m/data=!3m1!1e3!4m6!3m5!1s0x397294b04d338b2b:0xcc9c3f44187307c!8m2!3d27.5831875!4d76.8191875!16s%2Fg%2F11l6tm33d1?entry=ttu&g_ep=EgoyMDI0MDkwOC4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"

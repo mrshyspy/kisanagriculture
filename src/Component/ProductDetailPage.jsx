@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Breadcrumbs from "./Breadcrumb";
 import { useParams } from "react-router-dom";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
-
 import RelatedProductCarouselComponent from "./RelatedProductCarousel";
 
 function ProductDetailPage({ threshers }) {
@@ -10,8 +9,9 @@ function ProductDetailPage({ threshers }) {
     "https://i.imgur.com/nkjprq9.png",
     "https://i.imgur.com/IEAum1D.jpeg",
     "https://i.imgur.com/5haWYRc.jpeg",
-    "https://i.imgur.com/IEAum1D.jpeg",
+    "video", // Identifier for the YouTube video
   ];
+
   const { ProductId } = useParams();
   const [selectedImage, setSelectedImage] = useState(images[0]);
   const [isZoomed, setIsZoomed] = useState(false);
@@ -19,7 +19,6 @@ function ProductDetailPage({ threshers }) {
   const thresher = threshers.find((t) => t.productId === ProductId);
 
   useEffect(() => {
-    // Scroll to the top of the page when the component is mounted or when ProductId changes
     window.scrollTo(0, 0);
   }, [ProductId]);
 
@@ -66,13 +65,27 @@ function ProductDetailPage({ threshers }) {
               onMouseEnter={() => setIsZoomed(true)}
               onMouseLeave={() => setIsZoomed(false)}
             >
-              <img
-                src={selectedImage}
-                alt="Selected"
-                className={`object-cover w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 transition-transform duration-500 ${
-                  isZoomed ? "scale-110" : "scale-100"
-                }`}
-              />
+              {/* Conditionally render video or image */}
+              {selectedImage === "video" ? (
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/M-ob-0Mz8NY?si=RAxapQPvSy_iGe6Z"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80"
+                />
+              ) : (
+                <img
+                  src={selectedImage}
+                  alt="Selected"
+                  className={`object-cover w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 transition-transform duration-500 ${
+                    isZoomed ? "scale-110" : "scale-100"
+                  }`}
+                />
+              )}
               {/* Navigation arrows */}
               <button
                 className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300"
@@ -127,7 +140,9 @@ function ProductDetailPage({ threshers }) {
               {images.map((img, index) => (
                 <img
                   key={index}
-                  src={img}
+                  src={
+                    img !== "video" ? img : "https://i.imgur.com/IEAum1D.jpeg"
+                  } // Placeholder for video thumbnail
                   alt={`Thumbnail ${index + 1}`}
                   className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 cursor-pointer rounded-lg border-b-4 ${
                     selectedImage === img

@@ -40,7 +40,7 @@ const ProductCard = () => {
                   alt={machine.ModelName}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <h3 className="absolute bottom-4 left-4 text-white text-lg sm:text-xl font-bold">
+                <h3 className="absolute bottom-4 left-4 text-white text-lg sm:text-xl font-bold ">
                   {machine.ModelName}
                 </h3>
               </div>

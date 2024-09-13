@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CarouselComponent from "./CarouselComponent";
 import CallToActions from "./CallToAction";
 import Banner from "./Banner";
@@ -8,19 +8,21 @@ import ProductCard from "./ProductCards";
 import Map from "./Map";
 import Hero from "./Hero";
 
-
 const HomePage = () => {
+  useEffect(() => {
+    // Scroll to the top of the page when the component is mounted or when ProductId changes
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <CarouselComponent />
-      <Hero/>
+      <Hero />
       <ProductCard />
       <Banner />
-      <Banners/>
+      <Banners />
       <ProductVideos />
       <CallToActions />
-      <Map/>
-      
+      <Map />
     </>
   );
 };

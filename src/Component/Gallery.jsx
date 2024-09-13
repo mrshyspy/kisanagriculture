@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { FaTimes } from 'react-icons/fa';
+import React, { useState, useEffect, useRef } from 'react';
+import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const images = [
   "https://i.imgur.com/xCvyXTB.jpeg",
@@ -20,7 +20,8 @@ const images = [
 const Gallery = () => {
   const [loading, setLoading] = useState(Array(images.length).fill(true));
   const [progress, setProgress] = useState(Array(images.length).fill(0));
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const touchStartX = useRef(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -53,25 +54,64 @@ const Gallery = () => {
     });
   }, []);
 
-  const handleImageClick = (src) => {
-    setSelectedImage(src);
+  const handleImageClick = (index) => {
+    setSelectedImageIndex(index);
   };
 
   const handleCloseModal = () => {
-    setSelectedImage(null);
+    setSelectedImageIndex(null);
+  };
+
+  const handlePrev = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : images.length - 1
+    );
+  };
+
+  const handleNext = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex < images.length - 1 ? prevIndex + 1 : 0
+    );
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX.current - touchEndX;
+
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+
+    touchStartX.current = null;
+  };
+
+  const handlePhotoClick = (e) => {
+    e.stopPropagation(); // Prevent closing the modal when clicking on the photo
   };
 
   return (
     <div className="p-6 bg-white">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-800 font-extrabold mb-6 text-center">Photo Gallery</h2>
-      
+      <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-800 font-extrabold mb-6 text-center">
+        Photo Gallery
+      </h2>
+
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
         {images.map((src, index) => (
           <div
             key={index}
             className="relative overflow-hidden rounded-lg shadow-lg"
             style={{ paddingBottom: '56.25%' }}
-            onClick={() => handleImageClick(src)}
+            onClick={() => handleImageClick(index)}
           >
             {loading[index] && (
               <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
@@ -93,22 +133,37 @@ const Gallery = () => {
         ))}
       </div>
 
-      {selectedImage && (
+      {selectedImageIndex !== null && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
           onClick={handleCloseModal}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
-          <div className="relative max-w-full max-h-full p-4">
+          <div className="relative max-w-full max-h-full p-4" onClick={e => e.stopPropagation()}>
             <img
-              src={selectedImage}
+              src={images[selectedImageIndex]}
               alt="Selected"
               className="w-full h-auto max-h-screen object-contain"
+              onClick={handlePhotoClick} // Prevent modal close when clicking on photo
             />
             <button
-              className="absolute top-4 right-4 text-white"
+              className="absolute top-4 right-4 text-red-400 z-60"
               onClick={handleCloseModal}
             >
               <FaTimes size={36} />
+            </button>
+            <button
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white z-60"
+              onClick={handlePrev}
+            >
+              <FaChevronLeft size={36} />
+            </button>
+            <button
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white z-60"
+              onClick={handleNext}
+            >
+              <FaChevronRight size={36} />
             </button>
           </div>
         </div>

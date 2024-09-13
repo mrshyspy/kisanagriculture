@@ -19,7 +19,7 @@ function Banner() {
               className="mt-4 inline-flex items-center bg-green-600 text-white  md:mr-40 py-1.5 text-sm md:text-base rounded-full hover:bg-green-700 hover:text-white focus:outline-none  justify-center  transition duration-300 ease-in-out focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
             >
               <FaPhoneAlt className="mr-2" />
-              Contact Us Now
+              Contact Us
             </a>
           </div>
 

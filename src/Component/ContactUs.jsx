@@ -22,7 +22,7 @@ const ContactUs = () => {
           ></iframe>
         </div>
         <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
-          <div className="relative bg-gray-100 rounded-lg px-4 py-8 sm:px-6 sm:py-12 lg:px-12 lg:py-16 shadow-md border border-gray-300 backdrop-blur-md -mt-16 md:-mt-20 lg:-mt-32">
+          <div className="relative bg-green-100 rounded-lg px-4 py-8 sm:px-6 sm:py-12 lg:px-12 lg:py-16 shadow-md border border-gray-300 backdrop-blur-md -mt-16 md:-mt-20 lg:-mt-32">
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
                 Get in Touch
@@ -32,7 +32,7 @@ const ContactUs = () => {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-              <div className="bg-gray-100 rounded-lg p-4 sm:p-6">
+              <div className="bg-green-100 rounded-lg p-4 sm:p-6">
                 <ul className="space-y-4 sm:space-y-6">
                   <li className="flex items-start space-x-4">
                     <div className="flex h-10 w-10 sm:h-12 sm:w-12 text-green-600 items-center justify-center">
@@ -62,7 +62,7 @@ const ContactUs = () => {
                   </li>
                 </ul>
               </div>
-              <div className="bg-gray-100 rounded-lg p-4 sm:p-6">
+              <div className="bg-green-100 rounded-lg p-4 sm:p-6">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-6">
                   Follow Us
                 </h3>

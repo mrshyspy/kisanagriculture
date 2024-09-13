@@ -88,7 +88,7 @@ function ProductDetailPage({ threshers }) {
               )}
               {/* Navigation arrows */}
               <button
-                className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300"
+                className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300"
                 onClick={() => {
                   const currentIndex = images.indexOf(selectedImage);
                   const nextIndex =
@@ -112,7 +112,7 @@ function ProductDetailPage({ threshers }) {
                 </svg>
               </button>
               <button
-                className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300"
+                className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300"
                 onClick={() => {
                   const currentIndex = images.indexOf(selectedImage);
                   const nextIndex = (currentIndex + 1) % images.length;
@@ -195,7 +195,7 @@ function ProductDetailPage({ threshers }) {
                 <tr
                   key={index}
                   className={`border-b border-gray-300 ${
-                    index % 2 === 0 ? "bg-gray-100" : "bg-white"
+                    index % 2 === 0 ? "bg-green-100" : "bg-white"
                   }`}
                 >
                   <td className="px-4 py-3 border-r border-gray-300">
@@ -210,7 +210,7 @@ function ProductDetailPage({ threshers }) {
           </table>
         </div>
 
-        <div className="bg-gray-100 p-6 shadow-lg mb-12">
+        <div className="bg-green-100 p-6 shadow-lg mb-12">
           <h3 className="text-2xl font-semibold mb-4">Features</h3>
           <ul className="list-disc list-inside">
             {features.map((feature, index) => (

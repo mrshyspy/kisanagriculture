@@ -115,7 +115,7 @@ const CarouselComponent = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className={`absolute top-1/2 transform -translate-y-1/2 left-2 bg-green-600  text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300 z-10 ${
+        className={`absolute top-1/2 transform -translate-y-1/2 left-2 bg-green-600  text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300 z-10 ${
           currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
         }`}
         disabled={currentIndex === 0}
@@ -125,7 +125,7 @@ const CarouselComponent = () => {
       </button>
       <button
         onClick={nextSlide}
-        className={`absolute top-1/2 transform -translate-y-1/2 right-2 bg-green-600  text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-400 transition-all duration-300 z-10 ${
+        className={`absolute top-1/2 transform -translate-y-1/2 right-2 bg-green-600  text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300 z-10 ${
           currentIndex >= threshers.length - itemsPerPage
             ? "opacity-50 cursor-not-allowed"
             : ""

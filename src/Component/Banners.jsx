@@ -7,7 +7,7 @@ export default function Banners() {
     {
       title: "Heavy Duty",
       subtitle: "Maximize your efficiency with our high-performance threshers.",
-      bgClass: "from-green-400 to-emerald-600",
+      bgClass: "from-green-600 to-emerald-600",
       icon: "🚜",
     },
     {
@@ -43,7 +43,7 @@ export default function Banners() {
   ];
 
   return (
-    <div className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-gray-100 shadow-lg">
+    <div className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-green-100 shadow-lg">
       <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gray-800 dark:text-gray-200 mb-12 animate-fade-in-down">
         Quality Before Quantity
       </h2>

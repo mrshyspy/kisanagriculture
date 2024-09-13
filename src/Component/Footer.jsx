@@ -20,7 +20,7 @@ const Footer = () => {
                 />
               </Link>
               <p className="text-sm text-gray-400">
-                We manufacture a wide range of threshers including single fan, double fan, and three fan models.
+                We manufacture a wide range of agricultural equipment including thresher machines, chaff cutter etc.
               </p>
             </div>
             <div className="pt-6">

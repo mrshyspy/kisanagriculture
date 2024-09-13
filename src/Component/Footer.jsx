@@ -61,7 +61,7 @@ const Footer = () => {
           {/* Footer Widget 2 */}
           <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8">
             <div className="footer-widget">
-              <h3 className="text-lg font-semibold mb-4 text-gray-200">Quick Links</h3>
+              <h3 className="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Quick Links</h3>
               <ul className="list-none space-y-1">
                 <li>
                   <Link
@@ -85,7 +85,7 @@ const Footer = () => {
           {/* Footer Widget 3 */}
           <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8">
             <div className="footer-widget">
-              <h3 className="text-lg font-semibold mb-4 text-gray-200">Categories</h3>
+              <h3 className="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Categories</h3>
               <ul className="list-none space-y-1">
                 {threshers.map((thresher) => (
                   <li key={thresher.productId}>
@@ -103,7 +103,7 @@ const Footer = () => {
           {/* Footer Widget 4 */}
           <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8">
             <div className="footer-widget">
-              <h3 className="text-lg font-semibold mb-4 text-gray-200">Contact Us</h3>
+              <h3 className="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Contact Us</h3>
               <ul className="space-y-1">
                 <li className="flex items-start">
                   <MapPin className="mr-3 h-10 w-10 text-green-600" />

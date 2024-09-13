@@ -22,6 +22,7 @@ const Gallery = () => {
   const [progress, setProgress] = useState(Array(images.length).fill(0));
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -81,8 +82,8 @@ const Gallery = () => {
   const handleTouchEnd = (e) => {
     if (touchStartX.current === null) return;
 
-    const touchEndX = e.changedTouches[0].clientX;
-    const diffX = touchStartX.current - touchEndX;
+    touchEndX.current = e.changedTouches[0].clientX;
+    const diffX = touchStartX.current - touchEndX.current;
 
     if (Math.abs(diffX) > 50) {
       if (diffX > 0) {
@@ -93,6 +94,7 @@ const Gallery = () => {
     }
 
     touchStartX.current = null;
+    touchEndX.current = null;
   };
 
   const handlePhotoClick = (e) => {
@@ -109,7 +111,7 @@ const Gallery = () => {
         {images.map((src, index) => (
           <div
             key={index}
-            className="relative overflow-hidden rounded-lg shadow-lg"
+            className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out"
             style={{ paddingBottom: '56.25%' }}
             onClick={() => handleImageClick(index)}
           >
@@ -126,7 +128,7 @@ const Gallery = () => {
             <img
               src={src}
               alt={`Gallery Image ${index + 1}`}
-              className={`absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 ${loading[index] ? 'hidden' : 'block'}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform ${loading[index] ? 'hidden' : 'block'}`}
               loading="lazy"
             />
           </div>
@@ -144,26 +146,26 @@ const Gallery = () => {
             <img
               src={images[selectedImageIndex]}
               alt="Selected"
-              className="w-full h-auto max-h-screen object-contain"
+              className="w-full h-auto max-h-screen object-contain transition-transform duration-300 ease-in-out transform"
               onClick={handlePhotoClick} // Prevent modal close when clicking on photo
             />
             <button
               className="absolute top-4 right-4 text-red-400 z-60"
               onClick={handleCloseModal}
             >
-              <FaTimes size={36} />
+              <FaTimes size={24} />
             </button>
             <button
               className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white z-60"
               onClick={handlePrev}
             >
-              <FaChevronLeft size={36} />
+              <FaChevronLeft size={24} />
             </button>
             <button
               className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white z-60"
               onClick={handleNext}
             >
-              <FaChevronRight size={36} />
+              <FaChevronRight size={24} />
             </button>
           </div>
         </div>

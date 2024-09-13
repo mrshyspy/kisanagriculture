@@ -1,5 +1,6 @@
 import React from "react";
 import { MapPin, Phone, Mail } from "lucide-react";
+import {  FaYoutube, FaFacebook, FaInstagram } from "react-icons/fa";
 import threshers from "./Threshers";
 import { Link } from "react-router-dom";
 
@@ -22,12 +23,46 @@ const Footer = () => {
                 We manufacture a wide range of threshers including single fan, double fan, and three fan models.
               </p>
             </div>
+            <div className="pt-6">
+                <h3 className="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">
+                  Follow Us
+                </h3>
+                <div className="flex items-center gap-4 sm:gap-6">
+                  <a
+                    className="text-white hover:text-green-600"
+                    aria-label="Visit YouTube"
+                    href="https://www.youtube.com/c/KISANAgricultureWorkshop"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaYoutube className="h-6 w-6 sm:h-8 sm:w-8" />
+                  </a>
+                  <a
+                    className="text-white hover:text-green-600"
+                    aria-label="Visit Facebook"
+                    href="https://www.facebook.com/profile.php?id=100094649059141"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaFacebook className="h-6 w-6 sm:h-8 sm:w-8" />
+                  </a>
+                  <a
+                    className="text-white hover:text-green-600"
+                    aria-label="Visit Instagram"
+                    href="https://www.instagram.com/kisan_agriculture_workshop"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaInstagram className="h-6 w-6 sm:h-8 sm:w-8" />
+                  </a>
+                </div>
+              </div>
           </div>
           {/* Footer Widget 2 */}
           <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8">
             <div className="footer-widget">
               <h3 className="text-lg font-semibold mb-4 text-gray-200">Quick Links</h3>
-              <ul className="list-none space-y-2">
+              <ul className="list-none space-y-1">
                 <li>
                   <Link
                     to="/contact-us"
@@ -51,7 +86,7 @@ const Footer = () => {
           <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8">
             <div className="footer-widget">
               <h3 className="text-lg font-semibold mb-4 text-gray-200">Categories</h3>
-              <ul className="list-none space-y-2">
+              <ul className="list-none space-y-1">
                 {threshers.map((thresher) => (
                   <li key={thresher.productId}>
                     <Link
@@ -69,7 +104,7 @@ const Footer = () => {
           <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8">
             <div className="footer-widget">
               <h3 className="text-lg font-semibold mb-4 text-gray-200">Contact Us</h3>
-              <ul className="space-y-3">
+              <ul className="space-y-1">
                 <li className="flex items-start">
                   <MapPin className="mr-3 h-10 w-10 text-green-600" />
                   <a

@@ -1,5 +1,5 @@
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
-import { FaLinkedin, FaYoutube, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import {  FaYoutube, FaFacebook, FaInstagram } from "react-icons/fa";
 import { useEffect } from "react";
 const ContactUs = () => {
     useEffect(() => {

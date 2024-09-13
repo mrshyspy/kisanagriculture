@@ -29,29 +29,39 @@ const CarouselComponent = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Scroll event handler to detect and set the button state
+  // Function to update the scrollable state and current index
+  const updateScrollState = () => {
+    if (carouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+
+      // Enable/disable the left arrow based on scroll position
+      setCanScrollLeft(scrollLeft > 0);
+
+      // Add a buffer to handle rounding issues when close to the end
+      const buffer = 2; // Adjust this value if needed
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - buffer);
+
+      // Update the current index based on scroll position
+      const itemWidth = carouselRef.current.offsetWidth / itemsPerPage;
+      const newIndex = Math.round(scrollLeft / itemWidth);
+      setCurrentIndex(newIndex);
+    }
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-      if (carouselRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-
-        // Enable/disable the left arrow based on scroll position
-        setCanScrollLeft(scrollLeft > 0);
-
-        // Add a buffer to handle rounding issues when close to the end
-        const buffer = 2; // Adjust this value if needed
-        setCanScrollRight(scrollLeft < scrollWidth - clientWidth - buffer);
-      }
-    };
+    const handleScroll = () => updateScrollState();
+    const handleTouchMove = () => updateScrollState();
 
     const carousel = carouselRef.current;
     if (carousel) {
       carousel.addEventListener("scroll", handleScroll);
+      carousel.addEventListener("touchmove", handleTouchMove);
     }
 
     return () => {
       if (carousel) {
         carousel.removeEventListener("scroll", handleScroll);
+        carousel.removeEventListener("touchmove", handleTouchMove);
       }
     };
   }, []);
@@ -97,8 +107,7 @@ const CarouselComponent = () => {
     }
   };
 
-  const totalDots = Math.max(1, threshers.length - itemsPerPage+1);
-
+  const totalDots = Math.max(1, threshers.length - itemsPerPage + 1);
 
   return (
     <div className="relative md:px-12 w- mb-6">
@@ -176,7 +185,7 @@ const CarouselComponent = () => {
             aria-label={`Go to slide ${index + 1}`}
           >
             {index === currentIndex && (
-              <span className="absolute inset-0  rounded-full bg-green-600 opacity-50" />
+              <span className="absolute inset-0 rounded-full bg-green-600 opacity-50" />
             )}
           </button>
         ))}

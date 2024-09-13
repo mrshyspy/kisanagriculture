@@ -50,18 +50,15 @@ const CarouselComponent = () => {
 
   useEffect(() => {
     const handleScroll = () => updateScrollState();
-    const handleTouchMove = () => updateScrollState();
 
     const carousel = carouselRef.current;
     if (carousel) {
       carousel.addEventListener("scroll", handleScroll);
-      carousel.addEventListener("touchmove", handleTouchMove);
     }
 
     return () => {
       if (carousel) {
         carousel.removeEventListener("scroll", handleScroll);
-        carousel.removeEventListener("touchmove", handleTouchMove);
       }
     };
   }, []);
@@ -110,7 +107,7 @@ const CarouselComponent = () => {
   const totalDots = Math.max(1, threshers.length - itemsPerPage + 1);
 
   return (
-    <div className="relative md:px-12 w- mb-6">
+    <div className="relative md:px-12 w-full mb-6">
       <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold mt-16 mb-4 text-gray-800">
         Related Products
       </h2>
@@ -141,6 +138,7 @@ const CarouselComponent = () => {
       <div
         className="relative overflow-x-scroll scrollbar-hide touch-pan-x"
         ref={carouselRef}
+        style={{ touchAction: 'pan-x' }}
       >
         <div className="flex transition-transform duration-300 ease-in-out">
           {threshers.map((machine, index) => (

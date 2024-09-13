@@ -23,7 +23,7 @@ const ProductCard = () => {
   return (
     <div
       ref={topRef}
-      className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-yellow-100 to-gray-100"
+      className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-yellow-100 to-green-100"
     >
       {/* Responsive Grid Layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

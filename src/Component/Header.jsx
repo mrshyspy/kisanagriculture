@@ -62,7 +62,7 @@ const Header = () => {
                 rel="noopener noreferrer"
                 className="hover:underline text-gray-600"
               >
-                Ramgarh, (Alwar), Rajasthan
+                Ramgarh, Alwar, Rajasthan
               </a>
             </p>
           </div>

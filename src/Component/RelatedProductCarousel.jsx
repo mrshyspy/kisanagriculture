@@ -38,7 +38,7 @@ const CarouselComponent = () => {
       setCanScrollLeft(scrollLeft > 0);
 
       // Add a buffer to handle rounding issues when close to the end
-      const buffer = 2; // Adjust this value if needed
+      const buffer = 5; // Increased buffer value
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth - buffer);
 
       // Update the current index based on scroll position
@@ -48,6 +48,7 @@ const CarouselComponent = () => {
     }
   };
 
+  // Attach and detach scroll listener to update scroll state
   useEffect(() => {
     const handleScroll = () => updateScrollState();
 
@@ -56,12 +57,15 @@ const CarouselComponent = () => {
       carousel.addEventListener("scroll", handleScroll);
     }
 
+    // Call updateScrollState when itemsPerPage changes
+    updateScrollState();
+
     return () => {
       if (carousel) {
         carousel.removeEventListener("scroll", handleScroll);
       }
     };
-  }, []);
+  }, [itemsPerPage]); // Added itemsPerPage as a dependency
 
   // Function to handle next slide
   const nextSlide = () => {
@@ -140,7 +144,7 @@ const CarouselComponent = () => {
       <div
         className="relative overflow-x-scroll scrollbar-hide touch-pan-x"
         ref={carouselRef}
-        style={{ touchAction: 'pan-x pan-y' }}
+        style={{ touchAction: "pan-x pan-y" }}
       >
         <div className="flex transition-transform duration-300 ease-in-out">
           {threshers.map((machine, index) => (
@@ -173,7 +177,7 @@ const CarouselComponent = () => {
         </div>
       </div>
 
-      {/* Navigation Hints */}
+      {/* Navigation Dots */}
       <div className="flex justify-center space-x-2 mt-4">
         {Array.from({ length: totalDots }, (_, index) => (
           <button
@@ -183,11 +187,7 @@ const CarouselComponent = () => {
             } rounded-full transition-all duration-300 ease-in-out`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
-          >
-            {index === currentIndex && (
-              <span className="absolute inset-0 rounded-full bg-green-600 opacity-50" />
-            )}
-          </button>
+          />
         ))}
       </div>
     </div>

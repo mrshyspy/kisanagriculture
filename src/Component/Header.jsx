@@ -5,28 +5,22 @@ import threshers from "./Threshers";
 
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
   const dropdownRef = useRef(null);
 
   const handleMouseEnter = () => {
-    if (!isClicked) {
-      setDropdownOpen(true);
-    }
+    setDropdownOpen(true);
   };
 
   const handleMouseLeave = () => {
-    if (!isClicked) {
-      setDropdownOpen(false);
-    }
+    setDropdownOpen(false);
   };
 
   const handleClick = () => {
-    setIsClicked(!isClicked);
     setDropdownOpen(!dropdownOpen);
   };
 
   const handleClickDropDown = () => {
-    setDropdownOpen(false);
+    setDropdownOpen(false);  // Close the dropdown immediately after any item is clicked
   };
 
   // Close dropdown when clicking outside
@@ -107,7 +101,7 @@ const Header = () => {
               <button className="hover:text-green-600 transition-colors duration-300">
                 Our Products
               </button>
-              {(dropdownOpen || isClicked) && (
+              {dropdownOpen && (
                 <div className="absolute left-0 mt-2 w-48 sm:w-60 bg-white shadow-lg rounded-lg z-10">
                   <ul className="text-gray-800 font-medium text-sm">
                     {threshers.map((thresher, index) => (

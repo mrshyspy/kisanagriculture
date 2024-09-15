@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { FaTimes } from 'react-icons/fa';
+import React, { useState, useEffect, useRef } from "react";
+import { FaTimes } from "react-icons/fa";
 
 const images = [
   "https://i.imgur.com/xCvyXTB.jpeg",
@@ -112,7 +112,7 @@ const Gallery = () => {
           <div
             key={index}
             className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out"
-            style={{ paddingBottom: '56.25%' }}
+            style={{ paddingBottom: "56.25%" }}
             onClick={() => handleImageClick(index)}
           >
             {loading[index] && (
@@ -128,7 +128,9 @@ const Gallery = () => {
             <img
               src={src}
               alt={`Gallery Image ${index + 1}`}
-              className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform ${loading[index] ? 'hidden' : 'block'}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform ${
+                loading[index] ? "hidden" : "block"
+              }`}
               loading="lazy"
             />
           </div>
@@ -142,8 +144,10 @@ const Gallery = () => {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <div className="relative max-w-full max-h-full p-4" onClick={e => e.stopPropagation()}>
-
+          <div
+            className="relative max-w-full max-h-full p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={images[selectedImageIndex]}
               alt="Selected"
@@ -157,21 +161,44 @@ const Gallery = () => {
               <FaTimes size={24} />
             </button>
             <button
-              className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300 z-60"
+              className="fixed left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300 z-60"
               onClick={handlePrev}
               aria-label="Previous image"
             >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
             </button>
+
             <button
-              className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300 z-60"
+              className="fixed right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300 z-60"
               onClick={handleNext}
               aria-label="Next image"
             >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </button>
           </div>

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useSwipeable } from 'react-swipeable';
+import React, { useState, useEffect } from "react";
+import { useSwipeable } from "react-swipeable";
 
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -7,38 +7,40 @@ const Carousel = () => {
     {
       title: "Combine Harvester - 512",
       imageUrl: "https://i.imgur.com/9UlVtFF.png",
-      link: "https://www.Kisan.com/combine-harvester/combine-harvester-512"
+      link: "https://www.Kisan.com/combine-harvester/combine-harvester-512",
     },
     {
       title: "Tractor Mounted Combine - 510",
       imageUrl: "https://i.imgur.com/eGrnSDw.png",
-      link: "https://www.Kisan.com/combine-harvester/tractor-mounted-combine-510"
+      link: "https://www.Kisan.com/combine-harvester/tractor-mounted-combine-510",
     },
     {
       title: "Multicrop Thresher",
-      imageUrl:"https://i.imgur.com/lJHNByQ.png",
-      link: "https://www.Kisan.com/multicrop-thresher"
+      imageUrl: "https://i.imgur.com/lJHNByQ.png",
+      link: "https://www.Kisan.com/multicrop-thresher",
     },
     {
       title: "Kisan Rotavator",
       imageUrl: "https://i.imgur.com/IEAum1D.jpg",
-      link: "https://www.Kisan.com/rotavator/Kisan-rotavator"
+      link: "https://www.Kisan.com/rotavator/Kisan-rotavator",
     },
     {
       title: "Chaff Cutter",
-      imageUrl: "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
-      link: "https://www.Kisan.com/chaff-cutter/Kisan-chaff-cutter"
+      imageUrl: "https://i.imgur.com/dEaCC6d.png",
+      // link: "https://www.Kisan.com/chaff-cutter/Kisan-chaff-cutter"
     },
     {
       title: "Groundnut Thresher",
-      imageUrl: "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
-      link: "https://www.Kisan.com/groundnut-thresher/Kisan-groundnut-thresher"
+      imageUrl:
+        "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
+      link: "https://www.Kisan.com/groundnut-thresher/Kisan-groundnut-thresher",
     },
     {
       title: "Maize Thresher",
-      imageUrl: "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
-      link: "https://www.Kisan.com/maize-thresher/Kisan-maize-thresher"
-    }
+      imageUrl:
+        "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
+      link: "https://www.Kisan.com/maize-thresher/Kisan-maize-thresher",
+    },
   ];
 
   const handlers = useSwipeable({
@@ -46,22 +48,22 @@ const Carousel = () => {
     onSwipedRight: () => prevSlide(),
     swipeDuration: 300,
     preventDefaultTouchmoveEvent: true,
-    trackMouse: true
+    trackMouse: true,
   });
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'ArrowLeft') {
+      if (e.key === "ArrowLeft") {
         prevSlide();
-      } else if (e.key === 'ArrowRight') {
+      } else if (e.key === "ArrowRight") {
         nextSlide();
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -87,7 +89,10 @@ const Carousel = () => {
         className="relative w-full h-full flex overflow-hidden"
         {...handlers}
       >
-        <div className="flex flex-nowrap transition-transform duration-1000" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+        <div
+          className="flex flex-nowrap transition-transform duration-1000"
+          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        >
           {items.map((item, index) => (
             <div
               key={index}
@@ -98,9 +103,11 @@ const Carousel = () => {
                 alt={item.title}
                 className="object-cover w-full h-full"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4 sm:p-6">
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 p-4 sm:p-6">
                 <div className="text-center text-white max-w-md sm:max-w-lg lg:max-w-2xl px-4">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">{item.title}</h2>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+                    {item.title}
+                  </h2>
                   <a
                     href={item.link}
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
@@ -118,8 +125,19 @@ const Carousel = () => {
         className="absolute top-1/2 left-2 md:left-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300"
         aria-label="Previous slide"
       >
-        <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        <svg
+          className="w-5 h-5 sm:w-6 sm:h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
         </svg>
       </button>
       <button
@@ -127,8 +145,19 @@ const Carousel = () => {
         className="absolute top-1/2 right-2 md:right-4 transform -translate-y-1/2  bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300"
         aria-label="Next slide"
       >
-        <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <svg
+          className="w-5 h-5 sm:w-6 sm:h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
         </svg>
       </button>
     </div>

@@ -157,7 +157,7 @@ function ProductDetailPage({ threshers }) {
 
           {/* Right side: Product description */}
           <div className="lg:w-1/2 flex flex-col justify-center space-y-4 md:space-y-6">
-            <h1 className="mt-8 text-2xl font-semibold text-gray-800 mb-4">
+            <h1 className="mt-8 text-2xl font-semibold text-green-600 mb-4">
               {thresher.ModelName}
             </h1>
             <p className="text-gray-700 leading-relaxed">

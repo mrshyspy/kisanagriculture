@@ -32,7 +32,7 @@ const Carousel = () => {
     {
       title: "Groundnut Thresher",
       imageUrl:
-        "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
+        "	https://i.imgur.com/QA81qqR.png",
       link: "https://www.Kisan.com/groundnut-thresher/Kisan-groundnut-thresher",
     },
     {
@@ -105,15 +105,15 @@ const Carousel = () => {
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 p-4 sm:p-6">
                 <div className="text-center text-white max-w-md sm:max-w-lg lg:max-w-2xl px-4">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+                  {/* <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
                     {item.title}
-                  </h2>
-                  <a
+                  </h2> */}
+                  {/* <a
                     href={item.link}
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
                   >
                     View Detail
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

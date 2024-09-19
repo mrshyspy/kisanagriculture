@@ -16,31 +16,31 @@ const Carousel = () => {
     },
     {
       title: "Multicrop Thresher",
-      imageUrl: "https://i.imgur.com/2hCuYLe.jpeg",
+      imageUrl: "	https://i.imgur.com/A61TlKM.jpeg",
       link: "https://www.Kisan.com/multicrop-thresher",
     },
-    {
-      title: "Kisan Rotavator",
-      imageUrl: "https://i.imgur.com/IEAum1D.jpg",
-      link: "https://www.Kisan.com/rotavator/Kisan-rotavator",
-    },
-    {
-      title: "Chaff Cutter",
-      imageUrl: "https://i.imgur.com/dEaCC6d.png",
-      // link: "https://www.Kisan.com/chaff-cutter/Kisan-chaff-cutter"
-    },
-    {
-      title: "Groundnut Thresher",
-      imageUrl:
-        "	https://i.imgur.com/QA81qqR.png",
-      link: "https://www.Kisan.com/groundnut-thresher/Kisan-groundnut-thresher",
-    },
-    {
-      title: "Maize Thresher",
-      imageUrl:
-        "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
-      link: "https://www.Kisan.com/maize-thresher/Kisan-maize-thresher",
-    },
+    // {
+    //   title: "Kisan Rotavator",
+    //   imageUrl: "https://i.imgur.com/IEAum1D.jpg",
+    //   link: "https://www.Kisan.com/rotavator/Kisan-rotavator",
+    // },
+    // {
+    //   title: "Chaff Cutter",
+    //   imageUrl: "https://i.imgur.com/dEaCC6d.png",
+    //   // link: "https://www.Kisan.com/chaff-cutter/Kisan-chaff-cutter"
+    // },
+    // {
+    //   title: "Groundnut Thresher",
+    //   imageUrl:
+    //     "	https://i.imgur.com/QA81qqR.png",
+    //   link: "https://www.Kisan.com/groundnut-thresher/Kisan-groundnut-thresher",
+    // },
+    // {
+    //   title: "Maize Thresher",
+    //   imageUrl:
+    //     "https://www.deere.co.in/assets/images/region-1/products/tractors/john-deere-d-series-tractor.jpg",
+    //   link: "https://www.Kisan.com/maize-thresher/Kisan-maize-thresher",
+    // },
   ];
 
   const handlers = useSwipeable({

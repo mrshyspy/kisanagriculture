@@ -23,7 +23,7 @@ export default function CallToActions() {
         <div className="bg-green-600 backdrop-blur-sm rounded-full p-2 shadow-lg relative">
           {/* Cross button */}
           <button
-            className="absolute -top-3 -right-3 text-white hover:text-white bg-green-700 p-1 rounded-full"
+            className="absolute -top-3 -right-4 text-gray-700 hover:text-gray-800 bg-gray-200 p-1 rounded-full"
             onClick={() => setIsVisible(false)} // Hide component on click
           >
             <X className="h-4 w-4" /> {/* X icon */}

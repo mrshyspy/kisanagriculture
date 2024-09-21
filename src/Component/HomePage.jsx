@@ -23,6 +23,7 @@ const HomePage = () => {
       <Banners />
       <CallToActions />
       <Map />
+      
     </>
   );
 };

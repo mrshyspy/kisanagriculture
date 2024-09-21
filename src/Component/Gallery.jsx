@@ -103,7 +103,7 @@ const Gallery = () => {
 
   return (
     <div className="p-6 bg-white">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-800 font-extrabold mb-6 text-center">
+      <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
         Photo Gallery
       </h2>
 

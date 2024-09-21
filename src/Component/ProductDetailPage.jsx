@@ -158,7 +158,7 @@ function ProductDetailPage({ threshers }) {
 
           {/* Right side: Product description */}
           <div className="lg:w-1/2 flex flex-col justify-center space-y-4 md:space-y-6">
-            <h1 className="mt-8 text-2xl font-semibold text-green-600 mb-4">
+            <h1 className="mt-8 text-2xl font-semibold text-gray-800 mb-4">
               {thresher.ModelName}
             </h1>
             <p className="text-gray-700 leading-relaxed">
@@ -186,7 +186,7 @@ function ProductDetailPage({ threshers }) {
             </p>
           </div>
         </div>
-        <h2 className="mt-8 text-2xl font-semibold mb-4">
+        <h2 className="mt-8 text-2xl font-semibold text-gray-800 mb-4">
           Technical Specifications
         </h2>
         <div className="overflow-x-auto mb-12">
@@ -212,7 +212,7 @@ function ProductDetailPage({ threshers }) {
         </div>
 
         <div className="bg-gray-100 p-6 shadow-lg mb-12">
-          <h3 className="text-2xl font-semibold mb-4">Features</h3>
+          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Features</h3>
           <ul className="list-disc list-inside">
             {features.map((feature, index) => (
               <li key={index}>{feature}</li>

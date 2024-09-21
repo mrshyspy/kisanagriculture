@@ -10,8 +10,6 @@ const CarouselComponent = () => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const carouselRef = useRef(null);
-  const [startX, setStartX] = useState(null);
-  const [isDragging, setIsDragging] = useState(false);
 
   // Handle window resize and adjust items per page
   useEffect(() => {
@@ -36,10 +34,14 @@ const CarouselComponent = () => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
 
+      // Enable/disable the left arrow based on scroll position
       setCanScrollLeft(scrollLeft > 0);
+
+      // Add a buffer to handle rounding issues when close to the end
       const buffer = 5; // Increased buffer value
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth - buffer);
 
+      // Update the current index based on scroll position
       const itemWidth = carouselRef.current.offsetWidth / itemsPerPage;
       const newIndex = Math.round(scrollLeft / itemWidth);
       setCurrentIndex(newIndex);
@@ -65,37 +67,14 @@ const CarouselComponent = () => {
     };
   }, [itemsPerPage]); // Added itemsPerPage as a dependency
 
-  // Touch event handlers
-  const handleTouchStart = (e) => {
-    setStartX(e.touches[0].clientX);
-    setIsDragging(true);
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging) return;
-
-    const currentX = e.touches[0].clientX;
-    const diffX = startX - currentX;
-
-    if (Math.abs(diffX) > 50) {
-      if (diffX > 0) {
-        nextSlide(); // Swipe left
-      } else {
-        prevSlide(); // Swipe right
-      }
-      setIsDragging(false); // Prevent further dragging actions
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
-
   // Function to handle next slide
   const nextSlide = () => {
     if (carouselRef.current && canScrollRight) {
       const itemWidth = carouselRef.current.offsetWidth / itemsPerPage;
-      const newIndex = Math.min(currentIndex + 1, threshers.length - itemsPerPage);
+      const newIndex = Math.min(
+        currentIndex + 1,
+        threshers.length - itemsPerPage
+      );
       setCurrentIndex(newIndex);
       carouselRef.current.scrollTo({
         left: carouselRef.current.scrollLeft + itemWidth,
@@ -133,14 +112,16 @@ const CarouselComponent = () => {
 
   return (
     <div className="relative md:px-12 w-full mb-6">
-      <h2 className="text-3xl font-bold text-center mt-12 mb-4 text-gray-800">
+      <h2 className="text-3xl font-bold text-center  mt-12 mb-4 text-gray-800">
         Related Products
       </h2>
 
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className={`absolute top-1/2 transform -translate-y-1/2 left-2 bg-green-600 text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300 z-10 ${currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
+        className={`absolute top-1/2 transform -translate-y-1/2 left-2 bg-green-600  text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300 z-10 ${
+          currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+        }`}
         disabled={currentIndex === 0}
         aria-label="Previous Slide"
       >
@@ -148,7 +129,11 @@ const CarouselComponent = () => {
       </button>
       <button
         onClick={nextSlide}
-        className={`absolute top-1/2 transform -translate-y-1/2 right-2 bg-green-600 text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300 z-10 ${currentIndex >= threshers.length - itemsPerPage ? "opacity-50 cursor-not-allowed" : ""}`}
+        className={`absolute top-1/2 transform -translate-y-1/2 right-2 bg-green-600  text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300 z-10 ${
+          currentIndex >= threshers.length - itemsPerPage
+            ? "opacity-50 cursor-not-allowed"
+            : ""
+        }`}
         disabled={currentIndex >= threshers.length - itemsPerPage}
         aria-label="Next Slide"
       >
@@ -160,9 +145,6 @@ const CarouselComponent = () => {
         className="relative overflow-x-scroll scrollbar-hide touch-pan-x"
         ref={carouselRef}
         style={{ touchAction: "pan-x pan-y" }}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
       >
         <div className="flex transition-transform duration-300 ease-in-out">
           {threshers.map((machine, index) => (
@@ -200,7 +182,9 @@ const CarouselComponent = () => {
         {Array.from({ length: totalDots }, (_, index) => (
           <button
             key={index}
-            className={`relative h-3 ${index === currentIndex ? "bg-green-600 w-6" : "bg-gray-300 w-3"} rounded-full transition-all duration-300 ease-in-out`}
+            className={`relative h-3 ${
+              index === currentIndex ? "bg-green-600 w-6" : "bg-gray-300 w-3"
+            } rounded-full transition-all duration-300 ease-in-out`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
           />

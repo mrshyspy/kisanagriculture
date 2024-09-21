@@ -48,12 +48,12 @@ export default function FeaturesComponent() {
       icon: <Cog className="h-6 w-6" />,
       title: "Durable Components",
       description:
-        "Good quality bearings, pulleys, brackets, tyres, safety features, gears, and belts used",
+        "Good quality bearings, pulleys, brackets, tyres, gears, and belts used",
     },
     {
       icon: <Clock className="h-6 w-6" />,
       title: "On Time Delivery",
-      description: "We deliver on time as promised during order",
+      description: "We deliver on time as promised",
     },
     {
       icon: <CheckCircle className="h-6 w-6" />,

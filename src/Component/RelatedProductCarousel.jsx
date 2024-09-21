@@ -155,7 +155,7 @@ const CarouselComponent = () => {
                 width: `${100 / itemsPerPage}%`,
               }}
             >
-              <div className="bg-white text-gray-800 rounded-xl overflow-hidden shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300">
+              <div className="bg-white text-gray-800 rounded-lg overflow-hidden shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300">
                 <Link to={`/${machine.productId}`} className="block">
                   <img
                     className="h-64 w-full object-cover mb-2"

@@ -16,7 +16,7 @@ export default function VideoList() {
       <h1 className="text-center text-2xl sm:text-3xl md:text-4xl font-extrabold mt-4 mb-8 text-gray-800">Product Videos</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {threshers.slice(0, showAll ? threshers.length : (typeof window !== 'undefined' && window.innerWidth >= 1024 ? 3 : 2)).map((thresher, index) => (
-          <div key={index} className=" transition-transform ease-in-out bg-white rounded-xl shadow-lg overflow-hidden duration-300 hover:scale-105">
+          <div key={index} className=" transition-transform ease-in-out bg-white rounded-lg shadow-lg overflow-hidden duration-300 hover:scale-105">
             <div className="relative pb-[56.25%]">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"

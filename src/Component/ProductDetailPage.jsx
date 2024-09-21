@@ -62,7 +62,7 @@ function ProductDetailPage({ threshers }) {
           {/* Left side: Carousel */}
           <div className="lg:w-1/2 mb-4 lg:mb-0">
             <div
-              className="relative overflow-hidden rounded-xl shadow-lg"
+              className="relative overflow-hidden rounded-lg shadow-lg"
               onMouseEnter={() => setIsZoomed(true)}
               onMouseLeave={() => setIsZoomed(false)}
             >

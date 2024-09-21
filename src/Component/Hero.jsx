@@ -11,13 +11,13 @@ function Hero() {
 
         <h1 className="text-3xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-8 sm:mb-10 lg:mb-12 mt-1">
           Discover Our Wide Range of{" "}
-          <span className="text-green-600">Thresher Machines</span>!
+          <span className="text-green-600">Kisan Threshers</span>!
         </h1>
 
         <div>
           <p className="border-b-green-600 border-b-4 text-sm sm:text-base md:text-base lg:text-base leading-relaxed text-gray-700 bg-green-50 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md max-w-3xl mx-4 sm:mx-4 md:mx-auto">
-            Choose from our efficient and reliable thresher machines, available
-            in single, double, and three fan models, with or without elevators,
+            Choose from our efficient and reliable kisan thresher machines, available
+            in single, double three fan and four fan models, with or without elevators,
             tailored for various agricultural needs.
           </p>
         </div>

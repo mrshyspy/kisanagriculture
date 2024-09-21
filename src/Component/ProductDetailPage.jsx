@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { Phone, MessageSquare } from "lucide-react";
 import RelatedProductCarouselComponent from "./RelatedProductCarousel";
-import WhatsAppButton from "./Whatsapp";
 function ProductDetailPage({ threshers }) {
   const images = [
     "https://i.imgur.com/nkjprq9.png",
@@ -221,7 +220,6 @@ function ProductDetailPage({ threshers }) {
         </div>
 
         <RelatedProductCarouselComponent />
-        <WhatsAppButton/>
       </div>
     </>
   );

@@ -15,7 +15,7 @@ function Hero() {
         </h1>
 
         <div>
-          <p className="border-b-green-600 border-b-4 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-gray-700 bg-green-50 p-6 rounded-lg shadow-md max-w-3xl mx-auto sm:mx-4 md:mx-auto">
+          <p className="border-b-green-600 border-b-4 text-sm sm:text-base md:text-base lg:text-base leading-relaxed text-gray-700 bg-green-50 p-6 rounded-lg shadow-md max-w-3xl mx-auto sm:mx-4 md:mx-auto">
             Choose from our efficient and reliable thresher machines, available
             in single, double, and three fan models, with or without elevators,
             tailored for various agricultural needs.

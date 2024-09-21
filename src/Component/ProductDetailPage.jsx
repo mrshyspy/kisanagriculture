@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Breadcrumbs from "./Breadcrumb";
 import { useParams } from "react-router-dom";
-import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { Phone, MessageSquare } from "lucide-react";
 import RelatedProductCarouselComponent from "./RelatedProductCarousel";
+
 function ProductDetailPage({ threshers }) {
   const images = [
     "https://i.imgur.com/nkjprq9.png",
@@ -15,12 +15,44 @@ function ProductDetailPage({ threshers }) {
   const { ProductId } = useParams();
   const [selectedImage, setSelectedImage] = useState(images[0]);
   const [isZoomed, setIsZoomed] = useState(false);
+  const carouselRef = useRef(null);
+  const startX = useRef(null);
 
   const thresher = threshers.find((t) => t.productId === ProductId);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [ProductId]);
+
+  const changeImage = (direction) => {
+    const currentIndex = images.indexOf(selectedImage);
+    const nextIndex = (currentIndex + direction + images.length) % images.length;
+    setSelectedImage(images[nextIndex]);
+  };
+
+  const handleTouchStart = (e) => {
+    startX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!startX.current) return;
+
+    const currentX = e.touches[0].clientX;
+    const diff = startX.current - currentX;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        changeImage(1);
+      } else {
+        changeImage(-1);
+      }
+      startX.current = null;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    startX.current = null;
+  };
 
   const specs = [
     { label: "Gear Box", value: "21-21 Heavy Duty" },
@@ -61,9 +93,13 @@ function ProductDetailPage({ threshers }) {
           {/* Left side: Carousel */}
           <div className="lg:w-1/2 mb-4 lg:mb-0">
             <div
-              className="relative overflow-hidden rounded-lg shadow-lg"
+              ref={carouselRef}
+              className="relative overflow-hidden rounded-lg shadow-lg touch-pan-y"
               onMouseEnter={() => setIsZoomed(true)}
               onMouseLeave={() => setIsZoomed(false)}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
             >
               {/* Conditionally render video or image */}
               {selectedImage === "video" ? (
@@ -89,12 +125,7 @@ function ProductDetailPage({ threshers }) {
               {/* Navigation arrows */}
               <button
                 className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300"
-                onClick={() => {
-                  const currentIndex = images.indexOf(selectedImage);
-                  const nextIndex =
-                    (currentIndex - 1 + images.length) % images.length;
-                  setSelectedImage(images[nextIndex]);
-                }}
+                onClick={() => changeImage(-1)}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -113,11 +144,7 @@ function ProductDetailPage({ threshers }) {
               </button>
               <button
                 className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-white bg-opacity-60 text-green-600 p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-100 hover:text-white hover:bg-gradient-to-r from-green-600 to-green-600 transition-all duration-300"
-                onClick={() => {
-                  const currentIndex = images.indexOf(selectedImage);
-                  const nextIndex = (currentIndex + 1) % images.length;
-                  setSelectedImage(images[nextIndex]);
-                }}
+                onClick={() => changeImage(1)}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

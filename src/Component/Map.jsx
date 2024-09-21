@@ -4,7 +4,7 @@ function Map() {
   return (
 <div>
           <div className="container mx-auto py-8 px-6 sm:px-8 lg:px-12">
-            <h2 className="mt-4 text-2xl font-semibold text-gray-800 mb-6">
+            <h2 className="text-3xl font-bold text-center mb-8 mt-4   text-gray-800 ">
               Visit Us
             </h2>
             <iframe

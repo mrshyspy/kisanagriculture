@@ -167,7 +167,7 @@ function ProductDetailPage({ threshers }) {
             <div className="flex flex-row space-x-4">
               <a
                 href="tel:+919828719163"
-                className="flex bg-green-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105"
+                className="flex bg-green-600 hover:bg-green-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105"
               >
                 <Phone className="mr-2 sm:mr-3 text-white text-lg sm:text-xl md:text-xl" />
                 Call Now

@@ -24,7 +24,7 @@ const Component=()=> {
             className="bg-white border border-green-600 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow"
           >
             <div className="flex items-start space-x-4">
-              <FaTractor className="w-6 h-6 text-green-700 flex-shrink-0 mt-1" />
+              <FaTractor className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
               <p className="text-base text-green-900">{feature}</p>
             </div>
           </div>

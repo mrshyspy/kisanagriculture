@@ -46,7 +46,7 @@ const ProductCard = () => {
               </div>
 
               {/* Card content with border */}
-              <div className="border-l border-r border-b border-green-600  rounded-b-lg">
+              <div className=" border-green-600  rounded-b-lg">
                 <div className="p-4 sm:p-6">
                   <div className="space-y-2 text-sm sm:text-sm text-gray-600">
                     {Object.entries(machine.details.specification).map(

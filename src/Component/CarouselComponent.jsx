@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 
+
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const items = [
@@ -16,7 +17,7 @@ const Carousel = () => {
     },
     {
       title: "Multicrop Thresher",
-      imageUrl: "	https://i.imgur.com/A61TlKM.jpeg",
+      imageUrl: "	https://i.imgur.com/0MGgKUz.jpeg",
       link: "https://www.Kisan.com/multicrop-thresher",
     },
     // {
@@ -70,7 +71,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % items.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 8000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
   }, [items.length]);
@@ -85,6 +86,7 @@ const Carousel = () => {
 
   return (
     <div className="relative w-full h-[30vh] sm:h-[40vh] md:h-[50vh] overflow-hidden">
+      
       <div
         className="relative w-full h-full flex overflow-hidden"
         {...handlers}

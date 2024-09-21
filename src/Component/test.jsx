@@ -1,37 +1,116 @@
-import { FaTractor } from "react-icons/fa" // Agriculture-related icon
+import React, { useState, useEffect, useRef } from 'react';
 
-const Component=()=> {
-  const features = [
-    "Large Sieve Area for Optimum Grain Cleaning.",
-    "Faster Unloading System.",
-    "High Ground Clearance.",
-    "Good working in the light Wet and Soft Fields.",
-    "Long Length thresher rotor for complete threshing.",
-    "Best quality V-belts, Bearings and accessories used.",
-    "Can operate with any tractor above 39 HP.",
-    "Heavy Duty Axles.",
-    "Highly Fuel Efficient.",
-    "Superior Chain Drives.",
-  ]
+const ImageCarousel = () => {
+  const images = [
+    "https://nvtthresher.com/wp-content/uploads/2023/01/3-2.jpg",
+    "https://nvtthresher.com/wp-content/uploads/2023/01/4-3.jpg",
+    "https://nvtthresher.com/wp-content/uploads/2023/01/1-4.jpg",
+    "https://nvtthresher.com/wp-content/uploads/2023/01/2-3.jpg",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [startX, setStartX] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
+  
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNextSlide();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  const goToNextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const goToPreviousSlide = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+
+    const currentX = e.touches[0].clientX;
+    const diffX = startX - currentX;
+
+    if (diffX > 50) {
+      goToNextSlide();
+      setIsDragging(false);
+    } else if (diffX < -50) {
+      goToPreviousSlide();
+      setIsDragging(false);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
 
   return (
-    <div className="container mx-auto px-4 py-8 bg-green-50">
-      <h2 className="text-3xl font-bold text-center mb-8 text-green-800">Key Features</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {features.map((feature, index) => (
+    <div
+      className="relative w-full max-w-6xl mx-auto overflow-hidden"
+      ref={carouselRef}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Carousel Images */}
+      <div
+        className="flex transition-transform duration-700 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images.map((src, index) => (
           <div
             key={index}
-            className="bg-white border border-green-600 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow"
+            className="min-w-full flex-shrink-0"
+            style={{ width: "100%" }}
           >
-            <div className="flex items-start space-x-4">
-              <FaTractor className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-              <p className="text-base text-green-900">{feature}</p>
-            </div>
+            <img
+              src={src}
+              alt={`Thresher ${index + 1}`}
+              className="w-full h-auto object-cover"
+            />
           </div>
         ))}
       </div>
-    </div>
-  )
-}
 
-export default  Component;
+      {/* Navigation Buttons */}
+      <button
+        onClick={goToPreviousSlide}
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full"
+      >
+        &#8592;
+      </button>
+      <button
+        onClick={goToNextSlide}
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full"
+      >
+        &#8594;
+      </button>
+
+      {/* Pagination Dots */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`w-3 h-3 rounded-full cursor-pointer ${
+              index === currentIndex ? 'bg-green-600' : 'bg-gray-400'
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default ImageCarousel;

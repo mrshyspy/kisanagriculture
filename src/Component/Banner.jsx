@@ -5,7 +5,7 @@ function Banner() {
   return (
     <div className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-gray-100 shadow-lg">
       <div className="flex flex-col md:flex-row items-stretch justify-center space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
-        <div className="flex flex-col md:flex-row items-center justify-between bg-green-50 dark:bg-gray-800 p-6 md:p-8 lg:p-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12 rounded-lg shadow-lg">
+        <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-br from-yellow-400 to-white dark:bg-gray-800 p-6 md:p-8 lg:p-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12 rounded-lg shadow-lg">
           <div className="flex flex-col justify-center md:w-1/2">
             <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 dark:text-white">
               All <span className="text-green-600">INDIA</span> Delivery

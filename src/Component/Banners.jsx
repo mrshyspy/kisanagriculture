@@ -39,7 +39,6 @@ export default function FeaturesComponent() {
       title: "Customer Service",
       description: "24/7 service provided to customers",
     },
-
     {
       icon: <Hammer className="h-6 w-6" />,
       title: "Quality Materials",
@@ -51,7 +50,6 @@ export default function FeaturesComponent() {
       description:
         "Good quality bearings, pulleys, brackets, tyres, safety features, gears, and belts used",
     },
-
     {
       icon: <Clock className="h-6 w-6" />,
       title: "On Time Delivery",
@@ -70,15 +68,15 @@ export default function FeaturesComponent() {
   ];
 
   return (
-    <div className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-gray-50">
-      <h2 className="text-3xl font-bold text-center mb-8">
+    <div className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-green-50">
+      <h2 className="text-3xl font-bold text-center mb-8 text-green-800">
         Key Features
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-white shadow rounded-lg hover:shadow-lg transition-shadow duration-300"
+            className="bg-white shadow rounded-lg hover:shadow-lg transition-shadow duration-300 border border-green-600"
           >
             <div className="p-6">
               <div className="flex items-center space-x-4">
@@ -86,8 +84,12 @@ export default function FeaturesComponent() {
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">{feature.title}</h3>
-                  <p className="text-sm text-gray-500">{feature.description}</p>
+                  <h3 className="font-semibold text-lg text-green-900">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
             </div>

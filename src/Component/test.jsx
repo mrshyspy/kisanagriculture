@@ -1,18 +1,37 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 
 const ImageCarousel = () => {
   const images = [
-    "https://nvtthresher.com/wp-content/uploads/2023/01/3-2.jpg",
-    "https://nvtthresher.com/wp-content/uploads/2023/01/4-3.jpg",
-    "https://nvtthresher.com/wp-content/uploads/2023/01/1-4.jpg",
-    "https://nvtthresher.com/wp-content/uploads/2023/01/2-3.jpg",
+    "https://i.imgur.com/Xnexzof.jpeg",
+    "https://i.imgur.com/BI2C1mk.jpeg",
+    "https://i.imgur.com/koUbuBT.jpeg",
+    "https://i.imgur.com/4nfQTJs.jpeg",
+    "https://i.imgur.com/BBt2yF7.jpeg",
+    "https://i.imgur.com/soosGHK.jpeg",
+    "https://i.imgur.com/x8QYPav.jpeg",
+    "https://i.imgur.com/dTMsEj5.jpeg",
+    "https://i.imgur.com/5EOWnfh.jpeg",
+    "https://i.imgur.com/TwxZC47.jpeg",
+    "https://i.imgur.com/AMlx4in.jpeg",
+    "https://i.imgur.com/X0QiHXK.jpeg",
+    "https://i.imgur.com/xIrBAGR.jpeg",
+    "https://i.imgur.com/lsic2f2.png",
+    "https://i.imgur.com/LTnjfGb.png",
+    "https://i.imgur.com/Bu6SVhp.png",
+    "https://i.imgur.com/yyTYXRT.png",
+    "https://i.imgur.com/fGTN5wg.png",
+    "https://i.imgur.com/A2q7uo6.png",
+    "https://i.imgur.com/UHoEFOz.png",
+    "https://i.imgur.com/Z8duUtH.png"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startX, setStartX] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
-  
+
   const carouselRef = useRef(null);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,12 +41,12 @@ const ImageCarousel = () => {
   }, [currentIndex]);
 
   const goToNextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 3) % images.length);
   };
 
   const goToPreviousSlide = () => {
     setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+      (prevIndex) => (prevIndex - 3 + images.length) % images.length
     );
   };
 
@@ -55,6 +74,10 @@ const ImageCarousel = () => {
     setIsDragging(false);
   };
 
+  const handleSeeMoreClick = () => {
+    navigate('/gallery'); // Navigate to the /gallery route
+  };
+
   return (
     <div
       className="relative w-full max-w-6xl mx-auto overflow-hidden"
@@ -66,13 +89,12 @@ const ImageCarousel = () => {
       {/* Carousel Images */}
       <div
         className="flex transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        style={{ transform: `translateX(-${(currentIndex / 3) * 100}%)` }} // Adjusting for 3 images at a time
       >
         {images.map((src, index) => (
           <div
             key={index}
-            className="min-w-full flex-shrink-0"
-            style={{ width: "100%" }}
+            className="carousel-slide flex-shrink-0 w-full md:w-1/3 sm:w-1/2 aspect-w-16 aspect-h-9"
           >
             <img
               src={src}
@@ -103,12 +125,20 @@ const ImageCarousel = () => {
           <div
             key={index}
             className={`w-3 h-3 rounded-full cursor-pointer ${
-              index === currentIndex ? 'bg-green-600' : 'bg-gray-400'
+              Math.floor(index / 3) === Math.floor(currentIndex / 3) ? 'bg-green-600' : 'bg-gray-400'
             }`}
             onClick={() => setCurrentIndex(index)}
           ></div>
         ))}
       </div>
+
+      {/* See More Button */}
+      <button
+        onClick={handleSeeMoreClick}
+        className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-green-600 text-white p-2 rounded-md"
+      >
+        See More
+      </button>
     </div>
   );
 };

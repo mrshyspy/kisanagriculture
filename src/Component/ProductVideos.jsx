@@ -16,7 +16,7 @@ export default function VideoList() {
       <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Product Videos</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {threshers.slice(0, showAll ? threshers.length : (typeof window !== 'undefined' && window.innerWidth >= 1024 ? 3 : 2)).map((thresher, index) => (
-          <div key={index} className=" transition-transform ease-in-out bg-white rounded-lg shadow-lg overflow-hidden duration-300 hover:scale-105">
+          <div key={index} className="relative transition-transform ease-in-out bg-white rounded-lg shadow-lg overflow-hidden duration-300 hover:scale-105">
             <div className="relative pb-[56.25%]">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
@@ -28,7 +28,7 @@ export default function VideoList() {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className="p-4">
+            <div className="p-4 border border-gray-300 border-t-0 rounded-b-lg">
               <h2 className="text-base font-medium text-gray-800 text-center">{thresher.ModelName}</h2>
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function VideoList() {
           <div className="relative">
             <button
               onClick={handleShowMore}
-              className="inline-flex items-center px-6 py-3 bg-white border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-300"
+              className="inline-flex items-center px-6 py-3 bg-white border border-gray-800 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-300"
             >
               Load More
               <ChevronDown className="ml-2 h-4 w-4" />

@@ -17,7 +17,7 @@ const threshers = [
         "Low maintenance"
       ],
       relatedModels: ["DoubleFan", "SingleFanWithElevator"],
-      imageUrl: "https://i.imgur.com/IEAum1D.jpeg"
+      imageUrl: "" // Updated to empty
     },
     productAds: [
       {
@@ -45,7 +45,7 @@ const threshers = [
         "Low power consumption"
       ],
       relatedModels: ["SingleFan", "DoubleFanWithElevator"],
-      imageUrl: "https://i.imgur.com/IEAum1D.jpeg"
+      imageUrl: "" // Updated to empty
     },
     productAds: [
       {
@@ -73,7 +73,7 @@ const threshers = [
         "Dual fan system for better separation"
       ],
       relatedModels: ["SingleFan", "ThreeFan", "DoubleFanWithElevator"],
-      imageUrl: "https://i.imgur.com/IEAum1D.jpeg"
+      imageUrl: "" // Updated to empty
     },
     productAds: [
       {
@@ -101,7 +101,7 @@ const threshers = [
         "Durable and reliable"
       ],
       relatedModels: ["DoubleFan", "ThreeFanWithElevator"],
-      imageUrl: "https://i.imgur.com/IEAum1D.jpeg"
+      imageUrl: "" // Updated to empty
     },
     productAds: [
       {
@@ -129,7 +129,7 @@ const threshers = [
         "Triple fan system for superior performance"
       ],
       relatedModels: ["DoubleFan", "ThreeFanWithElevator"],
-      imageUrl: "https://i.imgur.com/IEAum1D.jpeg"
+      imageUrl: "" // Updated to empty
     },
     productAds: [
       {
@@ -157,7 +157,7 @@ const threshers = [
         "Designed for heavy-duty operations"
       ],
       relatedModels: ["ThreeFan", "DoubleFanWithElevator"],
-      imageUrl: "https://i.imgur.com/IEAum1D.jpeg"
+      imageUrl: "" // Updated to empty
     },
     productAds: [
       {
@@ -168,5 +168,21 @@ const threshers = [
     ]
   }
 ];
+
+const imageUrls = [
+  'https://imgur.com/xIrBAGR.png',
+  'https://imgur.com/Bu6SVhp.png',
+  'https://imgur.com/AMlx4in.png',
+  'https://imgur.com/koUbuBT.png',
+  'https://imgur.com/A2q7uo6.png',
+  'https://imgur.com/ofXOY8A.png',
+];
+
+// Update the imageUrl in the threshers array
+threshers.forEach((thresher, index) => {
+  if (index < imageUrls.length) {
+    thresher.details.imageUrl = imageUrls[index];
+  }
+});
 
 export default threshers;

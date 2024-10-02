@@ -7,7 +7,7 @@ import ProductVideos from "./ProductVideos";
 import ProductCard from "./ProductCards";
 import Map from "./Map";
 import Hero from "./Hero";
-import  ImageCarousel from "./test";
+import  Component from "./test";
 
 const HomePage = () => {
   useEffect(() => {
@@ -19,7 +19,7 @@ const HomePage = () => {
       <CarouselComponent />
       <Hero />
       <ProductCard />
-      <ImageCarousel/>
+      <Component/>
       <Banner />
       <ProductVideos />
       <Banners />

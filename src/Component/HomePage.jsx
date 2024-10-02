@@ -19,7 +19,7 @@ const HomePage = () => {
       <CarouselComponent />
       <Hero />
       <ProductCard />
-      {/* <ImageCarousel/> */}
+      <ImageCarousel/>
       <Banner />
       <ProductVideos />
       <Banners />

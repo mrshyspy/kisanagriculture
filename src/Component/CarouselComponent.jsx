@@ -16,7 +16,7 @@ const Carousel = () => {
     },
     {
       title: "Multicrop Thresher",
-      imageUrl: "		https://i.imgur.com/NQjSkqr.png",
+      imageUrl: "			https://i.imgur.com/xCwV5if.png",
       link: "https://www.Kisan.com/multicrop-thresher",
     },
   ];

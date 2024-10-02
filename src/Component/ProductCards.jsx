@@ -34,11 +34,13 @@ const ProductCard = () => {
           >
             <Link to={`/${machine.productId}`} className="block">
               <div className="relative">
-                <img
-                  className="h-64 w-full object-cover mb-0 transition-transform duration-300 ease-in-out lg:hover:scale-105" // Zoom effect with ease-in-out
-                  src={machine.details.imageUrl}
-                  alt={machine.ModelName}
-                />
+                <div className="relative w-full pb-[56.25%]"> {/* 16:9 Aspect Ratio */}
+                  <img
+                    className="absolute inset-0 w-full h-full object-cover mb-0 transition-transform duration-300 ease-in-out lg:hover:scale-105" // Zoom effect with ease-in-out
+                    src={machine.details.imageUrl}
+                    alt={machine.ModelName}
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <h3 className="absolute bottom-4 left-4 text-white text-lg sm:text-xl font-bold">
                   {machine.ModelName}
@@ -46,7 +48,7 @@ const ProductCard = () => {
               </div>
 
               {/* Card content with border */}
-              <div className=" border-green-600  rounded-b-lg">
+              <div className="border-green-600 rounded-b-lg">
                 <div className="p-4 sm:p-6">
                   <div className="space-y-2 text-sm sm:text-sm text-gray-600">
                     {Object.entries(machine.details.specification).map(

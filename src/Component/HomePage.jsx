@@ -19,8 +19,8 @@ const HomePage = () => {
       <CarouselComponent />
       <Hero />
       <ProductCard />
-      <Component/>
       <Banner />
+      <Component/>
       <ProductVideos />
       <Banners />
       <CallToActions />

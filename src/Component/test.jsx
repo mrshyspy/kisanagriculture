@@ -13,28 +13,8 @@ const imageUrls = [
 
 export default function Carousel({ scrollSpeed = 1 }) {
   const [isPaused, setIsPaused] = useState(false);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
   const containerRef = useRef(null);
   let totalScrollWidth = 0;
-
-  const handleTouchStart = (e) => {
-    setIsPaused(true);
-    setTouchStart(e.targetTouches[0].clientX);
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (containerRef.current) {
-      const touchDiff = touchStart - touchEnd;
-      containerRef.current.scrollLeft += touchDiff;
-    }
-    setIsPaused(false);
-  };
 
   const scroll = () => {
     if (!isPaused && containerRef.current) {
@@ -75,11 +55,7 @@ export default function Carousel({ scrollSpeed = 1 }) {
         className={`flex gap-4 ${isPaused ? '' : 'animate-scroll'}`}
         style={{
           width: 'max-content',
-          touchAction: 'pan-x',
         }}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
       >
         {[...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls].map((url, index) => (
           <div key={index} className="flex-shrink-0">

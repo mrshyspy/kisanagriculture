@@ -8,6 +8,7 @@ import ProductCard from "./ProductCards";
 import Map from "./Map";
 import Hero from "./Hero";
 import  Component from "./test";
+import LatestFromSocialMedia from "./LatestFromSocialMedia"
 
 const HomePage = () => {
   useEffect(() => {
@@ -23,6 +24,7 @@ const HomePage = () => {
       <Component/>
       <ProductVideos />
       <Banners />
+      <LatestFromSocialMedia/>
       <CallToActions />
       <Map />
       

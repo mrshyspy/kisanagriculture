@@ -16,6 +16,7 @@ function App() {
     <Router>
       <Header />
       <Routes>
+        
         <Route path="/" element={<HomePage />} />
         <Route path="/product-detail" element={<ProductDetail />} />
         <Route path="/product/:ProductId" element={<TechnicalSpecifications threshers={threshers} />} />

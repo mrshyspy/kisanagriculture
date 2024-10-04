@@ -1,14 +1,34 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 
 const imageUrls = [
-  'https://imgur.com/xIrBAGR.png',
-  'https://imgur.com/Bu6SVhp.png',
-  'https://imgur.com/AMlx4in.png',
-  'https://imgur.com/koUbuBT.png',
-  'https://imgur.com/A2q7uo6.png',
-  'https://imgur.com/ofXOY8A.png',
-  'https://imgur.com/zs0DiuC.png',
-  'https://imgur.com/I3OJBJ7.png',
+  "https://i.imgur.com/qOt4WTX.jpeg",
+  "https://i.imgur.com/lRq04Pw.jpeg",
+  "https://i.imgur.com/h9w9ght.jpeg",
+  "https://i.imgur.com/o4tdl2J.jpeg",
+  "https://i.imgur.com/8pwExIa.jpeg",
+  "https://i.imgur.com/UuIURpI.jpeg",
+  "https://i.imgur.com/qZqrYGA.jpeg",
+  "https://i.imgur.com/yfwOFxV.jpeg",
+  "https://i.imgur.com/qZqrYGA.jpeg",
+  "https://i.imgur.com/yfwOFxV.jpeg",
+  "https://i.imgur.com/2HVpZPI.jpeg",
+  "https://i.imgur.com/UuIURpI.jpeg",
+  "https://i.imgur.com/TVqRY48.jpeg",
+  "https://i.imgur.com/LbLTmiL.jpeg",
+  "https://i.imgur.com/dSQ8O8Y.jpeg",
+  "https://i.imgur.com/8pwExIa.jpeg",
+  "https://i.imgur.com/2BYly07.png",
+  "https://i.imgur.com/N6y6DAs.jpeg",
+  "https://i.imgur.com/bbcxBen.jpeg",
+  "https://i.imgur.com/jZWCa2Y.jpeg",
+  "https://imgur.com/xIrBAGR.png",
+  "https://imgur.com/Bu6SVhp.png",
+  "https://imgur.com/AMlx4in.png",
+  "https://imgur.com/koUbuBT.png",
+  "https://imgur.com/A2q7uo6.png",
+  "https://imgur.com/ofXOY8A.png",
+  "https://imgur.com/zs0DiuC.png",
+  "https://imgur.com/I3OJBJ7.png",
 ];
 
 export default function Carousel({ scrollSpeed = 1 }) {
@@ -35,15 +55,18 @@ export default function Carousel({ scrollSpeed = 1 }) {
       requestAnimationFrame(scroll); // Start scrolling
 
       const handleScroll = () => {
-        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+        if (
+          container.scrollLeft + container.clientWidth >=
+          container.scrollWidth
+        ) {
           container.scrollLeft = 0; // Reset scroll position
         }
       };
 
-      container.addEventListener('scroll', handleScroll);
+      container.addEventListener("scroll", handleScroll);
 
       return () => {
-        container.removeEventListener('scroll', handleScroll);
+        container.removeEventListener("scroll", handleScroll);
       };
     }
   }, []);
@@ -52,12 +75,22 @@ export default function Carousel({ scrollSpeed = 1 }) {
     <div className="w-full overflow-hidden">
       <div
         ref={containerRef}
-        className={`flex gap-4 ${isPaused ? '' : 'animate-scroll'}`}
+        className={`flex gap-4 ${isPaused ? "" : "animate-scroll"}`}
         style={{
-          width: 'max-content',
+          width: "max-content",
         }}
       >
-        {[...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls, ...imageUrls].map((url, index) => (
+        {[
+          ...imageUrls,
+          ...imageUrls,
+          ...imageUrls,
+          ...imageUrls,
+          ...imageUrls,
+          ...imageUrls,
+          ...imageUrls,
+          ...imageUrls,
+          ...imageUrls,
+        ].map((url, index) => (
           <div key={index} className="flex-shrink-0">
             <img
               src={url}

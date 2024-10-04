@@ -170,12 +170,12 @@ const threshers = [
 ];
 
 const imageUrls = [
-  'https://imgur.com/xIrBAGR.png',
-  'https://imgur.com/Bu6SVhp.png',
-  'https://imgur.com/AMlx4in.png',
-  'https://imgur.com/koUbuBT.png',
-  'https://imgur.com/A2q7uo6.png',
-  'https://imgur.com/ofXOY8A.png',
+  "https://i.imgur.com/qOt4WTX.jpeg",
+  "https://i.imgur.com/lRq04Pw.jpeg",
+  "https://i.imgur.com/8pwExIa.jpeg",
+  "https://i.imgur.com/UuIURpI.jpeg",
+  "https://i.imgur.com/2BYly07.png",
+  "https://i.imgur.com/N6y6DAs.jpeg",
 ];
 
 // Update the imageUrl in the threshers array

@@ -14,8 +14,6 @@ const imageUrls = [
   "https://i.imgur.com/2HVpZPI.jpeg",
   "https://i.imgur.com/UuIURpI.jpeg",
   "https://i.imgur.com/TVqRY48.jpeg",
-  "https://i.imgur.com/LbLTmiL.jpeg",
-  "https://i.imgur.com/dSQ8O8Y.jpeg",
   "https://i.imgur.com/8pwExIa.jpeg",
   "https://i.imgur.com/2BYly07.png",
   "https://i.imgur.com/N6y6DAs.jpeg",

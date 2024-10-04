@@ -71,7 +71,7 @@ export default function Carousel({ scrollSpeed = 1 }) {
   }, []);
 
   return (
-    <Link href="/gallery">
+    <Link to="/gallery"> {/* Use Link from react-router-dom */}
       <div className="w-full overflow-hidden cursor-pointer">
         <div
           ref={containerRef}

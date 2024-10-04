@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const imageUrls = [
   "https://i.imgur.com/qOt4WTX.jpeg",
@@ -70,37 +71,29 @@ export default function Carousel({ scrollSpeed = 1 }) {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden">
-      <div
-        ref={containerRef}
-        className={`flex gap-4 ${isPaused ? "" : "animate-scroll"}`}
-        style={{
-          width: "max-content",
-        }}
-      >
-        {[
-          ...imageUrls,
-          ...imageUrls,
-          ...imageUrls,
-          ...imageUrls,
-          ...imageUrls,
-          ...imageUrls,
-          ...imageUrls,
-          ...imageUrls,
-          ...imageUrls,
-        ].map((url, index) => (
-          <div key={index} className="flex-shrink-0">
-            <img
-              src={url}
-              alt={`Image ${index + 1}`}
-              width={300}
-              height={200}
-              loading="lazy" // Lazy load images
-              className="rounded-lg my-4"
-            />
-          </div>
-        ))}
+    <Link href="/gallery">
+      <div className="w-full overflow-hidden cursor-pointer">
+        <div
+          ref={containerRef}
+          className={`flex gap-4 ${isPaused ? "" : "animate-scroll"}`}
+          style={{
+            width: "max-content",
+          }}
+        >
+          {[...imageUrls,...imageUrls,...imageUrls,...imageUrls,...imageUrls,...imageUrls,...imageUrls,...imageUrls].map((url, index) => (
+            <div key={index} className="flex-shrink-0">
+              <img
+                src={url}
+                alt={`Image ${index + 1}`}
+                width={300}
+                height={200}
+                loading="lazy" // Lazy load images
+                className="rounded-lg my-4"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }

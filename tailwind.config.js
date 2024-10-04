@@ -63,7 +63,7 @@ export default {
 			  },
 			},
 			animation: {
-			  scroll: 'scroll 800s linear infinite', // Adjust the duration here (e.g., 30s, 50s)
+			  scroll: 'scroll 700s linear infinite', // Adjust the duration here (e.g., 30s, 50s)
 			},
 		  
 	  }

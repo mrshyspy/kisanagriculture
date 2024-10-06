@@ -28,7 +28,7 @@ export default function VideoList() {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className="p-4 border border-gray-300 border-t-0 rounded-b-lg">
+            <div className="p-3 border border-green-600 border-t-0 rounded-b-lg">
               <h2 className="text-base font-medium text-gray-800 text-center">{thresher.ModelName}</h2>
             </div>
           </div>

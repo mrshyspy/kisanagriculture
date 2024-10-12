@@ -30,7 +30,7 @@ const imageUrls = [
   "https://imgur.com/I3OJBJ7.png",
 ];
 
-export default function Carousel({ scrollSpeed = 1 }) {
+export default function ImageSlider({ scrollSpeed = 1 }) {
   const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef(null);
   let totalScrollWidth = 0;

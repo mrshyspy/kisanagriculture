@@ -7,7 +7,7 @@ import ProductVideos from "./ProductVideos";
 import ProductCard from "./ProductCards";
 import Map from "./Map";
 import Hero from "./Hero";
-import  Component from "./test";
+import  ImageSlider from "./ImageSlider";
 import LatestFromSocialMedia from "./LatestFromSocialMedia"
 
 const HomePage = () => {
@@ -21,7 +21,7 @@ const HomePage = () => {
       <Hero />
       <ProductCard />
       <Banner />
-      <Component/>
+      <ImageSlider/>
       <ProductVideos />
       <Banners />
       <LatestFromSocialMedia/>

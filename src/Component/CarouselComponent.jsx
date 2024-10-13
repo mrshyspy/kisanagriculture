@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 
 const Carousel = () => {
@@ -34,7 +34,7 @@ const Carousel = () => {
     },
     {
       title: "Image 3",
-      imageUrl: "		https://i.imgur.com/LK2KIHv.png",
+      imageUrl: "https://i.imgur.com/LK2KIHv.png",
     },
   ];
 
@@ -100,6 +100,7 @@ const Carousel = () => {
               <img
                 src={item.imageUrl}
                 alt={item.title}
+                loading="lazy" // Lazy loading added here
                 className="object-contain w-full h-full"
               />
               <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">

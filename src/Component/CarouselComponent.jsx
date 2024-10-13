@@ -34,7 +34,7 @@ const Carousel = () => {
     },
     {
       title: "Image 3",
-      imageUrl: "		https://i.imgur.com/bsE41in.png",
+      imageUrl: "		https://i.imgur.com/LK2KIHv.png",
     },
   ];
 

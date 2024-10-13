@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; 
 import { useSwipeable } from "react-swipeable";
 
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const items = [
+  const [isMobile, setIsMobile] = useState(false);
+
+  const desktopItems = [
     {
       title: "Combine Harvester - 512",
       imageUrl: "https://i.imgur.com/c9Dh2wU.jpeg",
@@ -16,10 +18,27 @@ const Carousel = () => {
     },
     {
       title: "Multicrop Thresher",
-      imageUrl: "			https://i.imgur.com/xCwV5if.png",
+      imageUrl: "https://i.imgur.com/kvJW5N0.png",
       link: "https://www.Kisan.com/multicrop-thresher",
     },
   ];
+
+  const mobileItems = [
+    {
+      title: "Image 1",
+      imageUrl: "https://i.imgur.com/dGdDYTX.png",
+    },
+    {
+      title: "Image 2",
+      imageUrl: "https://i.imgur.com/uQlsjdg.png",
+    },
+    {
+      title: "Image 3",
+      imageUrl: "	https://i.imgur.com/JSWbzwG.png",
+    },
+  ];
+
+  const [items, setItems] = useState(desktopItems);
 
   const handlers = useSwipeable({
     onSwipedLeft: () => nextSlide(),
@@ -30,25 +49,30 @@ const Carousel = () => {
   });
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "ArrowLeft") {
-        prevSlide();
-      } else if (e.key === "ArrowRight") {
-        nextSlide();
-      }
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    window.addEventListener("keydown", handleKeyDown);
+    handleResize(); // Check the initial screen size
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   useEffect(() => {
+    if (isMobile) {
+      setItems(mobileItems);
+    } else {
+      setItems(desktopItems);
+    }
+  }, [isMobile]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % items.length);
-    }, 4000); // Change slide every 8 seconds
+    }, 4000); // Change slide every 4 seconds
 
     return () => clearInterval(interval);
   }, [items.length]);
@@ -60,9 +84,9 @@ const Carousel = () => {
   const nextSlide = () => {
     setActiveIndex((current) => (current + 1) % items.length);
   };
-  // h-[30vh] sm:h-[40vh] md:h-[50vh]
+
   return (
-    <div className="relative w-full  overflow-hidden">
+    <div className="relative w-full overflow-hidden">
       <div className="relative w-full h-full flex overflow-hidden" {...handlers}>
         <div
           className="flex flex-nowrap transition-transform duration-1000"
@@ -76,7 +100,7 @@ const Carousel = () => {
               <img
                 src={item.imageUrl}
                 alt={item.title}
-                className="object-contain w-full h-full" // Changed object-fit to object-contain
+                className="object-contain w-full h-full"
               />
               <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
                 {/* You can add any overlay or text here if needed */}

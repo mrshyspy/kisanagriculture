@@ -24,6 +24,7 @@ const ProductDetail = ({threshers}) => {
           <img
             src={selectedImage}
             alt="Selected"
+            loading="lazy"
             className={`object-cover w-full h-56 md:h-80 transition-transform duration-500 ${
               isZoomed ? 'scale-110' : 'scale-100'
             }`}

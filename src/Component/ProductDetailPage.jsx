@@ -117,6 +117,7 @@ function ProductDetailPage({ threshers }) {
                 <img
                   src={selectedImage}
                   alt="Selected"
+                  loading="lazy"
                   className={`object-cover w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 transition-transform duration-500 ${
                     isZoomed ? "scale-110" : "scale-100"
                   }`}

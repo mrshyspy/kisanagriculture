@@ -39,6 +39,7 @@ const ProductCard = () => {
                     className="absolute inset-0 w-full h-full object-cover mb-0 transition-transform duration-300 ease-in-out lg:hover:scale-105" // Zoom effect with ease-in-out
                     src={machine.details.imageUrl}
                     alt={machine.ModelName}
+                    loading="lazy"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

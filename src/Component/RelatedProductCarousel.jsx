@@ -158,9 +158,10 @@ const CarouselComponent = () => {
               <div className="bg-white text-gray-800 rounded-lg overflow-hidden shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300">
                 <Link to={`/${machine.productId}`} className="block">
                   <img
-                    className="h-64 w-full object-cover mb-2"
+                    className=" w-full object-cover mb-2"
                     src={machine.details.imageUrl}
                     alt={machine.ModelName}
+                    loading="lazy"
                   />
                   <div className="p-6">
                     <p className="text-lg font-semibold mb-1 text-center">

@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import threshers from "./Threshers";
+import { ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -20,7 +21,7 @@ const Header = () => {
   };
 
   const handleClickDropDown = () => {
-    setDropdownOpen(false);  // Close the dropdown immediately after any item is clicked
+    setDropdownOpen(false);  // Close the dropdown after any item is clicked
   };
 
   // Close dropdown when clicking outside
@@ -98,9 +99,15 @@ const Header = () => {
               onClick={handleClick}
               ref={dropdownRef}
             >
-              <button className="hover:text-green-600 transition-colors duration-300">
+              <button className="flex items-center hover:text-green-600 transition-colors duration-300">
                 Our Products
+                <ChevronDown
+                  className={`ml-1 h-4 w-4 transition-transform duration-300 transform ${
+                    dropdownOpen ? 'rotate-180' : ''
+                  }`}
+                />
               </button>
+
               {dropdownOpen && (
                 <div className="absolute left-0 mt-2 w-48 sm:w-60 bg-white shadow-lg rounded-lg z-10">
                   <ul className="text-gray-800 font-medium text-sm">

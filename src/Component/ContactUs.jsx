@@ -24,7 +24,7 @@ const ContactUs = () => {
         <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
           <div className="relative bg-gray-100 rounded-lg px-4 py-8 sm:px-6 sm:py-12 lg:px-12 lg:py-16 shadow-md border border-gray-300 backdrop-blur-md -mt-16 md:-mt-20 lg:-mt-32">
             <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-600">
                 Get in Touch
               </h2>
               <p className="mt-4 text-sm sm:text-base text-gray-600">

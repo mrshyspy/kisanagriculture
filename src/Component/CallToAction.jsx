@@ -33,7 +33,7 @@ export default function CallToActions() {
             <Button
               variant="ghost"
               size="sm"
-              className="text-white rounded-full hover:text-white/90 hover:bg-green-600 text-sm"
+              className="text-white rounded-full hover:text-white/90 hover:bg-green-700 text-sm"
               asChild
             >
               <a href="https://wa.me/+917665373702" className="flex items-center space-x-2">
@@ -45,7 +45,7 @@ export default function CallToActions() {
             <Button
               variant="ghost"
               size="sm"
-              className="text-white rounded-full  hover:text-white hover:bg-green-600 text-sm"
+              className="text-white rounded-full  hover:text-white hover:bg-green-700 text-sm"
               asChild
             >
               <a href="tel:+919828719163" className="flex items-center space-x-2">

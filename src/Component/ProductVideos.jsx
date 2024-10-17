@@ -42,7 +42,7 @@ export default function VideoList() {
           <div className="relative">
             <button
               onClick={handleShowMore}
-              className="inline-flex items-center px-6 py-3 bg-white border border-gray-800 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-300"
+              className="inline-flex items-center px-6 py-3 bg-white border border-gray-800 hover:border-gray-100 rounded-full text-sm font-medium text-gray-700 hover:text-white hover:bg-green-600  transition-colors duration-300"
             >
               Load More
               <ChevronDown className="ml-2 h-4 w-4" />

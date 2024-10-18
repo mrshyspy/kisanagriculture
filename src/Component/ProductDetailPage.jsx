@@ -172,7 +172,7 @@ function ProductDetailPage({ threshers }) {
                     img !== "video" ? img : "https://i.imgur.com/IEAum1D.jpeg"
                   } // Placeholder for video thumbnail
                   alt={`Thumbnail ${index + 1}`}
-                  className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 cursor-pointer rounded-lg border-b-4 ${
+                  className={`w-12 h-12 sm:w-14 sm:h-8 md:w-16 md:h-9 lg:w-20 lg:h-10 cursor-pointer rounded-lg border-b-4 ${
                     selectedImage === img
                       ? "border-b-green-600"
                       : "border-b-gray-300"

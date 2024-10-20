@@ -153,9 +153,9 @@ const Gallery = () => {
             <img
               src={src}
               alt={`Gallery Image ${index + 1}`}
-              className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out transform ${
+              className={`absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out transform ${
                 loading[index] ? "hidden" : "block"
-              } hover:scale-110 cursor-pointer`}
+              } hover:scale-105 cursor-pointer`}
               loading="lazy"
             />
           </div>

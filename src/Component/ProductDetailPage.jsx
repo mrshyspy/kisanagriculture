@@ -167,18 +167,19 @@ function ProductDetailPage({ threshers }) {
             <div className="flex space-x-2 mt-4 justify-center">
               {images.map((img, index) => (
                 <img
-                  key={index}
-                  src={
-                    img !== "video" ? img : "https://i.imgur.com/IEAum1D.jpeg"
-                  } // Placeholder for video thumbnail
-                  alt={`Thumbnail ${index + 1}`}
-                  className={`w-12 h-7 sm:w-14 sm:h-9 md:w-16 md:h-9 lg:w-20 lg:h-11 cursor-pointer rounded-lg border-b-4 ${
-                    selectedImage === img
-                      ? "border-b-green-600"
-                      : "border-b-gray-300"
-                  } shadow-sm transform transition-transform duration-300 hover:scale-110`}
-                  onClick={() => setSelectedImage(img)}
-                />
+                key={index}
+                src={
+                  img !== "video" ? img : "https://i.imgur.com/IEAum1D.jpeg"
+                }
+                alt={`Thumbnail ${index + 1}`}
+                className={`w-16 h-9 sm:w-20 sm:h-11 md:w-24 md:h-14 lg:w-28 lg:h-16 cursor-pointer rounded-lg border-b-4 ${
+                  selectedImage === img
+                    ? "border-b-green-600"
+                    : "border-b-gray-300"
+                } shadow-sm transform transition-transform duration-300 hover:scale-110`}
+                onClick={() => setSelectedImage(img)}
+              />
+              
               ))}
             </div>
           </div>

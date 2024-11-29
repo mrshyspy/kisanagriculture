@@ -8,7 +8,7 @@ import ProductCard from "./ProductCards";
 import Map from "./Map";
 import Hero from "./Hero";
 import  ImageSlider from "./ImageSlider";
-import LatestFromSocialMedia from "./LatestFromSocialMedia"
+import SocialMediaLinks from "./SocialMedia"
 
 const HomePage = () => {
   useEffect(() => {
@@ -24,7 +24,7 @@ const HomePage = () => {
       <ImageSlider/>
       <ProductVideos />
       <Banners />
-      <LatestFromSocialMedia/>
+      <SocialMediaLinks/>
       <CallToActions />
       <Map />
       

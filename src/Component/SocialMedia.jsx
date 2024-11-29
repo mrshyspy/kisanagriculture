@@ -9,7 +9,7 @@ export default function SocialMediaLinks() {
       </h2>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         <a
-          href="https://www.youtube.com"
+          href="https://www.youtube.com/@KISANAgricultureWorkshop"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-2 my-2 bg-red-600 text-white rounded-md hover:bg-red-700"
@@ -18,7 +18,7 @@ export default function SocialMediaLinks() {
           <span>YouTube</span>
         </a>
         <a
-          href="https://www.facebook.com"
+          href="https://www.facebook.com/profile.php?id=100094649059141"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"

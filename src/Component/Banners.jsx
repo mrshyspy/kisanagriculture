@@ -70,7 +70,7 @@ export default function FeaturesComponent() {
   return (
     <div className="container mx-auto py-8 px-6 sm:px-8 lg:px-12 bg-green-50">
       <h2 className="text-3xl font-bold text-center mb-8 text-green-800">
-        Key Features
+        Why KISAN Agriculture?
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, index) => (

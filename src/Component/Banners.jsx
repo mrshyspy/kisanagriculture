@@ -99,3 +99,51 @@ export default function FeaturesComponent() {
     </div>
   );
 }
+// import React from 'react';
+// import { FaCheckCircle } from 'react-icons/fa';
+
+// const FeaturesComponent = () => {
+//   const features = [
+//     {
+//       title: 'High Efficiency',
+//       description: 'Our thresher machines are designed to deliver maximum output with minimal effort.',
+//     },
+//     {
+//       title: 'Durable Build',
+//       description: 'Built with premium materials to ensure long-lasting performance.',
+//     },
+//     {
+//       title: 'Affordable Pricing',
+//       description: 'Get the best value for your money with our competitively priced products.',
+//     },
+//     {
+//       title: 'After-Sales Support',
+//       description: 'Reliable support to assist you with any queries or issues.',
+//     },
+//   ];
+
+//   return (
+//     <section className="bg-gray-100 py-12 px-6">
+//       <div className="max-w-7xl mx-auto text-center">
+//         <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-6">Why Choose Us?</h2>
+//         <p className="text-gray-700 mb-10 text-base md:text-lg leading-relaxed">
+//           Discover why our thresher machines are the preferred choice for farmers and agricultural professionals.
+//         </p>
+//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+//           {features.map((feature, index) => (
+//             <div
+//               key={index}
+//               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+//             >
+//               <FaCheckCircle className="text-green-600 text-3xl mb-4 mx-auto" />
+//               <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
+//               <p className="text-gray-600 text-sm md:text-base leading-relaxed">{feature.description}</p>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default FeaturesComponent;
